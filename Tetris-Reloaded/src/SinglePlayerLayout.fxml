@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<SplitPane dividerPositions="0.6159874608150471" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SinglePlayerController">
+    <items>
+        <HBox fx:id="gameContainer" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <Canvas fx:id="canvasGame" height="398.0" onMouseClicked="#canvasGame_MouseClicked" style="-fx-background-color: red;" width="200.0">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Canvas>
+            </children>
+        </HBox>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+            <children>
+                <Region VBox.vgrow="ALWAYS" />
+                <Label fx:id="lblMessage" text="Loading...">
+                    <font>
+                        <Font size="32.0" />
+                    </font>
+                </Label>
+                <HBox fx:id="nextPieceContainer" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Canvas fx:id="canvasNextPiece" height="120.0" style="-fx-background-color: red;" width="120.0" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER">
+                    <children>
+                        <Label text="Rows Popped: ">
+                            <font>
+                                <Font size="25.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lblRowsPopped" text="0">
+                            <font>
+                                <Font size="25.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <Region VBox.vgrow="ALWAYS" />
+                <Button fx:id="btnStart" disable="true" mnemonicParsing="false" onAction="#btnStart_Action" prefWidth="136.0" text="Start">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Button>
+                <Region VBox.vgrow="ALWAYS" />
+                <Button fx:id="btnRestart" disable="true" mnemonicParsing="false" onAction="#btnRestart_Action" prefWidth="136.0" text="Restart">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Button>
+                <Region VBox.vgrow="ALWAYS" />
+                <Button fx:id="btnSave" disable="true" mnemonicParsing="false" onAction="#btnSave_Action" prefWidth="136.0" text="Save">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Button>
+                <Region VBox.vgrow="ALWAYS" />
+            <Button fx:id="btnBack" mnemonicParsing="false" onAction="#btnBack_Action" prefWidth="136.0" text="Back">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+            <Region VBox.vgrow="ALWAYS" />
+            </children>
+        </VBox>
+    </items>
+</SplitPane>

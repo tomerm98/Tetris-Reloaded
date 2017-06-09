@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="layout" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HomeController">
+    <children>
+        <Region VBox.vgrow="ALWAYS" />
+        <Label text="Tetris: Reloaded" textAlignment="CENTER">
+            <font>
+                <Font size="36.0" />
+            </font>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </Label>
+        <Region VBox.vgrow="ALWAYS">
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </Region>
+        <Button fx:id="btnReset" mnemonicParsing="false" onAction="#btnReset_Action" prefHeight="25.0" prefWidth="84.0" text="Reset" />
+        <HBox alignment="CENTER">
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+            <children>
+                <Region HBox.hgrow="ALWAYS" />
+                <VBox alignment="CENTER">
+                    <children>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Label text="Width: ">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="lblWidth" text="10">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <Slider fx:id="sldrWidth" blockIncrement="1.0" max="20.0" min="1.0" value="10.0" />
+                    </children>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <VBox alignment="CENTER">
+                    <children>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Label text="Height: ">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="lblHeight" text="18">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <Slider fx:id="sldrHeight" blockIncrement="1.0" max="40.0" min="1.0" value="18.0" />
+                    </children>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <VBox alignment="CENTER">
+                    <children>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Label text="Piece Size: ">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="lblPieceSize" text="4">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <Slider fx:id="sldrPieceSize" blockIncrement="1.0" max="10.0" min="1.0" value="4.0" />
+                    </children>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+            </children>
+        </HBox>
+        <Region VBox.vgrow="ALWAYS" />
+        <Button fx:id="btnSinglePLayer" mnemonicParsing="false" onAction="#btnSinglePlayer_Action" prefWidth="136.0" text="Single Player">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Button>
+        <Region VBox.vgrow="ALWAYS" />
+        <Button fx:id="btnDuel" mnemonicParsing="false" onAction="#btnDuel_Action" prefWidth="136.0" text="Duel">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Button>
+        <Region VBox.vgrow="ALWAYS" />
+        <Button fx:id="btnHistory" mnemonicParsing="false" onAction="#btnHistory_Action" prefWidth="136.0" text="History" VBox.vgrow="ALWAYS">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Button>
+        <Region VBox.vgrow="ALWAYS" />
+    </children>
+</VBox>
