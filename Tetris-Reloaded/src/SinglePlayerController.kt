@@ -11,6 +11,7 @@ import javafx.scene.layout.Pane
 import javafx.scene.paint.Color
 import java.net.URL
 import java.util.*
+import kotlin.concurrent.timerTask
 
 class SinglePlayerController : Initializable {
 
@@ -44,6 +45,7 @@ class SinglePlayerController : Initializable {
         container.heightProperty().addListener { _, _, _ -> resizeGameCanvas(gameSizeRatio) }
         container.widthProperty().addListener { _, _, _ -> resizeGameCanvas(gameSizeRatio) }
         setupKeyPressedEvents(container.scene)
+
         game = Game(
                 width = width,
                 height = height,
@@ -76,7 +78,8 @@ class SinglePlayerController : Initializable {
         game.restart()
     }
     fun btnBack_Action(){
-        game?.pause()
+        if (game?.isPlaying ?: false)
+            game?.pause()
         App.launchHomeScreen()
     }
     fun btnSave_Action() {
@@ -97,6 +100,7 @@ class SinglePlayerController : Initializable {
 
     private fun game_Change(game: Game) {
         updateGameCanvas()
+
     }
 
     private fun game_Ready(game: Game) {
@@ -111,6 +115,9 @@ class SinglePlayerController : Initializable {
 
     private fun game_RowsPopped(game: Game, rowsPopped: Int) {
         lblRowsPopped?.text = game.rowsPopped.toString()
+        game.delayMillis -= 20 * rowsPopped
+        if (game.delayMillis < 100)
+            game.delayMillis = 100
     }
 
 
@@ -158,7 +165,6 @@ class SinglePlayerController : Initializable {
     }
 
     private fun resizeCanvas(canvas: Canvas, container: Pane, sizeRatio: Double) {
-        println("resized")
         val reversedRatio = 1.0 / sizeRatio
         val conWidth = container.width
         val conHeight = container.height
@@ -169,32 +175,59 @@ class SinglePlayerController : Initializable {
         val option1Area = option1Width * option1Height
         val option2Area = option2Width * option2Height
         if (option1Area > option2Area)
-            canvas.resize(option1Width, option1Height)
+            {
+                canvas.width = option1Width
+                canvas.height = option1Height
+            }
         else
-            canvas.resize(option2Width, option2Height)
+        {
+            canvas.width = option2Width
+            canvas.height = option2Height
+        }
 
 
     }
 
 
     private fun setupKeyPressedEvents(scene: Scene) {
-        scene.setOnKeyPressed { e ->
-            if (game != null)
-            {
-                val game = checkNotNull(game)
-                if (game.isPlaying) {
-                    when (e.code) {
-                        KeyCode.UP -> game.rotatePiece()
-                        KeyCode.LEFT -> game.movePieceLeft()
-                        KeyCode.RIGHT -> game.movePieceRight()
-                        KeyCode.DOWN -> game.movePieceDown()
-                        KeyCode.SPACE -> game.dropPiece()
-                    }
-                }
-            }
 
+        var timer = Timer()
+        var timerRunning = false
+        fun startTimer() {
+            timer = Timer()
+            val downTimerTask = timerTask { game?.movePieceDown() }
+            timer.scheduleAtFixedRate(downTimerTask, 0, 60)
         }
+
+        fun stopTimer() {
+            timer.cancel()
+            timer.purge()
+        }
+        scene.setOnKeyPressed { e ->
+            if (game?.isPlaying ?: false) {
+                    when (e.code) {
+                        KeyCode.UP -> game?.rotatePiece()
+                        KeyCode.LEFT -> game?.movePieceLeft()
+                        KeyCode.RIGHT -> game?.movePieceRight()
+                        KeyCode.SPACE -> game?.dropPiece()
+                        KeyCode.DOWN -> {
+                            if (!timerRunning) {
+                                startTimer()
+                                timerRunning = true
+                            }
+                        }
+                    }
+            }
+        }
+        scene.setOnKeyReleased { e ->
+            if (e.code == KeyCode.DOWN) {
+                stopTimer()
+                timerRunning = false
+            }
+        }
+
     }
+
 
 
     private fun updateNextPieceCanvas() {

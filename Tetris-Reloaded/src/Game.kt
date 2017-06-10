@@ -7,7 +7,7 @@ import kotlin.concurrent.timerTask
 
 private val COLOR_LIST = listOf(
         Color.ORANGE,
-        Color.PURPLE,
+        Color.BLUEVIOLET,
         Color.BLUE,
         Color.YELLOW,
         Color.RED,
@@ -27,7 +27,7 @@ class Game(
         val width: Int,
         val height: Int,
         val pieceSize: Int,
-        var delayMillis: Long = 1000,
+        var delayMillis: Long = 650,
         val onReady: (Game) -> Unit = {},
         val onEnd: (Game) -> Unit = {},
         val onChange: (Game) -> Unit = {},
@@ -110,6 +110,9 @@ class Game(
             currentPiece.moveUp()
             addPieceToGrid(currentPiece)
         }
+        popFullRows()
+
+        setUpNewPiece()
     }
 
     fun movePieceRight() {
@@ -131,7 +134,7 @@ class Game(
             removePieceFromGrid(currentPiece)
             currentPiece.moveLeft()
             if (!isPieceLocationLegal(currentPiece))
-                currentPiece.rotateRight()
+                currentPiece.moveRight()
             addPieceToGrid(currentPiece)
         }
         screenChanged()
@@ -173,7 +176,6 @@ class Game(
 
 
     private fun end() {
-        require(isPlaying)
         stopTimer()
         resetProperties()
         onEnd(this)
@@ -252,41 +254,43 @@ class Game(
             )
         }
     }
-
-    private fun startTimer() {
-        timer = Timer()
-
-        fun setUpNewPiece() {
-            currentPiece = nextPiece
-            nextPiece = getRandomPiece()
-            if (isPieceLocationLegal(currentPiece)) {
-                addPieceToGrid(currentPiece)
-                popFullRows()
-                onPieceChanged(this)
-                screenChanged()
-            }
-            else {
-                isPlaying = false
-                Platform.runLater { onEnd(this) }
-            }
-
-        }
-
-        fun moveCurrentPieceDown() {
-            currentPiece.moveDown()
+   private fun setUpNewPiece() {
+        currentPiece = nextPiece
+        nextPiece = getRandomPiece()
+        if (isPieceLocationLegal(currentPiece)) {
             addPieceToGrid(currentPiece)
+            onPieceChanged(this)
             screenChanged()
         }
+        else end()
 
+    }
+
+
+    private fun startTimer() {
+
+
+
+
+
+        timer = Timer()
         val task = timerTask {
             if (isPlaying) {
                 removePieceFromGrid(currentPiece)
-                val tempPiece = currentPiece.copy().apply { moveDown() }
-                if (isPieceLocationLegal(tempPiece))
-                    moveCurrentPieceDown()
-                else {
+                currentPiece.moveDown()
+                if (isPieceLocationLegal(currentPiece))
+                {
                     addPieceToGrid(currentPiece)
-                    setUpNewPiece()
+                    Platform.runLater { screenChanged() }
+                }
+                else {
+                    currentPiece.moveUp()
+                    addPieceToGrid(currentPiece)
+
+                    Platform.runLater {
+                        popFullRows()
+                        setUpNewPiece()
+                    }
                 }
             }
         }
@@ -328,6 +332,7 @@ class Game(
                     count++
                 }
         }
+        rowsPopped += count
         onRowsPopped(this, count)
     }
 
