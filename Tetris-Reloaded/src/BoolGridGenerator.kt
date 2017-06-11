@@ -1,3 +1,8 @@
+import java.util.*
+
+
+
+
 fun generateBoolGridsToSharedList(blockCount: Int, sharedList: MutableList<BoolGrid>, onGridAdded: (BoolGrid) -> Unit ={}) {
     //the grid must be of size: blockCount X blockCount
     require(blockCount > 0)
@@ -41,7 +46,9 @@ fun generateBoolGridsToSharedList(blockCount: Int, sharedList: MutableList<BoolG
 
     fun generateNewGridsFromPrevious(grid: BoolGrid) {
         grid.addBorderMargin(1)
-        for ((x, y) in grid.getTruesLocations()) {
+        val truesLocations = grid.getTruesLocations()
+        Collections.shuffle(truesLocations)
+        for ((x, y) in truesLocations) {
             if (!grid[x - 1, y]) {
                 val newGrid = grid.copy()
                 newGrid.toggle(x - 1, y)

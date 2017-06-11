@@ -214,7 +214,9 @@ class SinglePlayerController : Initializable {
         var timerRunning = false
         fun startTimer() {
             timer = Timer()
-            val downTimerTask = timerTask { Platform.runLater { game?.movePieceDown() } }
+            val downTimerTask = timerTask { Platform.runLater {
+                if (game?.isPlaying ?: false)
+                game?.movePieceDown() } }
             timer.scheduleAtFixedRate(downTimerTask, 0, 45)
         }
 
@@ -289,7 +291,7 @@ class SinglePlayerController : Initializable {
                 squareSize - 2 * border
         )
     }
-    private fun drawCanvasBorder(canvas: Canvas, border:Int = 2)
+    private fun drawCanvasBorder(canvas: Canvas)
     {
         val graphics = canvas.graphicsContext2D
         val width = canvas.width

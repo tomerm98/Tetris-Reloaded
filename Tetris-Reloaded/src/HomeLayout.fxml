@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox fx:id="layout" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HomeController">
+<VBox fx:id="layout" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HomeController">
     <children>
         <Region VBox.vgrow="ALWAYS" />
         <Label text="Tetris: Reloaded" textAlignment="CENTER">
@@ -46,7 +46,7 @@
                                 </Label>
                             </children>
                         </HBox>
-                        <Slider fx:id="sldrWidth" blockIncrement="1.0" min="1.0" prefWidth="200.0" value="10.0" />
+                        <Slider fx:id="sldrWidth" blockIncrement="1.0" min="1.0" prefWidth="300.0" value="10.0" />
                     </children>
                 </VBox>
                 <Region HBox.hgrow="ALWAYS" />
@@ -66,7 +66,7 @@
                                 </Label>
                             </children>
                         </HBox>
-                        <Slider fx:id="sldrHeight" blockIncrement="1.0" min="1.0" prefWidth="200.0" value="18.0" />
+                        <Slider fx:id="sldrHeight" blockIncrement="1.0" min="1.0" prefWidth="300.0" value="18.0" />
                     </children>
                 </VBox>
                 <Region HBox.hgrow="ALWAYS" />
@@ -86,7 +86,7 @@
                                 </Label>
                             </children>
                         </HBox>
-                        <Slider fx:id="sldrPieceSize" blockIncrement="1.0" max="50.0" min="1.0" prefWidth="200.0" value="4.0" />
+                        <Slider fx:id="sldrPieceSize" blockIncrement="1.0" max="30.0" min="1.0" prefWidth="300.0" value="4.0" />
                     </children>
                 </VBox>
                 <Region HBox.hgrow="ALWAYS" />
