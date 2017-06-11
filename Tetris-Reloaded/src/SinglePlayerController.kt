@@ -1,3 +1,4 @@
+import javafx.application.Platform
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.Scene
@@ -18,9 +19,10 @@ class SinglePlayerController : Initializable {
     var game: Game? = null
     @FXML var lblMessage: Label? = null
     @FXML var lblRowsPopped: Label? = null
+    @FXML var lblPiecesGenerated: Label? = null
     @FXML var canvasNextPiece: Canvas? = null
     @FXML var canvasGame: Canvas? = null
-    @FXML var nextPieceContainer: HBox? = null
+   // @FXML var nextPieceContainer: HBox? = null
     @FXML var gameContainer: HBox? = null
     @FXML var btnStart: Button? = null
     @FXML var btnRestart: Button? = null
@@ -29,22 +31,24 @@ class SinglePlayerController : Initializable {
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         //resize the next-piece canvas when the container is resized
-        nextPieceContainer?.heightProperty()?.addListener { _, _, _ -> resizeNextPieceCanvas() }
-        nextPieceContainer?.widthProperty()?.addListener { _, _, _ -> resizeNextPieceCanvas() }
+        //nextPieceContainer?.heightProperty()?.addListener { _, _, _ -> resizeNextPieceCanvas() }
+        //nextPieceContainer?.widthProperty()?.addListener { _, _, _ -> resizeNextPieceCanvas() }
         btnStart?.isFocusTraversable = false
         btnRestart?.isFocusTraversable = false
         btnSave?.isFocusTraversable = false
         btnBack?.isFocusTraversable = false
 
+
     }
 
     fun loadGame(width: Int, height: Int, pieceSize: Int) {
+
         val gameSizeRatio = width.toDouble() / height.toDouble()
+        resizeGameCanvas(gameSizeRatio)
         val container = checkNotNull(gameContainer)
         //resize the game canvas when the container is resized
         container.heightProperty().addListener { _, _, _ -> resizeGameCanvas(gameSizeRatio) }
         container.widthProperty().addListener { _, _, _ -> resizeGameCanvas(gameSizeRatio) }
-        setupKeyPressedEvents(container.scene)
 
         game = Game(
                 width = width,
@@ -54,8 +58,14 @@ class SinglePlayerController : Initializable {
                 onChange = this::game_Change,
                 onEnd = this::game_End,
                 onRowsPopped = this::game_RowsPopped,
-                onPieceChanged = this::game_PieceChanged
+                onPieceChanged = this::game_PieceChanged,
+                onPieceGenerated = this::game_PieceGenerated,
+                functionThatRunsCodeInUiThread = Platform::runLater
+
         )
+        setupKeyPressedEvents(container.scene)
+
+
 
     }
 
@@ -87,7 +97,13 @@ class SinglePlayerController : Initializable {
     }
 
     fun canvasGame_MouseClicked() {
-
+        println("click")
+        if (game != null){
+            val paused = game?.isPaused ?: false
+            val playing = game?.isPlaying ?: false
+            if (paused || playing)
+               btnStart?.fire()
+        }
     }
 
 
@@ -119,7 +135,10 @@ class SinglePlayerController : Initializable {
         if (game.delayMillis < 100)
             game.delayMillis = 100
     }
+    private fun game_PieceGenerated(game:Game){
+        lblPiecesGenerated?.text = game.piecesGenerated.toString()
 
+    }
 
     private fun startGame() {
         lblMessage?.text = ""
@@ -143,15 +162,15 @@ class SinglePlayerController : Initializable {
     }
 
 
-    private fun resizeNextPieceCanvas() {
-        resizeCanvas(
-                checkNotNull(canvasNextPiece),
-                checkNotNull(nextPieceContainer),
-                1.0
-        )
-        if (game != null)
-        updateNextPieceCanvas()
-    }
+   // private fun resizeNextPieceCanvas() {
+   //     resizeCanvas(
+   //             checkNotNull(canvasNextPiece),
+   //             checkNotNull(nextPieceContainer),
+   //             1.0
+   //     )
+   //     if (game != null)
+   //     updateNextPieceCanvas()
+   // }
 
     private fun resizeGameCanvas(ratio: Double) {
         resizeCanvas(
@@ -195,8 +214,8 @@ class SinglePlayerController : Initializable {
         var timerRunning = false
         fun startTimer() {
             timer = Timer()
-            val downTimerTask = timerTask { game?.movePieceDown() }
-            timer.scheduleAtFixedRate(downTimerTask, 0, 60)
+            val downTimerTask = timerTask { Platform.runLater { game?.movePieceDown() } }
+            timer.scheduleAtFixedRate(downTimerTask, 0, 45)
         }
 
         fun stopTimer() {

@@ -1,4 +1,4 @@
-fun generateBoolGridsToSharedList(blockCount: Int, sharedList: MutableList<BoolGrid>) {
+fun generateBoolGridsToSharedList(blockCount: Int, sharedList: MutableList<BoolGrid>, onGridAdded: (BoolGrid) -> Unit ={}) {
     //the grid must be of size: blockCount X blockCount
     require(blockCount > 0)
     fun lockAndAdd(grid: BoolGrid) {
@@ -6,7 +6,7 @@ fun generateBoolGridsToSharedList(blockCount: Int, sharedList: MutableList<BoolG
         {
             sharedList.add(grid)
         }
-
+        onGridAdded(grid)
     }
 
     if (blockCount == 1) {
@@ -66,8 +66,11 @@ fun generateBoolGridsToSharedList(blockCount: Int, sharedList: MutableList<BoolG
     }
 
     val previousGrids = mutableListOf<BoolGrid>()
-    generateBoolGridsToSharedList(blockCount - 1, previousGrids)
-    previousGrids.forEach(::generateNewGridsFromPrevious)
+    generateBoolGridsToSharedList(blockCount - 1, previousGrids,
+            onGridAdded = ::generateNewGridsFromPrevious
+
+    )
+
 
 
 }

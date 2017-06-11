@@ -1,3 +1,4 @@
+
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
 import javafx.scene.Parent
@@ -28,9 +29,9 @@ class App : Application() {
         fun launchSinglePlayerScreen(width: Int, height: Int, pieceSize: Int) {
             val loader = FXMLLoader(javaClass.getResource("SinglePlayerLayout.fxml"))
             val layout: Parent = loader.load()
-            val controller: SinglePlayerController = loader.getController()
             stage?.scene = Scene(layout)
             stage?.show()
+            val controller: SinglePlayerController = loader.getController()
             controller.loadGame(width, height, pieceSize)
         }
 

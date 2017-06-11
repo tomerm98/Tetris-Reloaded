@@ -1,26 +1,8 @@
-import javafx.application.Platform
 import javafx.scene.paint.Color
 import java.util.*
 import java.util.concurrent.atomic.AtomicBoolean
 import kotlin.concurrent.thread
 import kotlin.concurrent.timerTask
-
-private val COLOR_LIST = listOf(
-        Color.ORANGE,
-        Color.BLUEVIOLET,
-        Color.BLUE,
-        Color.YELLOW,
-        Color.RED,
-        Color.GREEN,
-        Color.CYAN
-)
-
-data class GameTimeStamp(
-        val squareGrid: SquareGrid,
-        val nextPiece: GamePiece,
-        val time: Long,
-        val totalRowsPopped: Int
-)
 
 
 class Game(
@@ -33,8 +15,11 @@ class Game(
         val onChange: (Game) -> Unit = {},
         val onPieceChanged: (Game) -> Unit = {},
         val onRowsPopped: (Game, rowsPopped: Int) -> Unit = { _,_-> },
+        val onPieceGenerated: (Game) -> Unit = {},
+        val functionThatRunsCodeInUiThread: (Runnable) -> Unit,
         randomSeed: Long = System.currentTimeMillis()
 ) {
+
     private var totalSuspendedTime: Long = 0
     private var lastPauseTime: Long = 0
     private val initialDelayMillis = delayMillis
@@ -48,6 +33,9 @@ class Game(
     val history = mutableListOf<GameTimeStamp>()
     var nextPiece= GamePiece(BoolGrid(1,1))
     var rowsPopped = 0; private set
+    val piecesGenerated: Int
+    get() {return boolGrids.size}
+
     var isPaused = false; private set
     var isPlaying: Boolean
         private set(value) {
@@ -66,13 +54,15 @@ class Game(
         rng = Random(randomSeed)
 
         thread {
-            generateBoolGridsToSharedList(pieceSize, boolGrids)
+            generateBoolGridsToSharedList(pieceSize, boolGrids, onGridAdded = {
+                runUI  {onPieceGenerated(this)}
+            })
         }
         thread {
             waitUntilReady()
             currentPiece = getRandomPiece()
             nextPiece = getRandomPiece()
-            Platform.runLater { onReady(this) }
+            runUI { onReady(this) }
         }
     }
 
@@ -110,9 +100,7 @@ class Game(
             currentPiece.moveUp()
             addPieceToGrid(currentPiece)
         }
-        popFullRows()
-
-        setUpNewPiece()
+       hitBottom()
     }
 
     fun movePieceRight() {
@@ -149,7 +137,14 @@ class Game(
                 currentPiece.moveUp()
             addPieceToGrid(currentPiece)
         }
-        screenChanged()
+            removePieceFromGrid(currentPiece)
+            val isHitBottom = !isPieceLocationLegal(currentPiece.copy().apply { moveDown() })
+            addPieceToGrid(currentPiece)
+
+            if (isHitBottom) {
+                hitBottom()
+            } else screenChanged()
+
     }
 
     fun rotatePiece() {
@@ -254,6 +249,7 @@ class Game(
             )
         }
     }
+
    private fun setUpNewPiece() {
         currentPiece = nextPiece
         nextPiece = getRandomPiece()
@@ -265,7 +261,6 @@ class Game(
         else end()
 
     }
-
 
     private fun startTimer() {
 
@@ -281,15 +276,14 @@ class Game(
                 if (isPieceLocationLegal(currentPiece))
                 {
                     addPieceToGrid(currentPiece)
-                    Platform.runLater { screenChanged() }
+                    runUI { screenChanged() }
                 }
                 else {
                     currentPiece.moveUp()
                     addPieceToGrid(currentPiece)
 
-                    Platform.runLater {
-                        popFullRows()
-                        setUpNewPiece()
+                    runUI {
+                        hitBottom()
                     }
                 }
             }
@@ -302,7 +296,6 @@ class Game(
         timer.cancel()
         timer.purge()
     }
-
 
     private fun popFullRows() {
         fun isRowFull(top: Int): Boolean {
@@ -346,6 +339,12 @@ class Game(
             this[x + piece.left, y + piece.top] = GameSquare()
     }
 
+    private fun hitBottom(){
+        popFullRows()
+        screenChanged()
+        setUpNewPiece()
+    }
+
     private fun isPieceLocationLegal(piece: GamePiece): Boolean {
 
         for ((x, y) in piece.getSquaresLocations()) {
@@ -365,6 +364,7 @@ class Game(
 
     }
 
+    private fun runUI(function: () -> Unit) = functionThatRunsCodeInUiThread(Runnable { function() })
 
     private fun screenChanged() {
         updateHistory()
@@ -373,3 +373,20 @@ class Game(
 
 
 }
+
+data class GameTimeStamp(
+        val squareGrid: SquareGrid,
+        val nextPiece: GamePiece,
+        val time: Long,
+        val totalRowsPopped: Int
+)
+
+private val COLOR_LIST = listOf(
+        Color.ORANGE,
+        Color.BLUEVIOLET,
+        Color.BLUE,
+        Color.YELLOW,
+        Color.RED,
+        Color.GREEN,
+        Color.CYAN
+)
