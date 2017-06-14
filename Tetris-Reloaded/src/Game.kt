@@ -2,14 +2,12 @@ import javafx.scene.paint.Color
 import java.util.*
 import java.util.concurrent.atomic.AtomicBoolean
 import kotlin.concurrent.thread
-import kotlin.concurrent.timerTask
 
 
 class Game(
         val width: Int,
         val height: Int,
         val pieceSize: Int,
-        var delayMillis: Long = 650,
         val onReady: (Game) -> Unit = {},
         val onEnd: (Game) -> Unit = {},
         val onChange: (Game) -> Unit = {},
@@ -17,15 +15,17 @@ class Game(
         val onRowsPopped: (Game, rowsPopped: Int) -> Unit = { _,_-> },
         val onPieceGenerated: (Game) -> Unit = {},
         val functionThatRunsCodeInUiThread: (Runnable) -> Unit,
+        var delayMillis: Long = 450,
         randomSeed: Long = System.currentTimeMillis()
 ) {
-
+    private var gameTask = GameTask(this)
     private var totalSuspendedTime: Long = 0
     private var lastPauseTime: Long = 0
     private val initialDelayMillis = delayMillis
-    private val boolGrids: MutableList<BoolGrid>
+    private val piecesCombinations: MutableList<BoolGrid>
     private var currentPiece =GamePiece(BoolGrid(1,1))
     private val atomicIsPlaying: AtomicBoolean = AtomicBoolean(false)
+    private val atomicIsPaused: AtomicBoolean = AtomicBoolean(false)
     private val rng: Random
     private var timer = Timer()
     private val squareGrid: SquareGrid
@@ -33,28 +33,31 @@ class Game(
     val history = mutableListOf<GameTimeStamp>()
     var nextPiece= GamePiece(BoolGrid(1,1))
     var rowsPopped = 0; private set
-    val piecesGenerated: Int
-    get() {return boolGrids.size}
+    val piecesGenerated: Int get() {
+        return piecesCombinations.size
+    }
 
-    var isPaused = false; private set
-    var isPlaying: Boolean
-        private set(value) {
+    var isPaused: Boolean private set(value) {
+        atomicIsPaused.set(value)
+    } get() {
+        return atomicIsPaused.get()
+    }
+
+    var isPlaying: Boolean private set(value) {
             atomicIsPlaying.set(value)
-        }
-        get() {
+    } get() {
             return atomicIsPlaying.get()
         }
 
 
     init {
-
         require(width > 0 && height > 0 && delayMillis > 0 && pieceSize > 0)
-        boolGrids = mutableListOf<BoolGrid>()
+        piecesCombinations = mutableListOf<BoolGrid>()
         squareGrid = createSynchronizedSquareGrid(width, height)
         rng = Random(randomSeed)
 
         thread {
-            generateBoolGridsToSharedList(pieceSize, boolGrids, onGridAdded = {
+            generateBoolGridsToSharedList(pieceSize, piecesCombinations, onGridAdded = {
                 runUI  {onPieceGenerated(this)}
             })
         }
@@ -85,9 +88,9 @@ class Game(
     }
 
     fun isGameReady(): Boolean {
-        synchronized(boolGrids)
+        synchronized(piecesCombinations)
         {
-            return !boolGrids.isEmpty()
+            return !piecesCombinations.isEmpty()
         }
     }
 
@@ -167,6 +170,7 @@ class Game(
         screenChanged()
         startTimer()
 
+
     }
 
 
@@ -235,10 +239,10 @@ class Game(
     }
 
     private fun getRandomPiece(): GamePiece {
-        synchronized(boolGrids) {
-            require(!boolGrids.isEmpty())
-            val randomIndex = rng.nextInt(boolGrids.size)
-            val grid = boolGrids[randomIndex]
+        synchronized(piecesCombinations) {
+            require(!piecesCombinations.isEmpty())
+            val randomIndex = rng.nextInt(piecesCombinations.size)
+            val grid = piecesCombinations[randomIndex]
 
             val color = COLOR_LIST[randomIndex % COLOR_LIST.size]
             val left = width / 2 - grid.width / 2
@@ -263,39 +267,45 @@ class Game(
     }
 
     private fun startTimer() {
+        gameTask = GameTask(this)
+        timer.schedule(gameTask, 0)
+
+    }
+    private fun stopTimer()
+    {
+        gameTask.running = false
+    }
 
 
+    private class GameTask(val game: Game) : TimerTask() {
+        var running = true
+        override fun run() {
+            with(game) {
 
+                if ( running) {
+                    removePieceFromGrid(currentPiece)
+                    currentPiece.moveDown()
+                    if (isPieceLocationLegal(currentPiece)) {
+                        addPieceToGrid(currentPiece)
+                        runUI { screenChanged() }
+                    } else {
+                        currentPiece.moveUp()
+                        addPieceToGrid(currentPiece)
 
-
-        timer = Timer()
-        val task = timerTask {
-            if (isPlaying) {
-                removePieceFromGrid(currentPiece)
-                currentPiece.moveDown()
-                if (isPieceLocationLegal(currentPiece))
-                {
-                    addPieceToGrid(currentPiece)
-                    runUI { screenChanged() }
-                }
-                else {
-                    currentPiece.moveUp()
-                    addPieceToGrid(currentPiece)
-
-                    runUI {
-                        hitBottom()
+                        runUI {
+                            hitBottom()
+                        }
                     }
+
+                        gameTask = GameTask(game)
+                        timer.schedule(gameTask, delayMillis)
+
                 }
             }
         }
-        timer.scheduleAtFixedRate(task, 0, delayMillis)
 
     }
 
-    private fun stopTimer() {
-        timer.cancel()
-        timer.purge()
-    }
 
     private fun popFullRows() {
         fun isRowFull(top: Int): Boolean {
@@ -325,8 +335,10 @@ class Game(
                     count++
                 }
         }
-        rowsPopped += count
-        onRowsPopped(this, count)
+        if (count > 0) {
+            rowsPopped += count
+            onRowsPopped(this, count)
+        }
     }
 
     private fun addPieceToGrid(piece: GamePiece) {
@@ -383,10 +395,10 @@ data class GameTimeStamp(
 
 private val COLOR_LIST = listOf(
         Color.ORANGE,
-        Color.BLUEVIOLET,
-        Color.BLUE,
+        Color.web("#EF79FC"), //purple
+        Color.web("#1C36FF"), //blue
         Color.YELLOW,
-        Color.RED,
-        Color.GREEN,
-        Color.CYAN
+        Color.web("#FF2323"), //red
+        Color.CHARTREUSE, //green
+        Color.AQUA //cyan
 )

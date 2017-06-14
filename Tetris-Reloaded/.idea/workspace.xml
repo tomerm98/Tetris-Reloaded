@@ -2,10 +2,63 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a50f7b71-399f-4d74-88f2-2f9f86074b5d" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$startTimer$$inlined$timerTask$1$lambda$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$startTimer$$inlined$timerTask$1$lambda$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$startTimer$$inlined$timerTask$1.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/App$Companion.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/App$Companion.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/App.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/App.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/AppKt.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/AppKt.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGrid$removeAllMargin$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGrid$removeAllMargin$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGrid.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGrid.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt$generateBoolGridsToSharedList$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt$generateBoolGridsToSharedList$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt$generateBoolGridsToSharedList$2.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt$generateBoolGridsToSharedList$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt$generateBoolGridsToSharedList$4.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt$generateBoolGridsToSharedList$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt$generateBoolGridsToSharedList$5.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt$generateBoolGridsToSharedList$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt$generateBoolGridsToSharedList$6.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt$generateBoolGridsToSharedList$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$2.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$3.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$4.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$5.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$6.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$7$1$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$7$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$7$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$7$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$7.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$8$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$8$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$8.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$popFullRows$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$popFullRows$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$popFullRows$2.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$popFullRows$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$popFullRows$3.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$popFullRows$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$runUI$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$runUI$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/GameKt.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/GameKt.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/GameTimeStamp.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/GameTimeStamp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$loadGame$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$loadGame$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$loadGame$2.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$loadGame$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$loadGame$3.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$loadGame$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$loadGame$4.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$loadGame$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$loadGame$5.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$loadGame$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$loadGame$6.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$loadGame$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$loadGame$7.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$loadGame$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$loadGame$8.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$loadGame$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$loadGame$9.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$loadGame$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$1$startTimer$$inlined$timerTask$1$lambda$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$1$startTimer$$inlined$timerTask$1$lambda$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$1$startTimer$$inlined$timerTask$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$1$startTimer$$inlined$timerTask$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$2.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$3.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$4.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/HomeLayout.fxml" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/HomeLayout.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerLayout.fxml" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerLayout.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.kt" afterPath="$PROJECT_DIR$/src/App.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BoolGrid.kt" afterPath="$PROJECT_DIR$/src/BoolGrid.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BoolGridGenerator.kt" afterPath="$PROJECT_DIR$/src/BoolGridGenerator.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HomeLayout.fxml" afterPath="$PROJECT_DIR$/src/HomeLayout.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game.kt" afterPath="$PROJECT_DIR$/src/Game.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SinglePlayerController.kt" afterPath="$PROJECT_DIR$/src/SinglePlayerController.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SinglePlayerLayout.fxml" afterPath="$PROJECT_DIR$/src/SinglePlayerLayout.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,73 +69,62 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Tetris_Reloaded$AppKt.coverage" NAME="AppKt Coverage Results" MODIFIED="1497010335688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Tetris_Reloaded$AppKt.coverage" NAME="AppKt Coverage Results" MODIFIED="1497456334626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="Tetris-Reloaded" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Game.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="130" column="21" lean-forward="false" selection-start-line="130" selection-start-column="8" selection-end-line="130" selection-end-column="21" />
+            <state relative-caret-position="318">
+              <caret line="241" column="41" lean-forward="true" selection-start-line="241" selection-start-column="41" selection-end-line="241" selection-end-column="41" />
               <folding>
-                <element signature="e#1407#1457#0" expanded="false" />
-                <element signature="e#1472#1524#0" expanded="false" />
-                <element signature="e#1536#2113#0" expanded="false" />
-                <element signature="e#1776#1930#2" expanded="false" />
-                <element signature="e#1856#1919#1" expanded="false" />
-                <element signature="e#1946#2107#2" expanded="false" />
+                <element signature="e#1463#1504#0" expanded="false" />
+                <element signature="e#1511#1554#0" expanded="false" />
+                <element signature="e#1602#1648#0" expanded="false" />
+                <element signature="e#1655#1707#0" expanded="false" />
+                <element signature="e#1967#2130#2" expanded="false" />
+                <element signature="e#2056#2119#1" expanded="false" />
                 <element signature="n#!!block;n#get#0;n#!!block;n#Game#0" expanded="false" />
                 <element signature="n#!!block;n#set#0;n#!!block;n#Game#0" expanded="false" />
                 <element signature="n#!!block;n#getSquaresLocations#0;n#!!block;n#Game#0" expanded="false" />
                 <element signature="n#!!block;n#isGameReady#0;n#!!block;n#Game#0" expanded="false" />
-                <element signature="e#2661#2712#2" expanded="false" />
+                <element signature="e#2870#2930#2" expanded="false" />
                 <element signature="n#!!block;n#dropPiece#0;n#!!block;n#Game#0" expanded="false" />
-                <element signature="e#2804#3031#2" expanded="false" />
+                <element signature="e#3022#3249#2" expanded="false" />
                 <element signature="n#!!block;n#movePieceRight#0;n#!!block;n#Game#0" expanded="false" />
-                <element signature="e#3155#3383#2" expanded="false" />
+                <element signature="e#3373#3601#2" expanded="false" />
                 <element signature="n#!!block;n#movePieceLeft#0;n#!!block;n#Game#0" expanded="false" />
-                <element signature="e#3503#3731#2" expanded="false" />
-                <element signature="e#3851#4076#2" expanded="false" />
-                <element signature="e#4288#4331#1" expanded="false" />
+                <element signature="e#3721#3949#2" expanded="false" />
+                <element signature="n#!!block;n#movePieceDown#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="e#4069#4294#2" expanded="false" />
+                <element signature="e#4506#4549#1" expanded="false" />
                 <element signature="n#!!block;n#rotatePiece#0;n#!!block;n#Game#0" expanded="false" />
-                <element signature="e#4447#4679#2" expanded="false" />
-                <element signature="n#!!block;n#startIfReady#0;n#!!block;n#Game#0" expanded="false" />
-                <element signature="n#!!block;n#end#0;n#!!block;n#Game#0" expanded="false" />
-                <element signature="n#!!block;n#pause#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="e#4665#4897#2" expanded="false" />
                 <element signature="n#!!block;n#resume#0;n#!!block;n#Game#0" expanded="false" />
-                <element signature="n#!!block;n#restart#0;n#!!block;n#Game#0" expanded="false" />
                 <element signature="n#!!block;n#toString#0;n#!!block;n#Game#0" expanded="false" />
-                <element signature="e#5650#5825#1" expanded="false" />
-                <element signature="e#5689#5792#1" expanded="false" />
+                <element signature="e#5869#6044#1" expanded="false" />
+                <element signature="e#5908#6011#1" expanded="false" />
                 <element signature="n#!!block;n#updateHistory#0;n#!!block;n#Game#0" expanded="false" />
-                <element signature="n#!!block;n#resetProperties#0;n#!!block;n#Game#0" expanded="false" />
-                <element signature="n#!!block;n#getRandomPiece#0;n#!!block;n#Game#0" expanded="false" />
-                <element signature="e#6533#6951#2" expanded="false" />
                 <element signature="n#!!block;n#setUpNewPiece#0;n#!!block;n#Game#0" expanded="false" />
-                <element signature="e#7110#7223#1" expanded="false" />
-                <element signature="n#!!block;n#startTimer#0;n#!!block;n#Game#0" expanded="false" />
-                <element signature="e#7340#7890#2" expanded="false" />
-                <element signature="e#7369#7880#1" expanded="false" />
-                <element signature="e#7533#7647#1" expanded="false" />
-                <element signature="e#7669#7866#1" expanded="false" />
-                <element signature="e#7789#7848#2" expanded="false" />
-                <element signature="n#!!block;n#stopTimer#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="e#7365#7478#1" expanded="false" />
+                <element signature="e#8020#8146#1" expanded="false" />
+                <element signature="e#8284#8351#2" expanded="false" />
                 <element signature="n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
                 <element signature="n#!!block;n#isRowFull#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
                 <element signature="n#!!block;n#popTopRow#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
                 <element signature="n#!!block;n#popRow#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
-                <element signature="e#8630#8791#2" expanded="false" />
-                <element signature="e#8704#8781#1" expanded="false" />
+                <element signature="e#9132#9293#2" expanded="false" />
+                <element signature="e#9206#9283#1" expanded="false" />
+                <element signature="e#9317#9398#1" expanded="false" />
                 <element signature="n#!!block;n#addPieceToGrid#0;n#!!block;n#Game#0" expanded="false" />
-                <element signature="n#!!block;n#removePieceFromGrid#0;n#!!block;n#Game#0" expanded="false" />
                 <element signature="n#!!block;n#hitBottom#0;n#!!block;n#Game#0" expanded="false" />
                 <element signature="n#!!block;n#isPieceLocationLegal#0;n#!!block;n#Game#0" expanded="false" />
-                <element signature="e#9454#9715#1" expanded="false" />
+                <element signature="e#9999#10260#1" expanded="false" />
                 <element signature="n#!!block;n#waitUntilReady#0;n#!!block;n#Game#0" expanded="false" />
                 <element signature="n#!!block;n#screenChanged#0;n#!!block;n#Game#0" expanded="false" />
               </folding>
@@ -90,12 +132,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SinglePlayerController.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SinglePlayerController.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SinglePlayerController.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="293" column="47" lean-forward="false" selection-start-line="293" selection-start-column="47" selection-end-line="293" selection-end-column="47" />
-              <folding />
+            <state relative-caret-position="425">
+              <caret line="251" column="39" lean-forward="true" selection-start-line="251" selection-start-column="39" selection-end-line="251" selection-end-column="39" />
+              <folding>
+                <element signature="n#!!block;n#initialize#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="n#!!block;n#loadGame#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="n#!!block;n#btnStart_Action#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="n#!!block;n#btnRestart_Action#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="n#!!block;n#btnBack_Action#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="n#!!block;n#btnSave_Action#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="n#!!block;n#canvasGame_MouseClicked#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="n#!!block;n#game_End#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="n#!!block;n#game_Change#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="n#!!block;n#game_Ready#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="n#!!block;n#game_PieceChanged#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="n#!!block;n#game_RowsPopped#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="n#!!block;n#game_PieceGenerated#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="n#!!block;n#startGame#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="n#!!block;n#resumeGame#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="n#!!block;n#pauseGame#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="n#!!block;n#resizeGameCanvas#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="n#!!block;n#resizeCanvas#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="n#!!block;n#startTimer#0;n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="e#5225#5334#2" expanded="false" />
+                <element signature="e#5245#5332#2" expanded="false" />
+                <element signature="n#!!block;n#stopTimer#0;n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="e#5525#6144#2" expanded="false" />
+                <element signature="e#5574#6134#1" expanded="false" />
+                <element signature="e#5895#6098#0" expanded="false" />
+                <element signature="e#5944#6072#1" expanded="false" />
+                <element signature="e#6176#6313#2" expanded="false" />
+                <element signature="e#6223#6303#1" expanded="false" />
+                <element signature="n#!!block;n#isGameStarted#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+                <element signature="n#!!block;n#drawCanvasBorder#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,21 +177,11 @@
       <file leaf-file-name="App.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="654">
-              <caret line="46" column="50" lean-forward="true" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
+            <state relative-caret-position="414">
+              <caret line="35" column="11" lean-forward="false" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
               <folding>
                 <element signature="e#1#147#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BoolGridGenerator.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/BoolGridGenerator.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -137,29 +201,9 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>end</find>
-      <find>visible</find>
-      <find>id</find>
-      <find>sldr</find>
-      <find>btnPLay</find>
-      <find>btnReset_Action</find>
-      <find>btnPlay</find>
-      <find>btnHis</find>
-      <find>btn</find>
-      <find>controller</find>
-      <find>resetProperties</find>
-      <find>updateNext</find>
-      <find>updateNextPieceCanvas</find>
-      <find>disable</find>
-      <find>btnStart?.isDisable</find>
-      <find>updateGameCanvas</find>
-      <find>reset</find>
-      <find>!= null</find>
       <find>popFullRows</find>
       <find>setUpNewPiece</find>
       <find>popf</find>
-      <find>resizeNextPieceCanvas</find>
-      <find>resizeGameCanvas</find>
       <find>resizeGame</find>
       <find>screenChanged</find>
       <find>setup</find>
@@ -167,6 +211,26 @@
       <find>Platform.runLater</find>
       <find>movePieceDown</find>
       <find>move</find>
+      <find>delayMillis</find>
+      <find>end(</find>
+      <find>cl</find>
+      <find>click</find>
+      <find>delay</find>
+      <find>restar</find>
+      <find>restart</find>
+      <find>onpiec</find>
+      <find>onpieceChange</find>
+      <find>onPieceChanged</find>
+      <find>end()</find>
+      <find>timer</find>
+      <find>updateNextPieceCanvas</find>
+      <find>updateGameCanvas</find>
+      <find>resizeNextPieceCanvas</find>
+      <find>resizeGameCanvas</find>
+      <find>isPaus</find>
+      <find>ispau</find>
+      <find>nextPieceContainer</find>
+      <find>//</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -181,7 +245,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Events.kt" />
-        <option value="$PROJECT_DIR$/src/GameSquare.kt" />
         <option value="$PROJECT_DIR$/src/GameSquare1.kt" />
         <option value="$PROJECT_DIR$/src/GameTimeStamp.kt" />
         <option value="$PROJECT_DIR$/src/Application.java" />
@@ -200,10 +263,12 @@
         <option value="$PROJECT_DIR$/src/HomeController.kt" />
         <option value="$PROJECT_DIR$/src/DuelController.kt" />
         <option value="$PROJECT_DIR$/src/GamePiece.kt" />
+        <option value="$PROJECT_DIR$/src/BoolGridGenerator.kt" />
+        <option value="$PROJECT_DIR$/src/BoolGrid.kt" />
+        <option value="$PROJECT_DIR$/src/GameSquare.kt" />
         <option value="$PROJECT_DIR$/src/Game.kt" />
         <option value="$PROJECT_DIR$/src/App.kt" />
         <option value="$PROJECT_DIR$/src/SinglePlayerController.kt" />
-        <option value="$PROJECT_DIR$/src/BoolGridGenerator.kt" />
       </list>
     </option>
   </component>
@@ -231,9 +296,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -262,6 +324,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -270,7 +335,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Kotlin" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="resume&#9;null&#9;null&#10;screenchange&#9;null&#9;null&#10;resetproperties&#9;null&#9;null&#10;resetProper&#9;null&#9;null&#10;Game&#9;FILE&#9;file://C:/Users/Tomer/Documents/GitHub/Tetris-Reloaded/Tetris-Reloaded/src/Game.kt&#10;Gam&#9;FILE&#9;file://C:/Users/Tomer/Documents/GitHub/Tetris-Reloaded/Tetris-Reloaded/src/GameSquare.kt&#10;Main&#9;FILE&#9;file://C:/Users/Tomer/Documents/GitHub/Tetris-Reloaded/Tetris-Reloaded/src/Main.kt&#10;GamTime&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="getrandom&#9;null&#9;null&#10;getRandomP&#9;null&#9;null&#10;resume&#9;null&#9;null&#10;screenchange&#9;null&#9;null&#10;resetproperties&#9;null&#9;null&#10;resetProper&#9;null&#9;null&#10;Game&#9;FILE&#9;file://C:/Users/Tomer/Documents/GitHub/Tetris-Reloaded/Tetris-Reloaded/src/Game.kt&#10;Gam&#9;FILE&#9;file://C:/Users/Tomer/Documents/GitHub/Tetris-Reloaded/Tetris-Reloaded/src/GameSquare.kt&#10;Main&#9;FILE&#9;file://C:/Users/Tomer/Documents/GitHub/Tetris-Reloaded/Tetris-Reloaded/src/Main.kt&#10;GamTime&#9;null&#9;null" />
     <property name="last_opened_file_path" value="C:/Program Files (x86)/Oracle/JavaFX Scene Builder 2.0/JavaFX Scene Builder 2.0.exe" />
   </component>
   <component name="RecentsManager">
@@ -582,28 +647,29 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35835096" sideWeight="0.50625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35835096" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35835096" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14375" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14270833" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957717" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957717" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="0" y="0" width="866" height="856" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -641,7 +707,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="25" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -650,13 +716,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/DuelController.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/HomeController.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="700">
@@ -669,59 +728,52 @@
         <state relative-caret-position="2260">
           <caret line="334" column="26" lean-forward="false" selection-start-line="334" selection-start-column="26" selection-end-line="334" selection-end-column="26" />
           <folding>
-            <element signature="e#1407#1457#0" expanded="false" />
-            <element signature="e#1472#1524#0" expanded="false" />
-            <element signature="e#1536#2113#0" expanded="false" />
-            <element signature="e#1776#1930#2" expanded="false" />
-            <element signature="e#1856#1919#1" expanded="false" />
-            <element signature="e#1946#2107#2" expanded="false" />
+            <element signature="e#1463#1504#0" expanded="false" />
+            <element signature="e#1511#1554#0" expanded="false" />
+            <element signature="e#1602#1648#0" expanded="false" />
+            <element signature="e#1655#1707#0" expanded="false" />
+            <element signature="e#1719#2313#0" expanded="false" />
+            <element signature="e#1967#2130#2" expanded="false" />
+            <element signature="e#2056#2119#1" expanded="false" />
+            <element signature="e#2146#2307#2" expanded="false" />
             <element signature="n#!!block;n#get#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#set#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#getSquaresLocations#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isGameReady#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#2661#2712#2" expanded="false" />
+            <element signature="e#2870#2930#2" expanded="false" />
             <element signature="n#!!block;n#dropPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#2804#3031#2" expanded="false" />
+            <element signature="e#3022#3249#2" expanded="false" />
             <element signature="n#!!block;n#movePieceRight#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#3155#3383#2" expanded="false" />
+            <element signature="e#3373#3601#2" expanded="false" />
             <element signature="n#!!block;n#movePieceLeft#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#3503#3731#2" expanded="false" />
-            <element signature="e#3851#4076#2" expanded="false" />
-            <element signature="e#4288#4331#1" expanded="false" />
+            <element signature="e#3721#3949#2" expanded="false" />
+            <element signature="n#!!block;n#movePieceDown#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="e#4069#4294#2" expanded="false" />
+            <element signature="e#4506#4549#1" expanded="false" />
             <element signature="n#!!block;n#rotatePiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#4447#4679#2" expanded="false" />
-            <element signature="n#!!block;n#startIfReady#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#end#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#pause#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="e#4665#4897#2" expanded="false" />
             <element signature="n#!!block;n#resume#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#restart#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#toString#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#5650#5825#1" expanded="false" />
-            <element signature="e#5689#5792#1" expanded="false" />
+            <element signature="e#5869#6044#1" expanded="false" />
+            <element signature="e#5908#6011#1" expanded="false" />
             <element signature="n#!!block;n#updateHistory#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#resetProperties#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#getRandomPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#6533#6951#2" expanded="false" />
+            <element signature="e#6761#7206#2" expanded="false" />
             <element signature="n#!!block;n#setUpNewPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#7110#7223#1" expanded="false" />
-            <element signature="n#!!block;n#startTimer#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#7340#7890#2" expanded="false" />
-            <element signature="e#7369#7880#1" expanded="false" />
-            <element signature="e#7533#7647#1" expanded="false" />
-            <element signature="e#7669#7866#1" expanded="false" />
-            <element signature="e#7789#7848#2" expanded="false" />
-            <element signature="n#!!block;n#stopTimer#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="e#7365#7478#1" expanded="false" />
+            <element signature="e#8020#8146#1" expanded="false" />
+            <element signature="e#8284#8351#2" expanded="false" />
             <element signature="n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isRowFull#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#popTopRow#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#popRow#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#8630#8791#2" expanded="false" />
-            <element signature="e#8704#8781#1" expanded="false" />
+            <element signature="e#9132#9293#2" expanded="false" />
+            <element signature="e#9206#9283#1" expanded="false" />
+            <element signature="e#9317#9398#1" expanded="false" />
             <element signature="n#!!block;n#addPieceToGrid#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#removePieceFromGrid#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#hitBottom#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isPieceLocationLegal#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#9454#9715#1" expanded="false" />
+            <element signature="e#9999#10260#1" expanded="false" />
             <element signature="n#!!block;n#waitUntilReady#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#screenChanged#0;n#!!block;n#Game#0" expanded="false" />
           </folding>
@@ -839,59 +891,52 @@
         <state relative-caret-position="360">
           <caret line="18" column="7" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="20" />
           <folding>
-            <element signature="e#1407#1457#0" expanded="false" />
-            <element signature="e#1472#1524#0" expanded="false" />
-            <element signature="e#1536#2113#0" expanded="false" />
-            <element signature="e#1776#1930#2" expanded="false" />
-            <element signature="e#1856#1919#1" expanded="false" />
-            <element signature="e#1946#2107#2" expanded="false" />
+            <element signature="e#1463#1504#0" expanded="false" />
+            <element signature="e#1511#1554#0" expanded="false" />
+            <element signature="e#1602#1648#0" expanded="false" />
+            <element signature="e#1655#1707#0" expanded="false" />
+            <element signature="e#1719#2313#0" expanded="false" />
+            <element signature="e#1967#2130#2" expanded="false" />
+            <element signature="e#2056#2119#1" expanded="false" />
+            <element signature="e#2146#2307#2" expanded="false" />
             <element signature="n#!!block;n#get#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#set#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#getSquaresLocations#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isGameReady#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#2661#2712#2" expanded="false" />
+            <element signature="e#2870#2930#2" expanded="false" />
             <element signature="n#!!block;n#dropPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#2804#3031#2" expanded="false" />
+            <element signature="e#3022#3249#2" expanded="false" />
             <element signature="n#!!block;n#movePieceRight#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#3155#3383#2" expanded="false" />
+            <element signature="e#3373#3601#2" expanded="false" />
             <element signature="n#!!block;n#movePieceLeft#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#3503#3731#2" expanded="false" />
-            <element signature="e#3851#4076#2" expanded="false" />
-            <element signature="e#4288#4331#1" expanded="false" />
+            <element signature="e#3721#3949#2" expanded="false" />
+            <element signature="n#!!block;n#movePieceDown#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="e#4069#4294#2" expanded="false" />
+            <element signature="e#4506#4549#1" expanded="false" />
             <element signature="n#!!block;n#rotatePiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#4447#4679#2" expanded="false" />
-            <element signature="n#!!block;n#startIfReady#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#end#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#pause#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="e#4665#4897#2" expanded="false" />
             <element signature="n#!!block;n#resume#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#restart#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#toString#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#5650#5825#1" expanded="false" />
-            <element signature="e#5689#5792#1" expanded="false" />
+            <element signature="e#5869#6044#1" expanded="false" />
+            <element signature="e#5908#6011#1" expanded="false" />
             <element signature="n#!!block;n#updateHistory#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#resetProperties#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#getRandomPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#6533#6951#2" expanded="false" />
+            <element signature="e#6761#7206#2" expanded="false" />
             <element signature="n#!!block;n#setUpNewPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#7110#7223#1" expanded="false" />
-            <element signature="n#!!block;n#startTimer#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#7340#7890#2" expanded="false" />
-            <element signature="e#7369#7880#1" expanded="false" />
-            <element signature="e#7533#7647#1" expanded="false" />
-            <element signature="e#7669#7866#1" expanded="false" />
-            <element signature="e#7789#7848#2" expanded="false" />
-            <element signature="n#!!block;n#stopTimer#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="e#7365#7478#1" expanded="false" />
+            <element signature="e#8020#8146#1" expanded="false" />
+            <element signature="e#8284#8351#2" expanded="false" />
             <element signature="n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isRowFull#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#popTopRow#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#popRow#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#8630#8791#2" expanded="false" />
-            <element signature="e#8704#8781#1" expanded="false" />
+            <element signature="e#9132#9293#2" expanded="false" />
+            <element signature="e#9206#9283#1" expanded="false" />
+            <element signature="e#9317#9398#1" expanded="false" />
             <element signature="n#!!block;n#addPieceToGrid#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#removePieceFromGrid#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#hitBottom#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isPieceLocationLegal#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#9454#9715#1" expanded="false" />
+            <element signature="e#9999#10260#1" expanded="false" />
             <element signature="n#!!block;n#waitUntilReady#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#screenChanged#0;n#!!block;n#Game#0" expanded="false" />
           </folding>
@@ -921,59 +966,52 @@
         <state relative-caret-position="2920">
           <caret line="161" column="26" lean-forward="false" selection-start-line="161" selection-start-column="26" selection-end-line="161" selection-end-column="26" />
           <folding>
-            <element signature="e#1407#1457#0" expanded="false" />
-            <element signature="e#1472#1524#0" expanded="false" />
-            <element signature="e#1536#2113#0" expanded="false" />
-            <element signature="e#1776#1930#2" expanded="false" />
-            <element signature="e#1856#1919#1" expanded="false" />
-            <element signature="e#1946#2107#2" expanded="false" />
+            <element signature="e#1463#1504#0" expanded="false" />
+            <element signature="e#1511#1554#0" expanded="false" />
+            <element signature="e#1602#1648#0" expanded="false" />
+            <element signature="e#1655#1707#0" expanded="false" />
+            <element signature="e#1719#2313#0" expanded="false" />
+            <element signature="e#1967#2130#2" expanded="false" />
+            <element signature="e#2056#2119#1" expanded="false" />
+            <element signature="e#2146#2307#2" expanded="false" />
             <element signature="n#!!block;n#get#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#set#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#getSquaresLocations#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isGameReady#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#2661#2712#2" expanded="false" />
+            <element signature="e#2870#2930#2" expanded="false" />
             <element signature="n#!!block;n#dropPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#2804#3031#2" expanded="false" />
+            <element signature="e#3022#3249#2" expanded="false" />
             <element signature="n#!!block;n#movePieceRight#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#3155#3383#2" expanded="false" />
+            <element signature="e#3373#3601#2" expanded="false" />
             <element signature="n#!!block;n#movePieceLeft#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#3503#3731#2" expanded="false" />
-            <element signature="e#3851#4076#2" expanded="false" />
-            <element signature="e#4288#4331#1" expanded="false" />
+            <element signature="e#3721#3949#2" expanded="false" />
+            <element signature="n#!!block;n#movePieceDown#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="e#4069#4294#2" expanded="false" />
+            <element signature="e#4506#4549#1" expanded="false" />
             <element signature="n#!!block;n#rotatePiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#4447#4679#2" expanded="false" />
-            <element signature="n#!!block;n#startIfReady#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#end#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#pause#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="e#4665#4897#2" expanded="false" />
             <element signature="n#!!block;n#resume#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#restart#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#toString#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#5650#5825#1" expanded="false" />
-            <element signature="e#5689#5792#1" expanded="false" />
+            <element signature="e#5869#6044#1" expanded="false" />
+            <element signature="e#5908#6011#1" expanded="false" />
             <element signature="n#!!block;n#updateHistory#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#resetProperties#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#getRandomPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#6533#6951#2" expanded="false" />
+            <element signature="e#6761#7206#2" expanded="false" />
             <element signature="n#!!block;n#setUpNewPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#7110#7223#1" expanded="false" />
-            <element signature="n#!!block;n#startTimer#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#7340#7890#2" expanded="false" />
-            <element signature="e#7369#7880#1" expanded="false" />
-            <element signature="e#7533#7647#1" expanded="false" />
-            <element signature="e#7669#7866#1" expanded="false" />
-            <element signature="e#7789#7848#2" expanded="false" />
-            <element signature="n#!!block;n#stopTimer#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="e#7365#7478#1" expanded="false" />
+            <element signature="e#8020#8146#1" expanded="false" />
+            <element signature="e#8284#8351#2" expanded="false" />
             <element signature="n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isRowFull#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#popTopRow#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#popRow#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#8630#8791#2" expanded="false" />
-            <element signature="e#8704#8781#1" expanded="false" />
+            <element signature="e#9132#9293#2" expanded="false" />
+            <element signature="e#9206#9283#1" expanded="false" />
+            <element signature="e#9317#9398#1" expanded="false" />
             <element signature="n#!!block;n#addPieceToGrid#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#removePieceFromGrid#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#hitBottom#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isPieceLocationLegal#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#9454#9715#1" expanded="false" />
+            <element signature="e#9999#10260#1" expanded="false" />
             <element signature="n#!!block;n#waitUntilReady#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#screenChanged#0;n#!!block;n#Game#0" expanded="false" />
           </folding>
@@ -1003,59 +1041,52 @@
         <state relative-caret-position="3220">
           <caret line="161" column="26" lean-forward="true" selection-start-line="161" selection-start-column="26" selection-end-line="161" selection-end-column="26" />
           <folding>
-            <element signature="e#1407#1457#0" expanded="false" />
-            <element signature="e#1472#1524#0" expanded="false" />
-            <element signature="e#1536#2113#0" expanded="false" />
-            <element signature="e#1776#1930#2" expanded="false" />
-            <element signature="e#1856#1919#1" expanded="false" />
-            <element signature="e#1946#2107#2" expanded="false" />
+            <element signature="e#1463#1504#0" expanded="false" />
+            <element signature="e#1511#1554#0" expanded="false" />
+            <element signature="e#1602#1648#0" expanded="false" />
+            <element signature="e#1655#1707#0" expanded="false" />
+            <element signature="e#1719#2313#0" expanded="false" />
+            <element signature="e#1967#2130#2" expanded="false" />
+            <element signature="e#2056#2119#1" expanded="false" />
+            <element signature="e#2146#2307#2" expanded="false" />
             <element signature="n#!!block;n#get#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#set#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#getSquaresLocations#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isGameReady#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#2661#2712#2" expanded="false" />
+            <element signature="e#2870#2930#2" expanded="false" />
             <element signature="n#!!block;n#dropPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#2804#3031#2" expanded="false" />
+            <element signature="e#3022#3249#2" expanded="false" />
             <element signature="n#!!block;n#movePieceRight#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#3155#3383#2" expanded="false" />
+            <element signature="e#3373#3601#2" expanded="false" />
             <element signature="n#!!block;n#movePieceLeft#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#3503#3731#2" expanded="false" />
-            <element signature="e#3851#4076#2" expanded="false" />
-            <element signature="e#4288#4331#1" expanded="false" />
+            <element signature="e#3721#3949#2" expanded="false" />
+            <element signature="n#!!block;n#movePieceDown#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="e#4069#4294#2" expanded="false" />
+            <element signature="e#4506#4549#1" expanded="false" />
             <element signature="n#!!block;n#rotatePiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#4447#4679#2" expanded="false" />
-            <element signature="n#!!block;n#startIfReady#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#end#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#pause#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="e#4665#4897#2" expanded="false" />
             <element signature="n#!!block;n#resume#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#restart#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#toString#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#5650#5825#1" expanded="false" />
-            <element signature="e#5689#5792#1" expanded="false" />
+            <element signature="e#5869#6044#1" expanded="false" />
+            <element signature="e#5908#6011#1" expanded="false" />
             <element signature="n#!!block;n#updateHistory#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#resetProperties#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#getRandomPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#6533#6951#2" expanded="false" />
+            <element signature="e#6761#7206#2" expanded="false" />
             <element signature="n#!!block;n#setUpNewPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#7110#7223#1" expanded="false" />
-            <element signature="n#!!block;n#startTimer#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#7340#7890#2" expanded="false" />
-            <element signature="e#7369#7880#1" expanded="false" />
-            <element signature="e#7533#7647#1" expanded="false" />
-            <element signature="e#7669#7866#1" expanded="false" />
-            <element signature="e#7789#7848#2" expanded="false" />
-            <element signature="n#!!block;n#stopTimer#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="e#7365#7478#1" expanded="false" />
+            <element signature="e#8020#8146#1" expanded="false" />
+            <element signature="e#8284#8351#2" expanded="false" />
             <element signature="n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isRowFull#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#popTopRow#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#popRow#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#8630#8791#2" expanded="false" />
-            <element signature="e#8704#8781#1" expanded="false" />
+            <element signature="e#9132#9293#2" expanded="false" />
+            <element signature="e#9206#9283#1" expanded="false" />
+            <element signature="e#9317#9398#1" expanded="false" />
             <element signature="n#!!block;n#addPieceToGrid#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#removePieceFromGrid#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#hitBottom#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isPieceLocationLegal#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#9454#9715#1" expanded="false" />
+            <element signature="e#9999#10260#1" expanded="false" />
             <element signature="n#!!block;n#waitUntilReady#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#screenChanged#0;n#!!block;n#Game#0" expanded="false" />
           </folding>
@@ -1078,59 +1109,52 @@
         <state relative-caret-position="360">
           <caret line="18" column="113" lean-forward="true" selection-start-line="18" selection-start-column="113" selection-end-line="18" selection-end-column="113" />
           <folding>
-            <element signature="e#1407#1457#0" expanded="false" />
-            <element signature="e#1472#1524#0" expanded="false" />
-            <element signature="e#1536#2113#0" expanded="false" />
-            <element signature="e#1776#1930#2" expanded="false" />
-            <element signature="e#1856#1919#1" expanded="false" />
-            <element signature="e#1946#2107#2" expanded="false" />
+            <element signature="e#1463#1504#0" expanded="false" />
+            <element signature="e#1511#1554#0" expanded="false" />
+            <element signature="e#1602#1648#0" expanded="false" />
+            <element signature="e#1655#1707#0" expanded="false" />
+            <element signature="e#1719#2313#0" expanded="false" />
+            <element signature="e#1967#2130#2" expanded="false" />
+            <element signature="e#2056#2119#1" expanded="false" />
+            <element signature="e#2146#2307#2" expanded="false" />
             <element signature="n#!!block;n#get#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#set#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#getSquaresLocations#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isGameReady#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#2661#2712#2" expanded="false" />
+            <element signature="e#2870#2930#2" expanded="false" />
             <element signature="n#!!block;n#dropPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#2804#3031#2" expanded="false" />
+            <element signature="e#3022#3249#2" expanded="false" />
             <element signature="n#!!block;n#movePieceRight#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#3155#3383#2" expanded="false" />
+            <element signature="e#3373#3601#2" expanded="false" />
             <element signature="n#!!block;n#movePieceLeft#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#3503#3731#2" expanded="false" />
-            <element signature="e#3851#4076#2" expanded="false" />
-            <element signature="e#4288#4331#1" expanded="false" />
+            <element signature="e#3721#3949#2" expanded="false" />
+            <element signature="n#!!block;n#movePieceDown#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="e#4069#4294#2" expanded="false" />
+            <element signature="e#4506#4549#1" expanded="false" />
             <element signature="n#!!block;n#rotatePiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#4447#4679#2" expanded="false" />
-            <element signature="n#!!block;n#startIfReady#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#end#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#pause#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="e#4665#4897#2" expanded="false" />
             <element signature="n#!!block;n#resume#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#restart#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#toString#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#5650#5825#1" expanded="false" />
-            <element signature="e#5689#5792#1" expanded="false" />
+            <element signature="e#5869#6044#1" expanded="false" />
+            <element signature="e#5908#6011#1" expanded="false" />
             <element signature="n#!!block;n#updateHistory#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#resetProperties#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#getRandomPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#6533#6951#2" expanded="false" />
+            <element signature="e#6761#7206#2" expanded="false" />
             <element signature="n#!!block;n#setUpNewPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#7110#7223#1" expanded="false" />
-            <element signature="n#!!block;n#startTimer#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#7340#7890#2" expanded="false" />
-            <element signature="e#7369#7880#1" expanded="false" />
-            <element signature="e#7533#7647#1" expanded="false" />
-            <element signature="e#7669#7866#1" expanded="false" />
-            <element signature="e#7789#7848#2" expanded="false" />
-            <element signature="n#!!block;n#stopTimer#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="e#7365#7478#1" expanded="false" />
+            <element signature="e#8020#8146#1" expanded="false" />
+            <element signature="e#8284#8351#2" expanded="false" />
             <element signature="n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isRowFull#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#popTopRow#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#popRow#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#8630#8791#2" expanded="false" />
-            <element signature="e#8704#8781#1" expanded="false" />
+            <element signature="e#9132#9293#2" expanded="false" />
+            <element signature="e#9206#9283#1" expanded="false" />
+            <element signature="e#9317#9398#1" expanded="false" />
             <element signature="n#!!block;n#addPieceToGrid#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#removePieceFromGrid#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#hitBottom#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isPieceLocationLegal#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#9454#9715#1" expanded="false" />
+            <element signature="e#9999#10260#1" expanded="false" />
             <element signature="n#!!block;n#waitUntilReady#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#screenChanged#0;n#!!block;n#Game#0" expanded="false" />
           </folding>
@@ -1243,77 +1267,104 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameSquare.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        <state relative-caret-position="180">
+          <caret line="10" column="39" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BoolGridGenerator.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="75" lean-forward="false" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="75" />
+          <folding>
+            <element signature="n#!!block;n#lockAndAdd#0;n#!!block;n#generateBoolGridsToSharedList#0" expanded="false" />
+            <element signature="e#313#357#2" expanded="false" />
+            <element signature="n#!!block;n#addToListIfNotDuplicate#0;n#!!block;n#generateBoolGridsToSharedList#0" expanded="false" />
+            <element signature="e#620#1032#1" expanded="false" />
+            <element signature="e#1324#2059#1" expanded="false" />
+            <element signature="e#1359#1506#1" expanded="false" />
+            <element signature="e#1540#1687#1" expanded="false" />
+            <element signature="e#1721#1868#1" expanded="false" />
+            <element signature="e#1902#2049#1" expanded="false" />
+            <element signature="n#!!block;n#getAmountOfPossibleCombinations#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BoolGrid.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="105" column="45" lean-forward="false" selection-start-line="105" selection-start-column="45" selection-end-line="105" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GamePiece.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
-          <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="35" column="11" lean-forward="false" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+          <folding>
+            <element signature="e#1#147#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="130" column="21" lean-forward="false" selection-start-line="130" selection-start-column="8" selection-end-line="130" selection-end-column="21" />
+        <state relative-caret-position="318">
+          <caret line="241" column="41" lean-forward="true" selection-start-line="241" selection-start-column="41" selection-end-line="241" selection-end-column="41" />
           <folding>
-            <element signature="e#1407#1457#0" expanded="false" />
-            <element signature="e#1472#1524#0" expanded="false" />
-            <element signature="e#1536#2113#0" expanded="false" />
-            <element signature="e#1776#1930#2" expanded="false" />
-            <element signature="e#1856#1919#1" expanded="false" />
-            <element signature="e#1946#2107#2" expanded="false" />
+            <element signature="e#1463#1504#0" expanded="false" />
+            <element signature="e#1511#1554#0" expanded="false" />
+            <element signature="e#1602#1648#0" expanded="false" />
+            <element signature="e#1655#1707#0" expanded="false" />
+            <element signature="e#1967#2130#2" expanded="false" />
+            <element signature="e#2056#2119#1" expanded="false" />
             <element signature="n#!!block;n#get#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#set#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#getSquaresLocations#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isGameReady#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#2661#2712#2" expanded="false" />
+            <element signature="e#2870#2930#2" expanded="false" />
             <element signature="n#!!block;n#dropPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#2804#3031#2" expanded="false" />
+            <element signature="e#3022#3249#2" expanded="false" />
             <element signature="n#!!block;n#movePieceRight#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#3155#3383#2" expanded="false" />
+            <element signature="e#3373#3601#2" expanded="false" />
             <element signature="n#!!block;n#movePieceLeft#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#3503#3731#2" expanded="false" />
-            <element signature="e#3851#4076#2" expanded="false" />
-            <element signature="e#4288#4331#1" expanded="false" />
+            <element signature="e#3721#3949#2" expanded="false" />
+            <element signature="n#!!block;n#movePieceDown#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="e#4069#4294#2" expanded="false" />
+            <element signature="e#4506#4549#1" expanded="false" />
             <element signature="n#!!block;n#rotatePiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#4447#4679#2" expanded="false" />
-            <element signature="n#!!block;n#startIfReady#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#end#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#pause#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="e#4665#4897#2" expanded="false" />
             <element signature="n#!!block;n#resume#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#restart#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#toString#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#5650#5825#1" expanded="false" />
-            <element signature="e#5689#5792#1" expanded="false" />
+            <element signature="e#5869#6044#1" expanded="false" />
+            <element signature="e#5908#6011#1" expanded="false" />
             <element signature="n#!!block;n#updateHistory#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#resetProperties#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#getRandomPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#6533#6951#2" expanded="false" />
             <element signature="n#!!block;n#setUpNewPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#7110#7223#1" expanded="false" />
-            <element signature="n#!!block;n#startTimer#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#7340#7890#2" expanded="false" />
-            <element signature="e#7369#7880#1" expanded="false" />
-            <element signature="e#7533#7647#1" expanded="false" />
-            <element signature="e#7669#7866#1" expanded="false" />
-            <element signature="e#7789#7848#2" expanded="false" />
-            <element signature="n#!!block;n#stopTimer#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="e#7365#7478#1" expanded="false" />
+            <element signature="e#8020#8146#1" expanded="false" />
+            <element signature="e#8284#8351#2" expanded="false" />
             <element signature="n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isRowFull#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#popTopRow#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#popRow#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#8630#8791#2" expanded="false" />
-            <element signature="e#8704#8781#1" expanded="false" />
+            <element signature="e#9132#9293#2" expanded="false" />
+            <element signature="e#9206#9283#1" expanded="false" />
+            <element signature="e#9317#9398#1" expanded="false" />
             <element signature="n#!!block;n#addPieceToGrid#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#removePieceFromGrid#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#hitBottom#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isPieceLocationLegal#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#9454#9715#1" expanded="false" />
+            <element signature="e#9999#10260#1" expanded="false" />
             <element signature="n#!!block;n#waitUntilReady#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#screenChanged#0;n#!!block;n#Game#0" expanded="false" />
           </folding>
@@ -1322,27 +1373,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SinglePlayerController.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="293" column="47" lean-forward="false" selection-start-line="293" selection-start-column="47" selection-end-line="293" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="46" column="50" lean-forward="true" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
+        <state relative-caret-position="425">
+          <caret line="251" column="39" lean-forward="true" selection-start-line="251" selection-start-column="39" selection-end-line="251" selection-end-column="39" />
           <folding>
-            <element signature="e#1#147#0" expanded="true" />
+            <element signature="n#!!block;n#initialize#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#loadGame#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#btnStart_Action#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#btnRestart_Action#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#btnBack_Action#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#btnSave_Action#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#canvasGame_MouseClicked#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#game_End#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#game_Change#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#game_Ready#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#game_PieceChanged#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#game_RowsPopped#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#game_PieceGenerated#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#startGame#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#resumeGame#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#pauseGame#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#resizeGameCanvas#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#resizeCanvas#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#startTimer#0;n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="e#5225#5334#2" expanded="false" />
+            <element signature="e#5245#5332#2" expanded="false" />
+            <element signature="n#!!block;n#stopTimer#0;n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="e#5525#6144#2" expanded="false" />
+            <element signature="e#5574#6134#1" expanded="false" />
+            <element signature="e#5895#6098#0" expanded="false" />
+            <element signature="e#5944#6072#1" expanded="false" />
+            <element signature="e#6176#6313#2" expanded="false" />
+            <element signature="e#6223#6303#1" expanded="false" />
+            <element signature="n#!!block;n#isGameStarted#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#drawCanvasBorder#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BoolGridGenerator.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

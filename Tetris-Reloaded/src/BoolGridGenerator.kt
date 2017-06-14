@@ -1,11 +1,9 @@
 import java.util.*
 
 
-
-
-fun generateBoolGridsToSharedList(blockCount: Int, sharedList: MutableList<BoolGrid>, onGridAdded: (BoolGrid) -> Unit ={}) {
-    //the grid must be of size: blockCount X blockCount
-    require(blockCount > 0)
+fun generateBoolGridsToSharedList(squareCount: Int, sharedList: MutableList<BoolGrid>, onGridAdded: (BoolGrid) -> Unit = {}) {
+    //the grid must be of size: squareCount X squareCount
+    require(squareCount > 0)
     fun lockAndAdd(grid: BoolGrid) {
         synchronized(sharedList)
         {
@@ -14,12 +12,10 @@ fun generateBoolGridsToSharedList(blockCount: Int, sharedList: MutableList<BoolG
         onGridAdded(grid)
     }
 
-    if (blockCount == 1) {
+    if (squareCount == 1) {
         lockAndAdd(BoolGrid(1, 1).apply { toggle(0, 0) })
         return
     }
-
-
     fun addToListIfNotDuplicate(grid: BoolGrid) {
         grid.removeAllMargin()
         for (gridFromList in sharedList) {
@@ -37,8 +33,6 @@ fun generateBoolGridsToSharedList(blockCount: Int, sharedList: MutableList<BoolG
             if (grid == compare)
                 return
         }
-
-
         lockAndAdd(grid)
 
 
@@ -47,7 +41,8 @@ fun generateBoolGridsToSharedList(blockCount: Int, sharedList: MutableList<BoolG
     fun generateNewGridsFromPrevious(grid: BoolGrid) {
         grid.addBorderMargin(1)
         val truesLocations = grid.getTruesLocations()
-        Collections.shuffle(truesLocations)
+        if (squareCount > 4)
+            Collections.shuffle(truesLocations)
         for ((x, y) in truesLocations) {
             if (!grid[x - 1, y]) {
                 val newGrid = grid.copy()
@@ -73,11 +68,52 @@ fun generateBoolGridsToSharedList(blockCount: Int, sharedList: MutableList<BoolG
     }
 
     val previousGrids = mutableListOf<BoolGrid>()
-    generateBoolGridsToSharedList(blockCount - 1, previousGrids,
+    generateBoolGridsToSharedList(squareCount - 1, previousGrids,
             onGridAdded = ::generateNewGridsFromPrevious
 
     )
 
 
-
 }
+
+fun getAmountOfPossibleCombinations(squareCount: Int): Long {
+
+
+    if (squareCount > 30 || squareCount < 1)
+        return -1
+    return possibleCombinationsAmounts[squareCount - 1]
+}
+
+private val possibleCombinationsAmounts = listOf(
+        1,
+        1,
+        2,
+        7,
+        18,
+        60,
+        196,
+        704,
+        2500,
+        9189,
+        33896,
+        126759,
+        476270,
+        1802312,
+        6849777,
+        26152418,
+        100203194,
+        385221143,
+        1485200848,
+        5741256764,
+        22245940545,
+        86383382827,
+        336093325058,
+        1309998125640,
+        5114451441106,
+        19998172734786,
+        78306011677182,
+        307022182222506,
+        1205243866707468,
+        4736694001644862
+
+)

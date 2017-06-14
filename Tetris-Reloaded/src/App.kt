@@ -7,6 +7,7 @@ import javafx.stage.Stage
 
 
 fun main(args: Array<String>) {
+
     Application.launch(App::class.java, *args)
 
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.canvas.*?>
@@ -11,9 +12,9 @@
 
 <SplitPane dividerPositions="0.6159874608150471" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SinglePlayerController">
     <items>
-        <HBox fx:id="gameContainer" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+        <HBox fx:id="gameContainer" alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="200.0">
             <children>
-                <Canvas fx:id="canvasGame" height="398.0" onMouseClicked="#canvasGame_MouseClicked" style="-fx-background-color: red;" width="200.0">
+                <Canvas fx:id="canvasGame" height="398.0" onMouseClicked="#canvasGame_MouseClicked" width="200.0">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
@@ -28,9 +29,9 @@
                         <Font size="32.0" />
                     </font>
                 </Label>
-            <Region VBox.vgrow="ALWAYS" />
-                  <Canvas fx:id="canvasNextPiece" height="300.0" style="-fx-background-color: red;" width="300.0" />
-            <Region VBox.vgrow="ALWAYS" />
+            <Region />
+                  <Canvas fx:id="canvasNextPiece" height="225.0" width="225.0" />
+            <Region />
                 <HBox alignment="CENTER">
                     <children>
                         <Label text="Rows Popped: ">
@@ -74,6 +75,8 @@
                <children>
                   <Label text="Pieces Generated: " />
                   <Label fx:id="lblPiecesGenerated" text="0" />
+                  <Label text=" / " />
+                  <Label fx:id="lblPossibleCombinations" text="0" />
                </children>
             </HBox>
             </children>

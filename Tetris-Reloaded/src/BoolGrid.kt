@@ -6,8 +6,8 @@ class BoolGrid(width: Int, height: Int) {
         require(width > 0 && height > 0)
     }
 
-    private var values: MutableList<MutableList<Boolean>> =
-            MutableList(width, { MutableList(height, { false }) })
+    private var values: Array<Array<Boolean>> =
+            Array(width, { Array(height, { false }) })
 
 
     fun getTruesLocations(): List<Pair<Int, Int>> {
@@ -91,17 +91,6 @@ class BoolGrid(width: Int, height: Int) {
         replaceGrid(newGrid)
     }
 
-    fun addVerticleMargin(amount: Int) {
-        val newGrid = copy()
-        values = MutableList(width, { MutableList(height + amount, { false }) })
-        newGrid.copyTo(this)
-    }
-
-    fun addHorizontalMargin(amount: Int) {
-        val newGrid = copy()
-        values = MutableList(width + amount, { MutableList(height, { false }) })
-        newGrid.copyTo(this)
-    }
 
     fun removeAllMargin() {
         val newWidth = width - leftMargin - rightMargin
@@ -114,7 +103,7 @@ class BoolGrid(width: Int, height: Int) {
     }
 
     private fun replaceGrid(newGrid: BoolGrid) {
-        values = MutableList(newGrid.width, { MutableList(newGrid.height, { false }) })
+        values = Array(newGrid.width, { Array(newGrid.height, { false }) })
         newGrid.copyTo(this)
     }
 
