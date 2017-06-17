@@ -7,7 +7,7 @@ import kotlin.concurrent.thread
 class Game(
         val width: Int,
         val height: Int,
-        val pieceSize: Int,
+        val squaresInPiece: Int,
         val onReady: (Game) -> Unit = {},
         val onEnd: (Game) -> Unit = {},
         val onChange: (Game) -> Unit = {},
@@ -31,11 +31,18 @@ class Game(
     private val squareGrid: SquareGrid
 
     val history = mutableListOf<GameTimeStamp>()
+    val timePlayed: Long; get() {
+        if (history.size > 0) {
+            return history.last().time -
+                    history.first().time -
+                    totalSuspendedTime
+        }
+        return 0
+    }
     var nextPiece= GamePiece(BoolGrid(1,1))
     var rowsPopped = 0; private set
-    val piecesGenerated: Int get() {
-        return piecesCombinations.size
-    }
+    val piecesGenerated: Int get() = piecesCombinations.size
+
 
     var isPaused: Boolean private set(value) {
         atomicIsPaused.set(value)
@@ -51,15 +58,20 @@ class Game(
 
 
     init {
-        require(width > 0 && height > 0 && delayMillis > 0 && pieceSize > 0)
+        require(width > 0 && height > 0 && delayMillis > 0 && squaresInPiece > 0)
         piecesCombinations = mutableListOf<BoolGrid>()
         squareGrid = createSynchronizedSquareGrid(width, height)
         rng = Random(randomSeed)
 
         thread {
-            generateBoolGridsToSharedList(pieceSize, piecesCombinations, onGridAdded = {
+            generateBoolGridsToSharedList(
+                    squareCount = squaresInPiece,
+                    sharedList = piecesCombinations,
+                    randomSeed = randomSeed,
+                    onGridAdded = {
                 runUI  {onPieceGenerated(this)}
-            })
+                    }
+            )
         }
         thread {
             waitUntilReady()

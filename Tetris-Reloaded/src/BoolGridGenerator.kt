@@ -1,9 +1,12 @@
 import java.util.*
 
 
-fun generateBoolGridsToSharedList(squareCount: Int, sharedList: MutableList<BoolGrid>, onGridAdded: (BoolGrid) -> Unit = {}) {
-    //the grid must be of size: squareCount X squareCount
-    require(squareCount > 0)
+fun generateBoolGridsToSharedList(
+        squareCount: Int,
+        sharedList: MutableList<BoolGrid>,
+        onGridAdded: (BoolGrid) -> Unit = {},
+        randomSeed: Long = System.currentTimeMillis()
+) {
     fun lockAndAdd(grid: BoolGrid) {
         synchronized(sharedList)
         {
@@ -11,38 +14,38 @@ fun generateBoolGridsToSharedList(squareCount: Int, sharedList: MutableList<Bool
         }
         onGridAdded(grid)
     }
-
+    require(squareCount > 0)
     if (squareCount == 1) {
         lockAndAdd(BoolGrid(1, 1).apply { toggle(0, 0) })
         return
     }
-    fun addToListIfNotDuplicate(grid: BoolGrid) {
-        grid.removeAllMargin()
-        for (gridFromList in sharedList) {
-            val compare = gridFromList.copy()
-            compare.removeAllMargin()
-            if (grid == compare)
-                return
-            grid.rotateRight()
-            if (grid == compare)
-                return
-            grid.rotateRight()
-            if (grid == compare)
-                return
-            grid.rotateRight()
-            if (grid == compare)
-                return
-        }
-        lockAndAdd(grid)
-
-
-    }
 
     fun generateNewGridsFromPrevious(grid: BoolGrid) {
+        fun addToListIfNotDuplicate(grid: BoolGrid) {
+
+            grid.removeAllMargin()
+            for (gridFromList in sharedList) {
+                val compare = gridFromList.copy()
+                compare.removeAllMargin()
+                if (grid == compare)
+                    return
+                grid.rotateRight()
+                if (grid == compare)
+                    return
+                grid.rotateRight()
+                if (grid == compare)
+                    return
+                grid.rotateRight()
+                if (grid == compare)
+                    return
+            }
+            lockAndAdd(grid)
+
+        }
         grid.addBorderMargin(1)
         val truesLocations = grid.getTruesLocations()
         if (squareCount > 4)
-            Collections.shuffle(truesLocations)
+            Collections.shuffle(truesLocations, Random(randomSeed))
         for ((x, y) in truesLocations) {
             if (!grid[x - 1, y]) {
                 val newGrid = grid.copy()
@@ -68,17 +71,17 @@ fun generateBoolGridsToSharedList(squareCount: Int, sharedList: MutableList<Bool
     }
 
     val previousGrids = mutableListOf<BoolGrid>()
-    generateBoolGridsToSharedList(squareCount - 1, previousGrids,
-            onGridAdded = ::generateNewGridsFromPrevious
-
+    generateBoolGridsToSharedList(
+            squareCount = squareCount - 1,
+            sharedList = previousGrids,
+            onGridAdded = ::generateNewGridsFromPrevious,
+            randomSeed = randomSeed
     )
 
 
 }
 
 fun getAmountOfPossibleCombinations(squareCount: Int): Long {
-
-
     if (squareCount > 30 || squareCount < 1)
         return -1
     return possibleCombinationsAmounts[squareCount - 1]

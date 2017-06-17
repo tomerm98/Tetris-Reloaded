@@ -1,94 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.canvas.*?>
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<SplitPane xmlns:fx="http://javafx.com/fxml/1" dividerPositions="0.3998435054773083, 0.6009389671361502" maxHeight="-Infinity"
-           maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0"
-           prefWidth="1280.0" xmlns="http://javafx.com/javafx/8"
-           fx:controller="SinglePlayerController">
+
+<SplitPane dividerPositions="0.3974960876369327, 0.6009389671361502" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DuelController">
     <items>
-        <VBox alignment="CENTER" prefHeight="798.0" prefWidth="745.0">
-            <children>
-                <Canvas fx:id="canvasGame" height="398.0" width="200.0" VBox.vgrow="ALWAYS">
+      <HBox fx:id="gameContainerLeft" alignment="CENTER" onMouseClicked="#gameContainerLeft_MouseClicked" prefHeight="100.0" prefWidth="200.0">
+         <children>
+                <Canvas fx:id="canvasGameLeft" height="398.0" width="200.0">
                     <cursor>
-                        <Cursor fx:constant="DEFAULT"/>
+                        <Cursor fx:constant="DEFAULT" />
                     </cursor>
                 </Canvas>
-            </children>
-        </VBox>
+         </children>
+      </HBox>
         <VBox alignment="CENTER" prefHeight="478.0" prefWidth="123.0">
             <children>
-                <Region VBox.vgrow="ALWAYS"/>
-                <Label fx:id="lblMessage" text="Loading...">
-                    <font>
-                        <Font size="32.0"/>
-                    </font>
-                </Label>
-                <Region VBox.vgrow="ALWAYS"/>
-                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                    <children>
-                        <Region HBox.hgrow="ALWAYS"/>
-                        <Canvas fx:id="canvasNextPiece" height="120.0" width="120.0">
-                            <cursor>
-                                <Cursor fx:constant="DEFAULT"/>
-                            </cursor>
-                        </Canvas>
-                        <Region HBox.hgrow="ALWAYS"/>
-                        <Canvas fx:id="canvasNextPiece1" height="120.0" width="120.0">
-                            <cursor>
-                                <Cursor fx:constant="DEFAULT"/>
-                            </cursor>
-                        </Canvas>
-                        <Region HBox.hgrow="ALWAYS"/>
-                    </children>
-                </HBox>
-                <Region VBox.vgrow="ALWAYS"/>
+            <Region VBox.vgrow="ALWAYS" />
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <Label text="Rows Popped: ">
                             <font>
-                                <Font size="25.0"/>
+                                <Font size="25.0" />
                             </font>
                         </Label>
-                        <Label fx:id="lblRowsPopped" text="0">
+                        <Label fx:id="lblRowsPoppedRight" text="0">
                             <font>
-                                <Font size="25.0"/>
+                                <Font size="25.0" />
                             </font>
                         </Label>
                     </children>
                 </HBox>
-                <Region VBox.vgrow="ALWAYS"/>
-                <Button fx:id="btnStart" disable="true" mnemonicParsing="false" prefWidth="136.0" text="Start">
+            <Canvas fx:id="canvasNextPieceRight" height="150.0" width="150.0" />
+                <Region VBox.vgrow="ALWAYS" />
+                <Label fx:id="lblMessage" text="Loading...">
                     <font>
-                        <Font size="19.0"/>
+                        <Font size="33.0" />
+                    </font>
+                </Label>
+            <HBox alignment="CENTER">
+               <children>
+                  <Label text="Pieces Generated: ">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblPiecesGenerated" text="0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label text=" / ">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblPossibleCombinations" text="0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+                <Region VBox.vgrow="ALWAYS" />
+                <Button fx:id="btnStart" disable="true" mnemonicParsing="false" onAction="#btnStart_Action" prefWidth="136.0" text="Start">
+                    <font>
+                        <Font size="19.0" />
                     </font>
                 </Button>
-                <Region VBox.vgrow="ALWAYS"/>
-                <Button fx:id="btnRestart" disable="true" mnemonicParsing="false" prefWidth="136.0" text="Restart">
+                <Region VBox.vgrow="ALWAYS" />
+                <Button fx:id="btnRestart" disable="true" mnemonicParsing="false" onAction="#btnRestart_Action" prefWidth="136.0" text="Restart">
                     <font>
-                        <Font size="19.0"/>
+                        <Font size="19.0" />
                     </font>
                 </Button>
-                <Region VBox.vgrow="ALWAYS"/>
-                <Button fx:id="btnSave" disable="true" mnemonicParsing="false" prefWidth="136.0" text="Save">
+                <Region VBox.vgrow="ALWAYS" />
+                <Button fx:id="btnSave" disable="true" mnemonicParsing="false" onAction="#btnStart_Action" prefWidth="136.0" text="Save">
                     <font>
-                        <Font size="19.0"/>
+                        <Font size="19.0" />
                     </font>
                 </Button>
-                <Region VBox.vgrow="ALWAYS"/>
+                <Region VBox.vgrow="ALWAYS" />
+            <Button fx:id="btnBack" mnemonicParsing="false" onAction="#btnBack_Action" prefWidth="136.0" text="Back">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+            <Region VBox.vgrow="ALWAYS" />
+            <Canvas fx:id="canvasNextPieceLeft" height="150.0" width="150.0" />
+            <Region VBox.vgrow="ALWAYS" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Rows Popped: ">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblRowsPoppedLeft" text="0">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Region VBox.vgrow="ALWAYS" />
             </children>
         </VBox>
-        <VBox alignment="CENTER" prefHeight="798.0" prefWidth="745.0">
-            <children>
-                <Canvas fx:id="canvasGame1" height="398.0" width="200.0" VBox.vgrow="ALWAYS">
+      <HBox fx:id="gameContainerRight" alignment="CENTER" onMouseClicked="#gameContainerRight_MouseClicked" prefHeight="100.0" prefWidth="200.0">
+         <children>
+                <Canvas fx:id="canvasGameRight" height="398.0" width="200.0">
                     <cursor>
-                        <Cursor fx:constant="DEFAULT"/>
+                        <Cursor fx:constant="DEFAULT" />
                     </cursor>
                 </Canvas>
-            </children>
-        </VBox>
+         </children>
+      </HBox>
     </items>
 </SplitPane>

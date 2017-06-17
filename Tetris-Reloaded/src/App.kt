@@ -12,13 +12,14 @@ fun main(args: Array<String>) {
 
 }
 
-var stage: Stage? = null
+var mainStage: Stage? = null
 
 class App : Application() {
 
     override fun start(primaryStage: Stage) {
-        stage = primaryStage
-        stage?.title = "Tetris: Reloaded"
+        mainStage = primaryStage
+        mainStage?.title = "Tetris: Reloaded"
+
         launchHomeScreen()
     }
 
@@ -30,10 +31,11 @@ class App : Application() {
         fun launchSinglePlayerScreen(width: Int, height: Int, pieceSize: Int) {
             val loader = FXMLLoader(javaClass.getResource("SinglePlayerLayout.fxml"))
             val layout: Parent = loader.load()
-            stage?.scene = Scene(layout)
-            stage?.show()
+            mainStage?.scene = Scene(layout)
+            mainStage?.show()
             val controller: SinglePlayerController = loader.getController()
             controller.loadGame(width, height, pieceSize)
+
         }
 
         fun launchDuelScreen(width: Int, height: Int, pieceSize: Int) {
@@ -41,13 +43,13 @@ class App : Application() {
         }
 
         fun launchHistoryScreen() {
-            simpleLoad("HistoryLayout.fxml")
+           // simpleLoad("HistoryLayout.fxml")
         }
 
         private fun simpleLoad(layoutFileName: String) {
             val layout: Parent = FXMLLoader.load(javaClass.getResource(layoutFileName))
-            stage?.scene = Scene(layout)
-            stage?.show()
+            mainStage?.scene = Scene(layout)
+            mainStage?.show()
         }
     }
 
