@@ -24,10 +24,10 @@ class SinglePlayerController : Initializable {
     @FXML var canvasNextPiece = Canvas()
     @FXML var canvasGame = Canvas()
     @FXML var gameContainer = HBox()
-    @FXML var btnStart= Button()
-    @FXML var btnRestart=Button()
-    @FXML var btnSave=Button()
-    @FXML var btnBack=Button()
+    @FXML var btnStart = Button()
+    @FXML var btnRestart = Button()
+    @FXML var btnSave = Button()
+    @FXML var btnBack = Button()
     val stage = checkNotNull(mainStage)
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
@@ -40,12 +40,12 @@ class SinglePlayerController : Initializable {
     }
 
     fun loadGame(width: Int, height: Int, pieceSize: Int) {
-        initiateGameObject(width,height,pieceSize)
+        initiateGameObject(width, height, pieceSize)
         lblPossibleCombinations.text = getAmountOfPossibleCombinations(pieceSize).toString()
         val gameSizeRatio = width.toDouble() / height.toDouble()
         resizeGameCanvas(gameSizeRatio)
         setupGameContainerEvents(gameSizeRatio)
-        setupKeyPressedEvents(checkNotNull(gameContainer).scene)
+        setupKeyPressedEvents(stage.scene)
     }
 
     private fun setupGameContainerEvents(gameSizeRatio: Double) {
@@ -71,18 +71,20 @@ class SinglePlayerController : Initializable {
         lblMessage.text = ""
         game.restart()
     }
-    fun btnBack_Action(){
+
+    fun btnBack_Action() {
         if (game?.isPlaying ?: false)
             game?.pause()
         App.launchHomeScreen()
     }
+
     fun btnSave_Action() {
 
     }
 
     fun gameContainer_MouseClicked() {
         if (isGameStarted())
-               btnStart.fire()
+            btnStart.fire()
     }
 
 
@@ -99,7 +101,7 @@ class SinglePlayerController : Initializable {
     }
 
     private fun game_Ready(game: Game) {
-        btnStart.isDisable= false
+        btnStart.isDisable = false
         lblMessage.text = "Ready"
     }
 
@@ -113,7 +115,8 @@ class SinglePlayerController : Initializable {
         if (game.delayMillis < 50)
             game.delayMillis = 50
     }
-    private fun game_PieceGenerated(game:Game){
+
+    private fun game_PieceGenerated(game: Game) {
         lblPiecesGenerated.text = game.piecesGenerated.toString()
 
     }
@@ -121,7 +124,7 @@ class SinglePlayerController : Initializable {
     private fun startGame() {
         lblMessage.text = ""
         btnStart.text = "Pause"
-        btnRestart.isDisable= false
+        btnRestart.isDisable = false
         btnSave.isDisable = false
         updateNextPieceCanvas()
         game?.startIfReady()
@@ -147,7 +150,7 @@ class SinglePlayerController : Initializable {
 
         )
         if (game != null)
-        updateGameCanvas()
+            updateGameCanvas()
     }
 
     private fun resizeCanvas(canvas: Canvas, container: Pane, sizeRatio: Double) {
@@ -162,36 +165,47 @@ class SinglePlayerController : Initializable {
 
     private fun setupKeyPressedEvents(scene: Scene) {
 
-        var timer = Timer()
+        var downPressedTimer = Timer()
         var timerRunning = false
         fun startTimer() {
-            timer = Timer()
-            val downTimerTask = timerTask { Platform.runLater {
-                if (game?.isPlaying ?: false)
-                game?.movePieceDown() } }
-            timer.scheduleAtFixedRate(downTimerTask, 0, 45)
+            downPressedTimer = Timer()
+            val downTimerTask = timerTask {
+                Platform.runLater {
+                    if (game?.isPlaying ?: false)
+                        game?.movePieceDown()
+                }
+            }
+            downPressedTimer.scheduleAtFixedRate(downTimerTask, 0, 45)
+            timerRunning = true
         }
 
         fun stopTimer() {
-            timer.cancel()
-            timer.purge()
+            downPressedTimer.cancel()
+            downPressedTimer.purge()
+            timerRunning = false
         }
         scene.setOnKeyPressed { e ->
+            val code = e.code
+            val gamePlaying = game?.isPlaying ?: false
             if (game?.isPlaying ?: false) {
-                    when (e.code) {
-                        KeyCode.UP -> game?.rotatePiece()
-                        KeyCode.LEFT -> game?.movePieceLeft()
-                        KeyCode.RIGHT -> game?.movePieceRight()
-                        KeyCode.SPACE -> game?.dropPiece()
-                        KeyCode.DOWN -> {
-                            if (!timerRunning) {
-                                startTimer()
-                                timerRunning = true
-                            }
-                        }
+                when (e.code) {
+                    KeyCode.UP -> game?.rotatePiece()
+                    KeyCode.LEFT -> game?.movePieceLeft()
+                    KeyCode.RIGHT -> game?.movePieceRight()
+                    KeyCode.SPACE -> game?.dropPiece()
+                    KeyCode.DOWN -> {
+                        if (!timerRunning)
+                            startTimer()
+
+
                     }
+                }
+                when{
+                    e.code == KeyCode.T && true-> {}
+                }
             }
-            when (e.code){
+
+            when (e.code) {
                 KeyCode.F11 -> stage.isFullScreen = !stage.isFullScreen
                 KeyCode.ENTER -> btnStart.fire()
                 KeyCode.R -> {
@@ -202,10 +216,10 @@ class SinglePlayerController : Initializable {
 
         }
         scene.setOnKeyReleased { e ->
-            if (e.code == KeyCode.DOWN) {
+            if (e.code == KeyCode.DOWN)
                 stopTimer()
-                timerRunning = false
-            }
+
+
         }
 
     }
@@ -222,15 +236,15 @@ class SinglePlayerController : Initializable {
         val graphics = canvas.graphicsContext2D
         val game = checkNotNull(game)
         val canvasSize = canvas.width
-        val squareSize = canvasSize /  game.squaresInPiece
+        val squareSize = canvasSize / game.squaresInPiece
         val piece = game.nextPiece
-        val leftMargin = (canvasSize - piece.width*squareSize) /2
-        val topMargin = (canvasSize - piece.height*squareSize) /2
-        graphics.clearRect(0.0,0.0,canvasSize,canvasSize)
+        val leftMargin = (canvasSize - piece.width * squareSize) / 2
+        val topMargin = (canvasSize - piece.height * squareSize) / 2
+        graphics.clearRect(0.0, 0.0, canvasSize, canvasSize)
         for ((x, y) in piece.getSquaresLocations()) {
             val left = x * squareSize + leftMargin
             val top = y * squareSize + topMargin
-            drawSquare(graphics, piece.color, squareSize, left,top)
+            drawSquare(graphics, piece.color, squareSize, left, top)
         }
     }
 
@@ -241,16 +255,16 @@ class SinglePlayerController : Initializable {
         val squareSize = canvas.width / game.width
         graphics.clearRect(0.0, 0.0, canvas.width, canvas.height)
         drawCanvasBorder(canvas)
-        for ((x,y) in game.getSquaresLocations()) {
-            val color = game[x,y].color
-            val left = x*squareSize
-            val top = y*squareSize
-            drawSquare(graphics,color,squareSize,left,top)
+        for ((x, y) in game.getSquaresLocations()) {
+            val color = game[x, y].color
+            val left = x * squareSize
+            val top = y * squareSize
+            drawSquare(graphics, color, squareSize, left, top)
         }
 
     }
-    private fun drawSquare(graphics: GraphicsContext, color:Color, squareSize: Double, left:Double, top: Double, border:Int=2)
-    {
+
+    private fun drawSquare(graphics: GraphicsContext, color: Color, squareSize: Double, left: Double, top: Double, border: Int = 2) {
         graphics.fill = Color.BLACK
         graphics.fillRect(left, top, squareSize, squareSize)
         graphics.fill = color
@@ -261,18 +275,18 @@ class SinglePlayerController : Initializable {
                 squareSize - 2 * border
         )
     }
-    private fun drawCanvasBorder(canvas: Canvas)
-    {
+
+    private fun drawCanvasBorder(canvas: Canvas) {
         val graphics = canvas.graphicsContext2D
         val width = canvas.width
         val height = canvas.height
-        graphics.strokeLine(0.0,0.0,width,0.0)
-        graphics.strokeLine(0.0,0.0,0.0,height)
-        graphics.strokeLine(width,height,width,0.0)
-        graphics.strokeLine(width,height,0.0,height)
+        graphics.strokeLine(0.0, 0.0, width, 0.0)
+        graphics.strokeLine(0.0, 0.0, 0.0, height)
+        graphics.strokeLine(width, height, width, 0.0)
+        graphics.strokeLine(width, height, 0.0, height)
     }
 
-    private fun initiateGameObject(width: Int, height:Int, pieceSize:Int){
+    private fun initiateGameObject(width: Int, height: Int, pieceSize: Int) {
         game = Game(
                 width = width,
                 height = height,

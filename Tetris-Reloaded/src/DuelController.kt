@@ -1,15 +1,18 @@
 import javafx.application.Platform
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
+import javafx.scene.Scene
 import javafx.scene.canvas.Canvas
 import javafx.scene.canvas.GraphicsContext
 import javafx.scene.control.Button
 import javafx.scene.control.Label
+import javafx.scene.input.KeyCode
 import javafx.scene.layout.HBox
 import javafx.scene.layout.Pane
 import javafx.scene.paint.Color
 import java.net.URL
 import java.util.*
+import kotlin.concurrent.timerTask
 
 class DuelController : Initializable{
 
@@ -43,8 +46,8 @@ class DuelController : Initializable{
         lblPossibleCombinations.text = getAmountOfPossibleCombinations(pieceSize).toString()
         val gameSizeRatio = width.toDouble() / height.toDouble()
         resizeGameCanvases(gameSizeRatio)
-        setupGameContainerEvents(gameSizeRatio)
-        setupKeyPressedEvents(checkNotNull(gameContainer).scene)
+        setupGameContainersEvents(gameSizeRatio)
+        setupKeyPressedEvents(stage.scene)
     }
     fun btnStart_Action() {
         val gameLeft = checkNotNull(this.gameLeft)
@@ -177,7 +180,12 @@ class DuelController : Initializable{
         val playing = gameRight?.isPlaying ?: false
         return paused || playing
     }
-
+    private fun setupGameContainersEvents(gameSizeRatio: Double) {
+        gameContainerLeft.heightProperty().addListener { _, _, _ -> resizeGameCanvases(gameSizeRatio) }
+        gameContainerLeft.widthProperty().addListener { _, _, _ -> resizeGameCanvases(gameSizeRatio) }
+        gameContainerRight.heightProperty().addListener { _, _, _ -> resizeGameCanvases(gameSizeRatio) }
+        gameContainerRight.widthProperty().addListener { _, _, _ -> resizeGameCanvases(gameSizeRatio) }
+    }
     private fun initiateGameObjects(width: Int, height:Int, pieceSize:Int){
         val randomSeed = System.currentTimeMillis()
         gameLeft = Game(
@@ -208,6 +216,69 @@ class DuelController : Initializable{
                 functionThatRunsCodeInUiThread = Platform::runLater
 
         )
+    }
+    private fun setupKeyPressedEvents(scene: Scene) {
+
+        var downPressedTimerLeft = Timer()
+        var downPressedTimerRight = Timer()
+        var timerLeftRunning = false
+
+        fun startTimerLeft() {
+            downPressedTimerLeft = Timer()
+            val task = timerTask { Platform.runLater {
+                if (gameLeft?.isPlaying ?: false)
+                    gameLeft?.movePieceDown() } }
+            downPressedTimerLeft.scheduleAtFixedRate(task, 0, 45)
+        }
+
+        fun stopTimerLeft() {
+            downPressedTimer.cancel()
+            downPressedTimer.purge()
+        }
+        fun startTimerRight() {
+            downPressedTimer = Timer()
+            val downTimerTask = timerTask { Platform.runLater {
+                if (gameLeft?.isPlaying ?: false)
+                    gameLeft?.movePieceDown() } }
+            downPressedTimer.scheduleAtFixedRate(downTimerTask, 0, 45)
+        }
+
+        fun stopTimerRight() {
+            downPressedTimer.cancel()
+            downPressedTimer.purge()
+        }
+        scene.setOnKeyPressed { e ->
+            if (game?.isPlaying ?: false) {
+                when (e.code) {
+                    KeyCode.UP -> game?.rotatePiece()
+                    KeyCode.LEFT -> game?.movePieceLeft()
+                    KeyCode.RIGHT -> game?.movePieceRight()
+                    KeyCode.SPACE -> game?.dropPiece()
+                    KeyCode.DOWN -> {
+                        if (!timerRunning) {
+                            startTimer()
+                            timerRunning = true
+                        }
+                    }
+                }
+            }
+            when (e.code){
+                KeyCode.F11 -> stage.isFullScreen = !stage.isFullScreen
+                KeyCode.ENTER -> btnStart.fire()
+                KeyCode.R -> {
+                    if (!btnRestart.isDisabled)
+                        btnRestart.fire()
+                }
+            }
+
+        }
+        scene.setOnKeyReleased { e ->
+            if (e.code == KeyCode.DOWN) {
+                stopTimer()
+                timerRunning = false
+            }
+        }
+
     }
 
 }
