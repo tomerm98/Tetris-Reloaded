@@ -11,13 +11,13 @@ fun main(args: Array<String>) {
 
 }
 
-var mainStage = Stage()
+var mainStage: Stage? = null
 
 class App : Application() {
 
     override fun start(primaryStage: Stage) {
         mainStage = primaryStage
-        mainStage.title = APP_TITLE
+        mainStage?.title = APP_TITLE
 
         launchHomeScreen()
     }
@@ -33,29 +33,38 @@ class App : Application() {
             load(HOME_LAYOUT_NAME)
         }
 
-        fun launchSinglePlayerScreen(width: Int, height: Int, pieceSize: Int) {
-            val loader = load(SINGLE_PLAYER_LAYOUT_NAME)
-            val controller: SinglePlayerController = loader.getController()
-            controller.loadGame(width, height, pieceSize)
-
+        fun launchSinglePlayerScreen(width: Int, height: Int, squaresInPiece: Int) {
+            val controller = SinglePlayerController(width,height,squaresInPiece)
+            val scene = load(SINGLE_PLAYER_LAYOUT_NAME, controller)
+            controller.setupScene(scene)
         }
 
-        fun launchDuelScreen(width: Int, height: Int, pieceSize: Int) {
-            val loader = load(DUEL_LAYOUT_NAME)
-            val controller: DuelController = loader.getController()
-            controller.loadGame(width, height, pieceSize)
+        fun launchDuelScreen(width: Int, height: Int, squaresInPiece: Int) {
+            val controller = DuelController(width,height,squaresInPiece)
+            val scene = load(DUEL_LAYOUT_NAME, controller)
+            controller.setupScene(scene)
         }
 
         fun launchHistoryScreen() {
             // load(HISTORY_LAYOUT_NAME)
         }
 
-        private fun load(layoutFileName: String): FXMLLoader {
+        private fun load(layoutFileName: String, controller: Any): Scene {
+            val loader = FXMLLoader(javaClass.getResource(layoutFileName))
+            loader.setController(controller)
+            val layout: Parent = loader.load()
+            val scene = Scene(layout)
+            mainStage?.scene = scene
+            mainStage?.show()
+            return scene
+        }
+        private fun load(layoutFileName: String): Scene {
             val loader = FXMLLoader(javaClass.getResource(layoutFileName))
             val layout: Parent = loader.load()
-            mainStage.scene = Scene(layout)
-            mainStage.show()
-            return loader
+            val scene  = Scene(layout)
+            mainStage?.scene = scene
+            mainStage?.show()
+            return scene
         }
     }
 

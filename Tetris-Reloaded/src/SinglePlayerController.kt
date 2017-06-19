@@ -1,4 +1,5 @@
 import javafx.application.Platform
+import javafx.event.ActionEvent
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.Scene
@@ -7,6 +8,7 @@ import javafx.scene.canvas.GraphicsContext
 import javafx.scene.control.Button
 import javafx.scene.control.Label
 import javafx.scene.input.KeyCode
+import javafx.scene.input.MouseEvent
 import javafx.scene.layout.HBox
 import javafx.scene.layout.Pane
 import javafx.scene.paint.Color
@@ -14,9 +16,9 @@ import java.net.URL
 import java.util.*
 import kotlin.concurrent.timerTask
 
-class SinglePlayerController : Initializable {
+class SinglePlayerController(val width: Int, val height: Int, val squaresInPiece: Int) : Initializable {
 
-    var game: Game? = null
+    var game: Game
     @FXML var lblMessage = Label()
     @FXML var lblRowsPopped = Label()
     @FXML var lblPiecesGenerated = Label()
@@ -29,33 +31,39 @@ class SinglePlayerController : Initializable {
     @FXML var btnSave = Button()
     @FXML var btnBack = Button()
     val stage = checkNotNull(mainStage)
+    val gameSizeRatio = width.toDouble() / height.toDouble()
+    val possibleCombinations =  getAmountOfPossibleCombinations(squaresInPiece)
+    init {
+        game = Game(
+                width = width,
+                height = height,
+                squaresInPiece = squaresInPiece,
+                onReady = this::game_Ready,
+                onChange = this::game_Change,
+                onEnd = this::game_End,
+                onRowsPopped = this::game_RowsPopped,
+                onPieceChanged = this::game_PieceChanged,
+                onPieceGenerated = this::game_PieceGenerated,
+                functionThatRunsCodeInUiThread = Platform::runLater
+
+        )
+    }
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
-        btnStart.isFocusTraversable = false
-        btnRestart.isFocusTraversable = false
-        btnSave.isFocusTraversable = false
-        btnBack.isFocusTraversable = false
-
+        game.load()
+        removeFocusFromButtons()
+        setupEvents()
+        lblPossibleCombinations.text = possibleCombinations.toString()
+        resizeGameCanvas()
 
     }
 
-    fun loadGame(width: Int, height: Int, pieceSize: Int) {
-        initiateGameObject(width, height, pieceSize)
-        lblPossibleCombinations.text = getAmountOfPossibleCombinations(pieceSize).toString()
-        val gameSizeRatio = width.toDouble() / height.toDouble()
-        resizeGameCanvas(gameSizeRatio)
-        setupGameContainerEvents(gameSizeRatio)
-        setupKeyPressedEvents(stage.scene)
-    }
-
-    private fun setupGameContainerEvents(gameSizeRatio: Double) {
-        gameContainer.heightProperty()?.addListener { _, _, _ -> resizeGameCanvas(gameSizeRatio) }
-        gameContainer.widthProperty()?.addListener { _, _, _ -> resizeGameCanvas(gameSizeRatio) }
+    fun setupScene(scene: Scene){
+        setupKeyPressedEvents(scene)
     }
 
 
-    fun btnStart_Action() {
-        val game = checkNotNull(this.game)
+    fun btnStart_Action(event: ActionEvent) {
         when {
             game.isPlaying -> pauseGame()
             game.isPaused -> resumeGame()
@@ -63,8 +71,7 @@ class SinglePlayerController : Initializable {
         }
     }
 
-    fun btnRestart_Action() {
-        val game = checkNotNull(this.game)
+    fun btnRestart_Action(event: ActionEvent) {
         btnStart.isVisible = true
         btnStart.text = "Pause"
         lblRowsPopped.text = "0"
@@ -72,18 +79,18 @@ class SinglePlayerController : Initializable {
         game.restart()
     }
 
-    fun btnBack_Action() {
-        if (game?.isPlaying ?: false)
-            game?.pause()
+    fun btnBack_Action(event: ActionEvent) {
+        if (game.isPlaying)
+            game.pause()
         App.launchHomeScreen()
     }
 
-    fun btnSave_Action() {
+    fun btnSave_Action(event: ActionEvent) {
 
     }
 
-    fun gameContainer_MouseClicked() {
-        if (isGameStarted())
+    fun gameContainer_MouseClicked(event: MouseEvent) {
+        if (game.isPlaying|| game.isPaused)
             btnStart.fire()
     }
 
@@ -111,9 +118,9 @@ class SinglePlayerController : Initializable {
 
     private fun game_RowsPopped(game: Game, rowsPopped: Int) {
         lblRowsPopped.text = game.rowsPopped.toString()
-        game.delayMillis -= 5 * rowsPopped
-        if (game.delayMillis < 50)
-            game.delayMillis = 50
+        game.delayMillis -= GAME_DELAY_MILLIS_DROP * rowsPopped
+        if (game.delayMillis < GAME_DELAY_MILLIS_MIN)
+            game.delayMillis = GAME_DELAY_MILLIS_MIN
     }
 
     private fun game_PieceGenerated(game: Game) {
@@ -121,36 +128,32 @@ class SinglePlayerController : Initializable {
 
     }
 
+
+
     private fun startGame() {
         lblMessage.text = ""
         btnStart.text = "Pause"
         btnRestart.isDisable = false
         btnSave.isDisable = false
         updateNextPieceCanvas()
-        game?.startIfReady()
+        game.startIfReady()
     }
 
     private fun resumeGame() {
-        game?.resume()
+        game.resume()
         lblMessage.text = ""
         btnStart.text = "Pause"
     }
 
     private fun pauseGame() {
-        game?.pause()
+        game.pause()
         lblMessage.text = "Paused"
         btnStart.text = "Resume"
     }
 
-    private fun resizeGameCanvas(ratio: Double) {
-        resizeCanvas(
-                checkNotNull(canvasGame),
-                checkNotNull(gameContainer),
-                ratio
-
-        )
-        if (game != null)
-            updateGameCanvas()
+    private fun resizeGameCanvas() {
+        resizeCanvas(canvasGame, gameContainer, gameSizeRatio)
+        updateGameCanvas()
     }
 
     private fun resizeCanvas(canvas: Canvas, container: Pane, sizeRatio: Double) {
@@ -170,10 +173,7 @@ class SinglePlayerController : Initializable {
         fun startTimer() {
             downPressedTimer = Timer()
             val downTimerTask = timerTask {
-                Platform.runLater {
-                    if (game?.isPlaying ?: false)
-                        game?.movePieceDown()
-                }
+                Platform.runLater { game.movePieceDown() }
             }
             downPressedTimer.scheduleAtFixedRate(downTimerTask, 0, 45)
             timerRunning = true
@@ -185,57 +185,33 @@ class SinglePlayerController : Initializable {
             timerRunning = false
         }
         scene.setOnKeyPressed { e ->
-            val code = e.code
-            val gamePlaying = game?.isPlaying ?: false
-            if (game?.isPlaying ?: false) {
-                when (e.code) {
-                    KeyCode.UP -> game?.rotatePiece()
-                    KeyCode.LEFT -> game?.movePieceLeft()
-                    KeyCode.RIGHT -> game?.movePieceRight()
-                    KeyCode.SPACE -> game?.dropPiece()
-                    KeyCode.DOWN -> {
-                        if (!timerRunning)
-                            startTimer()
-
-
-                    }
-                }
-                when{
-                    e.code == KeyCode.T && true-> {}
-                }
-            }
+            val gamePlaying = game.isPlaying
 
             when (e.code) {
+                KeyCode.UP -> if (gamePlaying) game.rotatePiece()
+                KeyCode.LEFT -> if (gamePlaying) game.movePieceLeft()
+                KeyCode.RIGHT -> if (gamePlaying) game.movePieceRight()
+                KeyCode.SPACE -> if (gamePlaying) game.dropPiece()
+                KeyCode.DOWN -> if (gamePlaying && !timerRunning) startTimer()
                 KeyCode.F11 -> stage.isFullScreen = !stage.isFullScreen
                 KeyCode.ENTER -> btnStart.fire()
-                KeyCode.R -> {
-                    if (!btnRestart.isDisabled)
-                        btnRestart.fire()
-                }
+                KeyCode.R -> if (!btnRestart.isDisabled) btnRestart.fire()
+
             }
+
 
         }
         scene.setOnKeyReleased { e ->
-            if (e.code == KeyCode.DOWN)
-                stopTimer()
-
-
+            when (e.code) {
+                KeyCode.DOWN -> stopTimer()
+            }
         }
-
-    }
-
-    private fun isGameStarted(): Boolean {
-        val paused = game?.isPaused ?: false
-        val playing = game?.isPlaying ?: false
-        return paused || playing
     }
 
 
     private fun updateNextPieceCanvas() {
-        val canvas = checkNotNull(canvasNextPiece)
-        val graphics = canvas.graphicsContext2D
-        val game = checkNotNull(game)
-        val canvasSize = canvas.width
+        val graphics = canvasNextPiece.graphicsContext2D
+        val canvasSize = canvasNextPiece.width
         val squareSize = canvasSize / game.squaresInPiece
         val piece = game.nextPiece
         val leftMargin = (canvasSize - piece.width * squareSize) / 2
@@ -249,12 +225,10 @@ class SinglePlayerController : Initializable {
     }
 
     private fun updateGameCanvas() {
-        val canvas = checkNotNull(canvasGame)
-        val graphics = canvas.graphicsContext2D
-        val game = checkNotNull(game)
-        val squareSize = canvas.width / game.width
-        graphics.clearRect(0.0, 0.0, canvas.width, canvas.height)
-        drawCanvasBorder(canvas)
+        val graphics = canvasGame.graphicsContext2D
+        val squareSize = canvasGame.width / game.width
+        graphics.clearRect(0.0, 0.0, canvasGame.width, canvasGame.height)
+        drawCanvasBorder(canvasGame)
         for ((x, y) in game.getSquaresLocations()) {
             val color = game[x, y].color
             val left = x * squareSize
@@ -286,20 +260,23 @@ class SinglePlayerController : Initializable {
         graphics.strokeLine(width, height, 0.0, height)
     }
 
-    private fun initiateGameObject(width: Int, height: Int, pieceSize: Int) {
-        game = Game(
-                width = width,
-                height = height,
-                squaresInPiece = pieceSize,
-                onReady = this::game_Ready,
-                onChange = this::game_Change,
-                onEnd = this::game_End,
-                onRowsPopped = this::game_RowsPopped,
-                onPieceChanged = this::game_PieceChanged,
-                onPieceGenerated = this::game_PieceGenerated,
-                functionThatRunsCodeInUiThread = Platform::runLater
 
-        )
+    private fun setupEvents() {
+        btnStart.setOnAction(this::btnStart_Action)
+        btnRestart.setOnAction(this::btnRestart_Action)
+        btnBack.setOnAction(this::btnBack_Action)
+        btnSave.setOnAction(this::btnSave_Action)
+        gameContainer.setOnMouseClicked(this::gameContainer_MouseClicked)
+        gameContainer.heightProperty()?.addListener { _, _, _ -> resizeGameCanvas() }
+        gameContainer.widthProperty()?.addListener { _, _, _ -> resizeGameCanvas() }
+
+    }
+
+    private fun removeFocusFromButtons() {
+        btnStart.isFocusTraversable = false
+        btnRestart.isFocusTraversable = false
+        btnSave.isFocusTraversable = false
+        btnBack.isFocusTraversable = false
     }
 
 

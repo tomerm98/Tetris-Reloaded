@@ -15,20 +15,20 @@ class Game(
         val onRowsPopped: (Game, rowsPopped: Int) -> Unit = { _,_-> },
         val onPieceGenerated: (Game) -> Unit = {},
         val functionThatRunsCodeInUiThread: (Runnable) -> Unit,
-        var delayMillis: Long = 450,
-        randomSeed: Long = System.currentTimeMillis()
+        var delayMillis: Long = GAME_DELAY_MILLIS_INITIAL,
+        val randomSeed: Long = System.currentTimeMillis()
 ) {
     private var gameTask = GameTask(this)
     private var totalSuspendedTime: Long = 0
     private var lastPauseTime: Long = 0
     private val initialDelayMillis = delayMillis
-    private val piecesCombinations: MutableList<BoolGrid>
+    private val piecesCombinations = mutableListOf<BoolGrid>()
     private var currentPiece =GamePiece(BoolGrid(1,1))
     private val atomicIsPlaying: AtomicBoolean = AtomicBoolean(false)
     private val atomicIsPaused: AtomicBoolean = AtomicBoolean(false)
-    private val rng: Random
+    private val rng= Random(randomSeed)
     private var timer = Timer()
-    private val squareGrid: SquareGrid
+    private val squareGrid= createSynchronizedSquareGrid(width, height)
 
     val history = mutableListOf<GameTimeStamp>()
     val timePlayed: Long; get() {
@@ -57,28 +57,25 @@ class Game(
         }
 
 
-    init {
-        require(width > 0 && height > 0 && delayMillis > 0 && squaresInPiece > 0)
-        piecesCombinations = mutableListOf<BoolGrid>()
-        squareGrid = createSynchronizedSquareGrid(width, height)
-        rng = Random(randomSeed)
+    fun load() {
 
-        thread {
-            generateBoolGridsToSharedList(
-                    squareCount = squaresInPiece,
-                    sharedList = piecesCombinations,
-                    randomSeed = randomSeed,
-                    onGridAdded = {
-                runUI  {onPieceGenerated(this)}
-                    }
-            )
-        }
-        thread {
-            waitUntilReady()
-            currentPiece = getRandomPiece()
-            nextPiece = getRandomPiece()
-            runUI { onReady(this) }
-        }
+            thread {
+                generatePieceCombinationsToList(
+                        squaresInPiece = squaresInPiece,
+                        sharedList = piecesCombinations,
+                        randomSeed = randomSeed,
+                        onGridAdded = {
+                            runUI { onPieceGenerated(this) }
+                        }
+                )
+            }
+            thread {
+                waitUntilReady()
+                currentPiece = getRandomPiece()
+                nextPiece = getRandomPiece()
+                runUI { onReady(this) }
+            }
+
     }
 
     operator fun get(x: Int, y: Int): GameSquare {
@@ -280,7 +277,7 @@ class Game(
 
     private fun startTimer() {
         gameTask = GameTask(this)
-        timer.schedule(gameTask, 0)
+        timer.schedule(gameTask, delayMillis)
 
     }
     private fun stopTimer()
@@ -397,7 +394,9 @@ class Game(
 
 
 }
-
+val GAME_DELAY_MILLIS_INITIAL: Long = 450
+val GAME_DELAY_MILLIS_MIN: Long = 50
+val GAME_DELAY_MILLIS_DROP: Long = 5
 data class GameTimeStamp(
         val squareGrid: SquareGrid,
         val nextPiece: GamePiece,

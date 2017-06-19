@@ -1,8 +1,8 @@
 import java.util.*
 
 
-fun generateBoolGridsToSharedList(
-        squareCount: Int,
+fun generatePieceCombinationsToList(
+        squaresInPiece: Int,
         sharedList: MutableList<BoolGrid>,
         onGridAdded: (BoolGrid) -> Unit = {},
         randomSeed: Long = System.currentTimeMillis()
@@ -14,8 +14,8 @@ fun generateBoolGridsToSharedList(
         }
         onGridAdded(grid)
     }
-    require(squareCount > 0)
-    if (squareCount == 1) {
+    require(squaresInPiece > 0)
+    if (squaresInPiece == 1) {
         lockAndAdd(BoolGrid(1, 1).apply { toggle(0, 0) })
         return
     }
@@ -44,7 +44,7 @@ fun generateBoolGridsToSharedList(
         }
         grid.addBorderMargin(1)
         val truesLocations = grid.getTruesLocations()
-        if (squareCount > 4)
+        if (squaresInPiece > 4)
             Collections.shuffle(truesLocations, Random(randomSeed))
         for ((x, y) in truesLocations) {
             if (!grid[x - 1, y]) {
@@ -71,8 +71,8 @@ fun generateBoolGridsToSharedList(
     }
 
     val previousGrids = mutableListOf<BoolGrid>()
-    generateBoolGridsToSharedList(
-            squareCount = squareCount - 1,
+    generatePieceCombinationsToList(
+            squaresInPiece = squaresInPiece - 1,
             sharedList = previousGrids,
             onGridAdded = ::generateNewGridsFromPrevious,
             randomSeed = randomSeed

@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import java.lang.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.canvas.*?>
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-
-<SplitPane dividerPositions="0.6159874608150471" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SinglePlayerController">
+<SplitPane
+        dividerPositions="0.6159874608150471"
+        maxHeight="-Infinity"
+        maxWidth="-Infinity"
+        minHeight="-Infinity"
+        minWidth="-Infinity"
+        prefHeight="800.0"
+        prefWidth="1280.0"
+        xmlns="http://javafx.com/javafx/8"
+        xmlns:fx="http://javafx.com/fxml/1">
     <items>
-        <HBox fx:id="gameContainer" alignment="CENTER" minHeight="0.0" minWidth="0.0" onMouseClicked="#gameContainer_MouseClicked" prefHeight="100.0" prefWidth="200.0">
+        <HBox
+                fx:id="gameContainer"
+                alignment="CENTER"
+                minHeight="0.0"
+                minWidth="0.0"
+                prefHeight="100.0"
+                prefWidth="200.0">
             <children>
                 <Canvas fx:id="canvasGame" height="398.0" width="200.0">
                     <cursor>
@@ -50,25 +60,43 @@
                     </children>
                 </HBox>
                 <Region VBox.vgrow="ALWAYS" />
-                <Button fx:id="btnStart" disable="true" mnemonicParsing="false" onAction="#btnStart_Action" prefWidth="136.0" text="Start">
+                <Button
+                        fx:id="btnStart"
+                        disable="true"
+                        mnemonicParsing="false"
+                        prefWidth="136.0" text="Start">
                     <font>
                         <Font size="19.0" />
                     </font>
                 </Button>
                 <Region VBox.vgrow="ALWAYS" />
-                <Button fx:id="btnRestart" disable="true" mnemonicParsing="false" onAction="#btnRestart_Action" prefWidth="136.0" text="Restart">
+                <Button
+                        fx:id="btnRestart"
+                        disable="true"
+                        mnemonicParsing="false"
+                        prefWidth="136.0"
+                        text="Restart">
                     <font>
                         <Font size="19.0" />
                     </font>
                 </Button>
                 <Region VBox.vgrow="ALWAYS" />
-                <Button fx:id="btnSave" disable="true" mnemonicParsing="false" onAction="#btnSave_Action" prefWidth="136.0" text="Save">
+                <Button
+                        fx:id="btnSave"
+                        disable="true"
+                        mnemonicParsing="false"
+                        prefWidth="136.0"
+                        text="Save">
                     <font>
                         <Font size="19.0" />
                     </font>
                 </Button>
                 <Region VBox.vgrow="ALWAYS" />
-            <Button fx:id="btnBack" mnemonicParsing="false" onAction="#btnBack_Action" prefWidth="136.0" text="Back">
+                <Button
+                        fx:id="btnBack"
+                        mnemonicParsing="false"
+                        prefWidth="136.0"
+                        text="Back">
                <font>
                   <Font size="19.0" />
                </font>
