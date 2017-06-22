@@ -4,72 +4,96 @@ import javafx.scene.control.Button
 import javafx.scene.control.Label
 import javafx.scene.control.Slider
 import javafx.scene.layout.VBox
+import java.io.File
+import java.io.FileInputStream
+import java.io.ObjectInputStream
 import java.net.URL
 import java.util.*
 
 class HomeController : Initializable {
-    @FXML var layout: VBox? = null
-    @FXML var btnSinglePLayer: Button? = null
-    @FXML var btnDuel: Button? = null
-    @FXML var btnHistory: Button? = null
-    @FXML var btnReset: Button? = null
-    @FXML var lblWidth: Label? = null
-    @FXML var lblHeight: Label? = null
-    @FXML var lblPieceSize: Label? = null
-    @FXML var sldrWidth: Slider? = null
-    @FXML var sldrHeight: Slider? = null
-    @FXML var sldrPieceSize: Slider? = null
+    @FXML var layout = VBox()
+    @FXML var btnSinglePLayer = Button()
+    @FXML var btnDuel = Button()
+    @FXML var btnHistory = Button()
+    @FXML var btnReset = Button()
+    @FXML var lblWidth = Label()
+    @FXML var lblHeight = Label()
+    @FXML var lblSquaresInPiece = Label()
+    @FXML var sldrWidth = Slider()
+    @FXML var sldrHeight = Slider()
+    @FXML var sldrSquaresInPiece = Slider()
 
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         //bind sliders min value
-        sldrWidth?.minProperty()?.bind(sldrPieceSize?.valueProperty())
-        sldrHeight?.minProperty()?.bind(sldrPieceSize?.valueProperty())
+        sldrWidth.minProperty()?.bind(sldrSquaresInPiece.valueProperty())
+        sldrHeight.minProperty()?.bind(sldrSquaresInPiece.valueProperty())
 
         //set labels text when sliders change value
-        sldrWidth?.valueProperty()?.addListener { _, _, newValue ->
-            lblWidth?.text = newValue.toInt().toString()
+        sldrWidth.valueProperty()?.addListener { _, _, newValue ->
+            lblWidth.text = newValue.toInt().toString()
         }
 
-        sldrHeight?.valueProperty()?.addListener { _, _, newValue ->
-            lblHeight?.text = newValue.toInt().toString()
+        sldrHeight.valueProperty()?.addListener { _, _, newValue ->
+            lblHeight.text = newValue.toInt().toString()
         }
 
-        sldrPieceSize?.valueProperty()?.addListener { _, _, newValue ->
-            lblPieceSize?.text = newValue.toInt().toString()
+        sldrSquaresInPiece.valueProperty()?.addListener { _, _, newValue ->
+            lblSquaresInPiece.text = newValue.toInt().toString()
         }
-        btnReset?.isFocusTraversable = false
-        btnSinglePLayer?.isFocusTraversable = false
-        btnDuel?.isFocusTraversable = false
-        btnHistory?.isFocusTraversable = false
+        btnReset.isFocusTraversable = false
+        btnSinglePLayer.isFocusTraversable = false
+        btnDuel.isFocusTraversable = false
+        btnHistory.isFocusTraversable = false
+
+        val file = File(GAME_DATA_FILE_NAME)
+        val ois = ObjectInputStream(FileInputStream(file))
+        val oldList = ois.readObject() as List<GameSave>
+        for (g in oldList)
+        when(g)
+        {
+            is SinglePlayerSave -> println(g.playerName)
+            is DuelSave -> println(g.playerNameLeft +" & " + g.playerNameRight)
+        }
+
+
+
 
     }
 
     fun btnReset_Action() {
-        sldrPieceSize?.value = 4.0
-        sldrWidth?.value = 10.0
-        sldrHeight?.value = 18.0
+        sldrSquaresInPiece.value = 4.0
+        sldrWidth.value = 10.0
+        sldrHeight.value = 18.0
     }
 
     fun btnSinglePlayer_Action() {
-        val (width, height, pieceSize) = getSliderValues()
-        App.launchSinglePlayerScreen(width, height, pieceSize)
+        val (width, height, squaresInPiece) = getSliderValues()
+        App.launchSinglePlayerScreen(width, height, squaresInPiece)
     }
 
     fun btnDuel_Action() {
-        val (width, height, pieceSize) = getSliderValues()
-        App.launchDuelScreen(width, height, pieceSize)
+        val (width, height, squaresInPiece) = getSliderValues()
+        App.launchDuelScreen(width, height, squaresInPiece)
     }
 
     fun btnHistory_Action() {
         App.launchHistoryScreen()
     }
 
+    fun btnWidthLeft_Action() = sldrWidth.value--
+    fun btnWidthRight_Action() = sldrWidth.value++
+    fun btnHeightLeft_Action() = sldrHeight.value--
+    fun btnHeightRight_Action() = sldrHeight.value++
+    fun btnSquaresInPieceLeft_Action() = sldrSquaresInPiece.value--
+    fun btnSquaresInPieceRight_Action() = sldrSquaresInPiece.value++
+
+
     private fun getSliderValues(): Triple<Int, Int, Int> {
-        val width = checkNotNull(sldrWidth?.value?.toInt())
-        val height = checkNotNull(sldrHeight?.value?.toInt())
-        val pieceSize = checkNotNull(sldrPieceSize?.value?.toInt())
-        return (Triple(width, height, pieceSize))
+        val width = sldrWidth.value.toInt()
+        val height = sldrHeight.value.toInt()
+        val squaresInPiece = sldrSquaresInPiece.value.toInt()
+        return (Triple(width, height, squaresInPiece))
     }
 
 }

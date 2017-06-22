@@ -2,8 +2,11 @@ import javafx.application.Application
 import javafx.fxml.FXMLLoader
 import javafx.scene.Parent
 import javafx.scene.Scene
+import javafx.scene.paint.Color
+import javafx.stage.Modality
 import javafx.stage.Stage
-
+import java.io.Serializable
+import java.util.*
 
 fun main(args: Array<String>) {
 
@@ -11,13 +14,20 @@ fun main(args: Array<String>) {
 
 }
 
-var mainStage: Stage? = null
+
+val GAME_DATA_FILE_NAME = "game_data"
+var mainStage_nullable: Stage? = null
+var mainStage: Stage
+    get() = checkNotNull(mainStage_nullable);
+    set(value) {
+        mainStage_nullable = value
+    }
 
 class App : Application() {
 
     override fun start(primaryStage: Stage) {
         mainStage = primaryStage
-        mainStage?.title = APP_TITLE
+        mainStage.title = APP_TITLE
 
         launchHomeScreen()
     }
@@ -28,44 +38,83 @@ class App : Application() {
         val SINGLE_PLAYER_LAYOUT_NAME = "SinglePlayerLayout.fxml"
         val DUEL_LAYOUT_NAME = "DuelLayout.fxml"
         val HISTORY_LAYOUT_NAME = "HistoryLayout.fxml"
+        val SINGLE_PLAYER_SAVE_LAYOUT_NAME = "SinglePlayerSaveLayout.fxml"
+        val DUEL_SAVE_LAYOUT_NAME = "DuelSaveLayout.fxml"
 
         fun launchHomeScreen() {
-            load(HOME_LAYOUT_NAME)
+            launchScreen(HOME_LAYOUT_NAME, mainStage)
         }
 
         fun launchSinglePlayerScreen(width: Int, height: Int, squaresInPiece: Int) {
             val controller = SinglePlayerController(width,height,squaresInPiece)
-            val scene = load(SINGLE_PLAYER_LAYOUT_NAME, controller)
-            controller.setupScene(scene)
+            launchScreen(SINGLE_PLAYER_LAYOUT_NAME, mainStage, controller)
         }
 
         fun launchDuelScreen(width: Int, height: Int, squaresInPiece: Int) {
             val controller = DuelController(width,height,squaresInPiece)
-            val scene = load(DUEL_LAYOUT_NAME, controller)
-            controller.setupScene(scene)
+            launchScreen(DUEL_LAYOUT_NAME, mainStage, controller)
+
         }
 
         fun launchHistoryScreen() {
-            // load(HISTORY_LAYOUT_NAME)
+
         }
 
-        private fun load(layoutFileName: String, controller: Any): Scene {
+        fun launchSinglePlayerSaveScreen(game: Game) {
+            val controller = SinglePlayerSaveController(game)
+            val stage = Stage()
+            stage.title = ""
+            launchPopup(SINGLE_PLAYER_SAVE_LAYOUT_NAME, stage, controller)
+        }
+
+        fun launchDuelSaveScreen(gameLeft: Game, gameRight:Game) {
+            val controller = DuelSaveController(gameLeft,gameRight)
+            val stage = Stage()
+            stage.title = ""
+            launchPopup(DUEL_SAVE_LAYOUT_NAME, stage, controller)
+        }
+
+
+        private fun launchScreen(layoutFileName: String, stage: Stage, controller: Any? = null) {
+            loadLayout(layoutFileName, stage, controller)
+            stage.show()
+        }
+        private fun launchPopup(layoutFileName: String, stage: Stage, controller: Any? = null) {
+            loadLayout(layoutFileName, stage, controller)
+            stage.initModality(Modality.APPLICATION_MODAL)
+            stage.show()
+        }
+        private fun loadLayout(layoutFileName: String, stage: Stage, controller: Any? = null)
+        {
             val loader = FXMLLoader(javaClass.getResource(layoutFileName))
             loader.setController(controller)
             val layout: Parent = loader.load()
             val scene = Scene(layout)
-            mainStage?.scene = scene
-            mainStage?.show()
-            return scene
+            stage.scene = scene
         }
-        private fun load(layoutFileName: String): Scene {
-            val loader = FXMLLoader(javaClass.getResource(layoutFileName))
-            val layout: Parent = loader.load()
-            val scene  = Scene(layout)
-            mainStage?.scene = scene
-            mainStage?.show()
-            return scene
-        }
+
+
     }
 
+}
+
+fun generateRandomId(): String {
+    val chars = "abcdefghijklmnopqrstuvwxyz1234567890"
+    var id = ""
+    val rng = Random()
+    repeat(30) {
+        val index = rng.nextInt(chars.length)
+        id += chars[index]
+    }
+    return id
+}
+
+class SerializableColor(val red: Double, val green: Double, val blue: Double, val opacity: Double) : Serializable {
+    fun toJavaFxColor(): Color {
+        return Color(red, green, blue, opacity)
+    }
+}
+
+fun Color.toSerializableColor(): SerializableColor {
+    return SerializableColor(red, green, blue, opacity)
 }

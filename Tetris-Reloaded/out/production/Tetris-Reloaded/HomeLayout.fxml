@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.geometry.Insets?>
@@ -23,7 +24,10 @@
                 <Insets />
             </VBox.margin>
         </Region>
-        <Button fx:id="btnReset" mnemonicParsing="false" onAction="#btnReset_Action" prefHeight="25.0" prefWidth="84.0" text="Reset" />
+        <Button fx:id="btnReset" focusTraversable="false" mnemonicParsing="false" onAction="#btnReset_Action" prefHeight="25.0" prefWidth="84.0" text="Reset">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
         <HBox alignment="CENTER">
             <VBox.margin>
                 <Insets top="20.0" />
@@ -46,7 +50,30 @@
                                 </Label>
                             </children>
                         </HBox>
-                        <Slider fx:id="sldrWidth" blockIncrement="1.0" min="1.0" prefWidth="300.0" value="10.0" />
+                        <Slider fx:id="sldrWidth" blockIncrement="1.0" focusTraversable="false" min="1.0" prefWidth="300.0" value="10.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Slider>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Button fx:id="btnWidthLeft" focusTraversable="false" mnemonicParsing="false" onAction="#btnWidthLeft_Action" text="←">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="btnWidthRight" focusTraversable="false" mnemonicParsing="false" onAction="#btnWidthRight_Action" text="→">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
                     </children>
                 </VBox>
                 <Region HBox.hgrow="ALWAYS" />
@@ -66,7 +93,30 @@
                                 </Label>
                             </children>
                         </HBox>
-                        <Slider fx:id="sldrHeight" blockIncrement="1.0" min="1.0" prefWidth="300.0" value="18.0" />
+                        <Slider fx:id="sldrHeight" blockIncrement="1.0" focusTraversable="false" min="1.0" prefWidth="300.0" value="18.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Slider>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Button fx:id="btnHeightLeft" focusTraversable="false" mnemonicParsing="false" onAction="#btnHeightLeft_Action" text="←">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="btnHeightRight" focusTraversable="false" mnemonicParsing="false" onAction="#btnHeightRight_Action" text="→">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
                     </children>
                 </VBox>
                 <Region HBox.hgrow="ALWAYS" />
@@ -74,41 +124,71 @@
                     <children>
                         <HBox alignment="CENTER">
                             <children>
-                                <Label text="Piece Size: ">
+                                <Label text="Squares in Piece: ">
                                     <font>
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <Label fx:id="lblPieceSize" text="4">
+                                <Label fx:id="lblSquaresInPiece" text="4">
                                     <font>
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
                             </children>
                         </HBox>
-                        <Slider fx:id="sldrPieceSize" blockIncrement="1.0" max="30.0" min="1.0" prefWidth="300.0" value="4.0" />
+                        <Slider fx:id="sldrSquaresInPiece" blockIncrement="1.0" focusTraversable="false" max="30.0" min="1.0" prefWidth="300.0" value="4.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Slider>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Button fx:id="btnSquaresInPieceLeft" focusTraversable="false" mnemonicParsing="false" onAction="#btnSquaresInPieceLeft_Action" text="←">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Button fx:id="btnSquaresInPieceRight" focusTraversable="false" mnemonicParsing="false" onAction="#btnSquaresInPieceRight_Action" text="→">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                     </children>
+                  </HBox>
                     </children>
                 </VBox>
                 <Region HBox.hgrow="ALWAYS" />
             </children>
         </HBox>
         <Region VBox.vgrow="ALWAYS" />
-        <Button fx:id="btnSinglePLayer" mnemonicParsing="false" onAction="#btnSinglePlayer_Action" prefWidth="136.0" text="Single Player">
+        <Button fx:id="btnSinglePLayer" focusTraversable="false" mnemonicParsing="false" onAction="#btnSinglePlayer_Action" prefWidth="136.0" text="Single Player">
             <font>
                 <Font size="19.0" />
             </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </Button>
         <Region VBox.vgrow="ALWAYS" />
-        <Button fx:id="btnDuel" mnemonicParsing="false" onAction="#btnDuel_Action" prefWidth="136.0" text="Duel">
+        <Button fx:id="btnDuel" focusTraversable="false" mnemonicParsing="false" onAction="#btnDuel_Action" prefWidth="136.0" text="Duel">
             <font>
                 <Font size="19.0" />
             </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </Button>
         <Region VBox.vgrow="ALWAYS" />
-        <Button fx:id="btnHistory" mnemonicParsing="false" onAction="#btnHistory_Action" prefWidth="136.0" text="History" VBox.vgrow="ALWAYS">
+        <Button fx:id="btnHistory" focusTraversable="false" mnemonicParsing="false" onAction="#btnHistory_Action" prefWidth="136.0" text="History" VBox.vgrow="ALWAYS">
             <font>
                 <Font size="19.0" />
             </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </Button>
         <Region VBox.vgrow="ALWAYS" />
     </children>

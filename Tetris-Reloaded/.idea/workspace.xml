@@ -2,20 +2,97 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a50f7b71-399f-4d74-88f2-2f9f86074b5d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt$generateBoolGridsToSharedList$4$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuleLayout.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupGameContainerEvents$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupGameContainerEvents$2.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DuleLayout.fxml" afterPath="$PROJECT_DIR$/src/DuelLayout.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/arrow_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/arrow_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DuelSaveController.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DuelSaveLayout.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SinglePlayerSaveController.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SinglePlayerSaveLayout.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt$generatePieceCombinationsToList$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt$generatePieceCombinationsToList$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt$generatePieceCombinationsToList$2.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt$generatePieceCombinationsToList$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt$generatePieceCombinationsToList$4.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt$generatePieceCombinationsToList$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt$generatePieceCombinationsToList$5.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt$generatePieceCombinationsToList$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/BoolGridGeneratorKt.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$10.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$11.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$11.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$12.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$12.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$2.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$3.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$4.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$5.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$6.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$7.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$8.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$9.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupEvents$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupEvents$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupEvents$10.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupEvents$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupEvents$2.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupEvents$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupEvents$3.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupEvents$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupEvents$4.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupEvents$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupEvents$5.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupEvents$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupEvents$6.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupEvents$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupEvents$7.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupEvents$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupEvents$8.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupEvents$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupEvents$9.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupEvents$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupKeyPressedEvents$1$startTimerLeft$$inlined$timerTask$1$lambda$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupKeyPressedEvents$1$startTimerLeft$$inlined$timerTask$1$lambda$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupKeyPressedEvents$1$startTimerLeft$$inlined$timerTask$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupKeyPressedEvents$1$startTimerLeft$$inlined$timerTask$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupKeyPressedEvents$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupKeyPressedEvents$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupKeyPressedEvents$2$startTimerRight$$inlined$timerTask$1$lambda$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupKeyPressedEvents$2$startTimerRight$$inlined$timerTask$1$lambda$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupKeyPressedEvents$2$startTimerRight$$inlined$timerTask$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupKeyPressedEvents$2$startTimerRight$$inlined$timerTask$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupKeyPressedEvents$2.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupKeyPressedEvents$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupKeyPressedEvents$3.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupKeyPressedEvents$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupKeyPressedEvents$4.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupKeyPressedEvents$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupKeyPressedEvents$5.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupKeyPressedEvents$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupKeyPressedEvents$6.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController$setupKeyPressedEvents$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$GameTask$run$1$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$GameTask$run$1$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$GameTask$run$1$2.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$GameTask$run$1$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$GameTask.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$GameTask.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$load$1$1$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$load$1$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$load$1$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$load$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$load$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$load$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$load$2$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$load$2$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$load$2.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$load$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$popFullRows$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$popFullRows$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$popFullRows$2.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$popFullRows$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$popFullRows$3.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$popFullRows$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$runUI$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game$runUI$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/Game.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/GameKt.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/GameKt.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/GameTimeStamp.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/GameTimeStamp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/HomeController$initialize$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/HomeController$initialize$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/HomeController$initialize$2.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/HomeController$initialize$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/HomeController$initialize$3.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/HomeController$initialize$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/HomeController.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/HomeController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupEvents$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupEvents$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupEvents$2.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupEvents$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupEvents$3.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupEvents$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupEvents$4.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupEvents$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupEvents$5.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupEvents$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupEvents$6.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupEvents$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupEvents$7.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupEvents$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$1$startTimer$$inlined$timerTask$1$lambda$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$1$startTimer$$inlined$timerTask$1$lambda$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$1$startTimer$$inlined$timerTask$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$1$startTimer$$inlined$timerTask$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$1.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$2.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$3.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$4.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController$setupKeyPressedEvents$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController.class" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelLayout.fxml" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/DuelLayout.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/HomeLayout.fxml" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/HomeLayout.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerLayout.fxml" afterPath="$PROJECT_DIR$/out/production/Tetris-Reloaded/SinglePlayerLayout.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.kt" afterPath="$PROJECT_DIR$/src/App.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BoolGridGenerator.kt" afterPath="$PROJECT_DIR$/src/BoolGridGenerator.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DuelController.kt" afterPath="$PROJECT_DIR$/src/DuelController.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DuelLayout.fxml" afterPath="$PROJECT_DIR$/src/DuelLayout.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game.kt" afterPath="$PROJECT_DIR$/src/Game.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GamePiece.kt" afterPath="$PROJECT_DIR$/src/GamePiece.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameSquare.kt" afterPath="$PROJECT_DIR$/src/GameSquare.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HistoryLayout.fxml" afterPath="$PROJECT_DIR$/src/HistoryLayout.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HomeController.kt" afterPath="$PROJECT_DIR$/src/HomeController.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HomeLayout.fxml" afterPath="$PROJECT_DIR$/src/HomeLayout.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SinglePlayerController.kt" afterPath="$PROJECT_DIR$/src/SinglePlayerController.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SinglePlayerLayout.fxml" afterPath="$PROJECT_DIR$/src/SinglePlayerLayout.fxml" />
     </list>
@@ -35,189 +112,113 @@
     <favorites_list name="Tetris-Reloaded" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="DuelController.kt" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/DuelController.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="124">
-                  <caret line="351" column="13" lean-forward="false" selection-start-line="351" selection-start-column="13" selection-end-line="351" selection-end-column="13" />
-                  <folding>
-                    <element signature="n#!!block;n#initialize#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#setupScene#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#btnStart_Action#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#btnRestart_Action#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#btnBack_Action#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#btnSave_Action#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#gameContainerLeft_MouseClicked#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#gameContainerRight_MouseClicked#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#gameLeft_Change#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#gameRight_Change#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#gameLeft_End#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="e#4370#4462#1" expanded="false" />
-                    <element signature="n#!!block;n#gameRight_End#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="e#4575#4667#1" expanded="false" />
-                    <element signature="n#!!block;n#gameLeft_RowsPopped#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#gameRight_RowsPopped#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#gameLeft_PieceChanged#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#gameRight_PieceChanged#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#startGames#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#resumeGames#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#pauseGames#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#setupEvents#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#removeFocusFromButtons#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#resizeGameCanvases#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#updateNextPieceCanvas#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="e#8574#8753#1" expanded="false" />
-                    <element signature="n#!!block;n#resizeCanvas#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#updateGameCanvas#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="e#9420#9601#1" expanded="false" />
-                    <element signature="n#!!block;n#drawSquare#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#drawCanvasBorder#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#startTimerLeft#0;n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#DuelController#0" expanded="false" />
-                    <element signature="n#!!block;n#stopTimerLeft#0;n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#DuelController#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Game.kt" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Game.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="44">
-                  <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#1368#1557#0" expanded="false" />
-                    <element signature="e#1400#1534#1" expanded="false" />
-                    <element signature="e#1746#1787#0" expanded="false" />
-                    <element signature="e#1794#1837#0" expanded="false" />
-                    <element signature="e#1885#1931#0" expanded="false" />
-                    <element signature="e#1938#1990#0" expanded="false" />
-                    <element signature="e#2282#2370#1" expanded="false" />
-                    <element signature="e#2422#2603#2" expanded="false" />
-                    <element signature="n#!!block;n#get#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="n#!!block;n#set#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="n#!!block;n#getSquaresLocations#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="n#!!block;n#isGameReady#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="e#3167#3227#2" expanded="false" />
-                    <element signature="n#!!block;n#dropPiece#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="e#3319#3546#2" expanded="false" />
-                    <element signature="n#!!block;n#movePieceRight#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="e#3670#3898#2" expanded="false" />
-                    <element signature="n#!!block;n#movePieceLeft#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="e#4018#4246#2" expanded="false" />
-                    <element signature="e#4366#4591#2" expanded="false" />
-                    <element signature="e#4803#4846#1" expanded="false" />
-                    <element signature="n#!!block;n#rotatePiece#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="e#4962#5194#2" expanded="false" />
-                    <element signature="n#!!block;n#startIfReady#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="n#!!block;n#end#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="n#!!block;n#pause#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="n#!!block;n#resume#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="n#!!block;n#restart#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="n#!!block;n#toString#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="e#6166#6341#1" expanded="false" />
-                    <element signature="e#6205#6308#1" expanded="false" />
-                    <element signature="n#!!block;n#updateHistory#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="n#!!block;n#resetProperties#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="n#!!block;n#getRandomPiece#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="e#7058#7503#2" expanded="false" />
-                    <element signature="n#!!block;n#setUpNewPiece#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="e#7662#7775#1" expanded="false" />
-                    <element signature="n#!!block;n#stopTimer#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="n#!!block;n#GameTask#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="n#!!block;n#run#0;n#!!block;n#GameTask#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="e#8134#8826#2" expanded="false" />
-                    <element signature="e#8167#8812#1" expanded="false" />
-                    <element signature="e#8327#8453#1" expanded="false" />
-                    <element signature="e#8459#8680#1" expanded="false" />
-                    <element signature="e#8591#8658#2" expanded="false" />
-                    <element signature="n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="n#!!block;n#isRowFull#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="n#!!block;n#popTopRow#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="n#!!block;n#popRow#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="e#9439#9600#2" expanded="false" />
-                    <element signature="e#9513#9590#1" expanded="false" />
-                    <element signature="e#9624#9705#1" expanded="false" />
-                    <element signature="n#!!block;n#addPieceToGrid#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="n#!!block;n#removePieceFromGrid#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="n#!!block;n#hitBottom#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="n#!!block;n#isPieceLocationLegal#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="e#10306#10567#1" expanded="false" />
-                    <element signature="n#!!block;n#waitUntilReady#0;n#!!block;n#Game#0" expanded="false" />
-                    <element signature="n#!!block;n#screenChanged#0;n#!!block;n#Game#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="App.kt" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/App.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1000">
-                  <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="HomeController.kt" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/HomeController.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="189">
-                  <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SinglePlayerController.kt" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/SinglePlayerController.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="500">
-                  <caret line="111" column="33" lean-forward="false" selection-start-line="110" selection-start-column="8" selection-end-line="111" selection-end-column="33" />
-                  <folding>
-                    <element signature="e#1267#1791#0" expanded="false" />
-                    <element signature="n#!!block;n#btnStart_Action#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="n#!!block;n#btnRestart_Action#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="n#!!block;n#btnBack_Action#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="n#!!block;n#btnSave_Action#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="n#!!block;n#gameContainer_MouseClicked#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="n#!!block;n#game_End#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="n#!!block;n#game_Change#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="n#!!block;n#game_PieceChanged#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="n#!!block;n#game_RowsPopped#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="n#!!block;n#game_PieceGenerated#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="n#!!block;n#startGame#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="n#!!block;n#resumeGame#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="n#!!block;n#pauseGame#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="n#!!block;n#resizeGameCanvas#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="n#!!block;n#resizeCanvas#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="n#!!block;n#startTimer#0;n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="e#4873#4947#2" expanded="false" />
-                    <element signature="n#!!block;n#stopTimer#0;n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="e#5236#5893#2" expanded="false" />
-                    <element signature="e#5925#6027#2" expanded="false" />
-                    <element signature="n#!!block;n#updateNextPieceCanvas#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="e#6526#6706#1" expanded="false" />
-                    <element signature="n#!!block;n#updateGameCanvas#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="e#7020#7210#1" expanded="false" />
-                    <element signature="n#!!block;n#drawSquare#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                    <element signature="n#!!block;n#drawCanvasBorder#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="DuelSaveController.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DuelSaveController.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="734">
+              <caret line="69" column="39" lean-forward="false" selection-start-line="69" selection-start-column="39" selection-end-line="69" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#277#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1306">
+              <caret line="440" column="37" lean-forward="false" selection-start-line="440" selection-start-column="37" selection-end-line="440" selection-end-column="37" />
+              <folding>
+                <element signature="e#1596#1637#0" expanded="false" />
+                <element signature="e#1644#1687#0" expanded="false" />
+                <element signature="e#1735#1781#0" expanded="false" />
+                <element signature="e#1788#1840#0" expanded="false" />
+                <element signature="n#!!block;n#load#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="e#1880#2203#2" expanded="false" />
+                <element signature="e#2083#2171#1" expanded="false" />
+                <element signature="e#2223#2311#2" expanded="false" />
+                <element signature="n#!!block;n#get#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="n#!!block;n#set#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="n#!!block;n#resetRNG#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="n#!!block;n#getSquaresLocations#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="n#!!block;n#isGameReady#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="e#3012#3072#2" expanded="false" />
+                <element signature="n#!!block;n#dropPiece#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="e#3164#3391#2" expanded="false" />
+                <element signature="n#!!block;n#movePieceRight#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="e#3515#3743#2" expanded="false" />
+                <element signature="n#!!block;n#movePieceLeft#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="e#3863#4091#2" expanded="false" />
+                <element signature="n#!!block;n#movePieceDown#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="e#4211#4436#2" expanded="false" />
+                <element signature="e#4648#4691#1" expanded="false" />
+                <element signature="n#!!block;n#rotatePiece#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="e#4807#5039#2" expanded="false" />
+                <element signature="n#!!block;n#startIfReady#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="n#!!block;n#pause#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="n#!!block;n#resume#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="n#!!block;n#restart#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="n#!!block;n#toString#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="e#6166#6341#1" expanded="false" />
+                <element signature="e#6205#6308#1" expanded="false" />
+                <element signature="n#!!block;n#getRandomPiece#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="e#7085#7530#2" expanded="false" />
+                <element signature="n#!!block;n#setUpNewPiece#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="e#7689#7802#1" expanded="false" />
+                <element signature="n#!!block;n#startTimer#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="n#!!block;n#stopTimer#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="n#!!block;n#GameTask#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="n#!!block;n#run#0;n#!!block;n#GameTask#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="e#8161#8853#2" expanded="false" />
+                <element signature="e#8194#8839#1" expanded="false" />
+                <element signature="e#8354#8480#1" expanded="false" />
+                <element signature="e#8486#8707#1" expanded="false" />
+                <element signature="e#8618#8685#2" expanded="false" />
+                <element signature="n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="n#!!block;n#isRowFull#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="n#!!block;n#popTopRow#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="n#!!block;n#popRow#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="e#9466#9627#2" expanded="false" />
+                <element signature="e#9540#9617#1" expanded="false" />
+                <element signature="e#9651#9732#1" expanded="false" />
+                <element signature="n#!!block;n#addPieceToGrid#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="n#!!block;n#removePieceFromGrid#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="n#!!block;n#hitBottom#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="n#!!block;n#isPieceLocationLegal#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="e#10333#10594#1" expanded="false" />
+                <element signature="n#!!block;n#waitUntilReady#0;n#!!block;n#Game#0" expanded="false" />
+                <element signature="n#!!block;n#screenChanged#0;n#!!block;n#Game#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/App.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="354">
+              <caret line="84" column="24" lean-forward="false" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
+              <folding>
+                <element signature="n#!!block;n#main#0" expanded="false" />
+                <element signature="n#!!block;n#start#0;n#!!block;n#App#0" expanded="false" />
+                <element signature="n#!!block;n#launchHomeScreen#0;n#!!block;n#Companion#0;n#!!block;n#App#0" expanded="false" />
+                <element signature="n#!!block;n#launchSinglePlayerScreen#0;n#!!block;n#Companion#0;n#!!block;n#App#0" expanded="false" />
+                <element signature="n#!!block;n#launchDuelScreen#0;n#!!block;n#Companion#0;n#!!block;n#App#0" expanded="false" />
+                <element signature="n#!!block;n#launchHistoryScreen#0;n#!!block;n#Companion#0;n#!!block;n#App#0" expanded="false" />
+                <element signature="n#!!block;n#generateRandomId#0" expanded="false" />
+                <element signature="e#3250#3330#2" expanded="false" />
+                <element signature="n#!!block;n#SerializableColor#0" expanded="false" />
+                <element signature="n#!!block;n#toJavaFxColor#0;n#!!block;n#SerializableColor#0" expanded="false" />
+                <element signature="n#!!block;n#toSerializableColor#0" expanded="false" />
+                <marker date="1498166200546" expanded="false" signature="7:207" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -232,16 +233,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>restar</find>
-      <find>restart</find>
-      <find>onpiec</find>
-      <find>onpieceChange</find>
-      <find>onPieceChanged</find>
-      <find>end()</find>
-      <find>timer</find>
-      <find>updateNextPieceCanvas</find>
-      <find>updateGameCanvas</find>
-      <find>resizeNextPieceCanvas</find>
       <find>resizeGameCanvas</find>
       <find>isPaus</find>
       <find>ispau</find>
@@ -252,16 +243,26 @@
       <find>check</find>
       <find>game?.</find>
       <find>checkNot</find>
-      <find>stage</find>
       <find>checkNo</find>
       <find>game</find>
       <find>startGames</find>
       <find>isGam</find>
       <find>resizeCanvas</find>
-      <find>resizeGameCanvases</find>
       <find>canvases</find>
       <find>updateCanvas</find>
       <find>isGameLeftStarted</find>
+      <find>piece</find>
+      <find>null</find>
+      <find>squaresInO</find>
+      <find>pieceSize</find>
+      <find>resizeGameCanvases</find>
+      <find>resetProperties</find>
+      <find>stage</find>
+      <find>scene</find>
+      <find>t</find>
+      <find>totalR</find>
+      <find>totalRow</find>
+      <find>totalRows</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -289,18 +290,23 @@
         <option value="$PROJECT_DIR$/src/PlayScreenLayout.fxml" />
         <option value="$PROJECT_DIR$/src/PlayScreenController.kt" />
         <option value="$PROJECT_DIR$/src/DuelController.fxml" />
-        <option value="$PROJECT_DIR$/src/HomeController.kt" />
-        <option value="$PROJECT_DIR$/src/GamePiece.kt" />
         <option value="$PROJECT_DIR$/src/BoolGrid.kt" />
-        <option value="$PROJECT_DIR$/src/GameSquare.kt" />
         <option value="$PROJECT_DIR$/src/SaveController.kt" />
         <option value="$PROJECT_DIR$/src/SinglePlayerLayout.fxml" />
-        <option value="$PROJECT_DIR$/src/BoolGridGenerator.kt" />
         <option value="$PROJECT_DIR$/src/DuleLayout.fxml" />
-        <option value="$PROJECT_DIR$/src/App.kt" />
-        <option value="$PROJECT_DIR$/src/Game.kt" />
+        <option value="$PROJECT_DIR$/src/HomeLayout.fxml" />
+        <option value="$PROJECT_DIR$/src/BoolGridGenerator.kt" />
+        <option value="$PROJECT_DIR$/src/SinglePlayerSaveLayout.fxml" />
+        <option value="$PROJECT_DIR$/src/DuelSaveLayout.fxml" />
+        <option value="$PROJECT_DIR$/src/GamePiece.kt" />
+        <option value="$PROJECT_DIR$/src/GameSquare.kt" />
         <option value="$PROJECT_DIR$/src/SinglePlayerController.kt" />
+        <option value="$PROJECT_DIR$/src/Game.kt" />
+        <option value="$PROJECT_DIR$/src/DuelSaveController.kt" />
+        <option value="$PROJECT_DIR$/src/SinglePlayerSaveController.kt" />
+        <option value="$PROJECT_DIR$/src/HomeController.kt" />
         <option value="$PROJECT_DIR$/src/DuelController.kt" />
+        <option value="$PROJECT_DIR$/src/App.kt" />
       </list>
     </option>
   </component>
@@ -328,7 +334,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -357,8 +363,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -372,6 +378,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tomer\Documents\GitHub\Tetris-Reloaded\Tetris-Reloaded\images" />
       <recent name="C:\Users\Tomer\Documents\GitHub\Tetris-Reloaded\Tetris-Reloaded\src" />
     </key>
   </component>
@@ -675,20 +682,20 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34038055" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33932346" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35835096" sideWeight="0.50625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42494714" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17653278" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14270833" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962963" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -720,18 +727,18 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957717" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34108528" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34038055" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="0" y="0" width="866" height="856" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4253876" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42494714" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14270833" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962963" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
@@ -750,41 +757,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/App.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SinglePlayerController.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SinglePlayerController.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SinglePlayerController.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -807,13 +779,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HomeLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="800">
           <caret line="40" column="24" lean-forward="false" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.kt">
@@ -928,57 +900,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application.java" />
     <entry file="file://$PROJECT_DIR$/src/PlayScreenController.java" />
-    <entry file="file://$PROJECT_DIR$/src/HistoryController.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/javafx-src.zip!/javafx/scene/Node.java" />
     <entry file="file://$PROJECT_DIR$/src/HistoryLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="10" column="45" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="45" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HomeLayout.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="236" lean-forward="false" selection-start-line="8" selection-start-column="236" selection-end-line="8" selection-end-column="236" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DuelController.fxml" />
     <entry file="file://$PROJECT_DIR$/src/Events.kt" />
-    <entry file="file://$PROJECT_DIR$/src/GameSquare.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="39" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BoolGrid.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="105" column="45" lean-forward="false" selection-start-line="105" selection-start-column="45" selection-end-line="105" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GamePiece.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SaveController.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -986,78 +920,161 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BoolGridGenerator.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="19" />
-          <folding>
-            <marker date="1497855308885" expanded="false" signature="232:2478" ph="{...}" />
-            <marker date="1497855308885" expanded="false" signature="269:388" ph="{...}" />
-            <marker date="1497855308885" expanded="false" signature="312:356" ph="{...}" />
-            <marker date="1497855308885" expanded="false" signature="450:530" ph="{...}" />
-            <marker date="1497855308885" expanded="false" signature="585:2197" ph="{...}" />
-            <marker date="1497855308885" expanded="false" signature="639:1230" ph="{...}" />
-            <marker date="1497855308885" expanded="false" signature="722:1190" ph="{...}" />
-            <marker date="1497855308885" expanded="false" signature="1456:2191" ph="{...}" />
-            <marker date="1497855308885" expanded="false" signature="1491:1638" ph="{...}" />
-            <marker date="1497855308885" expanded="false" signature="1672:1819" ph="{...}" />
-            <marker date="1497855308885" expanded="false" signature="1853:2000" ph="{...}" />
-            <marker date="1497855308885" expanded="false" signature="2034:2181" ph="{...}" />
-            <marker date="1497855308885" expanded="false" signature="2540:2662" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SinglePlayerLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="986">
           <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DuelLayout.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
-          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
     </entry>
     <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-runtime-sources.jar!/kotlin/Any.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
           <caret line="42" column="20" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="2435" column="0" lean-forward="true" selection-start-line="2435" selection-start-column="0" selection-end-line="2435" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HomeLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="118" column="31" lean-forward="true" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HistoryController.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DuelLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="51" column="37" lean-forward="false" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BoolGrid.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="106" column="19" lean-forward="false" selection-start-line="106" selection-start-column="19" selection-end-line="106" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SinglePlayerSaveLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="44" lean-forward="false" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DuelSaveLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BoolGridGenerator.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="854">
+          <caret line="75" column="56" lean-forward="false" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
           <folding>
-            <marker date="1497441721395" expanded="false" signature="0:600" ph="/ Copyright 2010-2015 JetBrains s.r.o. .../" />
-            <marker date="1497441721395" expanded="true" signature="618:714" ph="/** The root of the Kotlin class hierarchy. Every Kotlin class has [Any] as a superclass. ...*/" />
-            <marker date="1497441721395" expanded="true" signature="737:2362" ph="{...}" />
-            <marker date="1497441721395" expanded="true" signature="743:1671" ph="/** Indicates whether some other object is &quot;equal to&quot; this one. Implementations must fulfil the following ...*/" />
-            <marker date="1497441721395" expanded="true" signature="1735:2214" ph="/** Returns a hash code value for the object.  The general contract of hashCode is: ...*/" />
-            <marker date="1497441721395" expanded="true" signature="2256:2321" ph="/** Returns a string representation of the object. ...*/" />
+            <element signature="n#!!block;n#lockAndAdd#0;n#!!block;n#generatePieceCombinationsToList#0" expanded="false" />
+            <element signature="e#258#302#2" expanded="false" />
+            <element signature="e#396#476#1" expanded="false" />
+            <element signature="e#1361#2096#1" expanded="false" />
+            <element signature="e#1396#1543#1" expanded="false" />
+            <element signature="e#1577#1724#1" expanded="false" />
+            <element signature="e#1758#1905#1" expanded="false" />
+            <element signature="e#1939#2086#1" expanded="false" />
+            <element signature="n#!!block;n#getAmountOfPossibleCombinations#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GamePiece.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="3" column="109" lean-forward="false" selection-start-line="3" selection-start-column="109" selection-end-line="3" selection-end-column="109" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/util/Random.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="110" column="14" lean-forward="false" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="14" />
+          <folding>
+            <element signature="e#3504#3505#0" expanded="false" />
+            <element signature="e#3562#3563#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SinglePlayerSaveController.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="41" column="9" lean-forward="false" selection-start-line="36" selection-start-column="7" selection-end-line="41" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DuelSaveController.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="734">
+          <caret line="69" column="39" lean-forward="false" selection-start-line="69" selection-start-column="39" selection-end-line="69" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#277#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SinglePlayerController.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="111" column="33" lean-forward="false" selection-start-line="110" selection-start-column="8" selection-end-line="111" selection-end-column="33" />
+        <state relative-caret-position="420">
+          <caret line="84" column="7" lean-forward="true" selection-start-line="84" selection-start-column="7" selection-end-line="86" selection-end-column="46" />
           <folding>
-            <element signature="e#1267#1791#0" expanded="false" />
+            <element signature="e#1275#1799#0" expanded="false" />
+            <element signature="n#!!block;n#initialize#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
             <element signature="n#!!block;n#btnStart_Action#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
             <element signature="n#!!block;n#btnRestart_Action#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
             <element signature="n#!!block;n#btnBack_Action#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-            <element signature="n#!!block;n#btnSave_Action#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
             <element signature="n#!!block;n#gameContainer_MouseClicked#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
             <element signature="n#!!block;n#game_End#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
             <element signature="n#!!block;n#game_Change#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#game_Ready#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
             <element signature="n#!!block;n#game_PieceChanged#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
             <element signature="n#!!block;n#game_RowsPopped#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
             <element signature="n#!!block;n#game_PieceGenerated#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
@@ -1068,150 +1085,183 @@
             <element signature="n#!!block;n#resizeCanvas#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
             <element signature="n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
             <element signature="n#!!block;n#startTimer#0;n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-            <element signature="e#4873#4947#2" expanded="false" />
+            <element signature="e#4955#5109#2" expanded="false" />
+            <element signature="e#4991#5095#2" expanded="false" />
             <element signature="n#!!block;n#stopTimer#0;n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-            <element signature="e#5236#5893#2" expanded="false" />
-            <element signature="e#5925#6027#2" expanded="false" />
+            <element signature="e#5398#6055#2" expanded="false" />
+            <element signature="e#6087#6189#2" expanded="false" />
             <element signature="n#!!block;n#updateNextPieceCanvas#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-            <element signature="e#6526#6706#1" expanded="false" />
-            <element signature="n#!!block;n#updateGameCanvas#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
-            <element signature="e#7020#7210#1" expanded="false" />
-            <element signature="n#!!block;n#drawSquare#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="e#6688#6868#1" expanded="false" />
             <element signature="n#!!block;n#drawCanvasBorder#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="n#!!block;n#setupEvents#0;n#!!block;n#SinglePlayerController#0" expanded="false" />
+            <element signature="e#8349#8487#2" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HomeController.kt">
+    <entry file="file://$PROJECT_DIR$/src/GameSquare.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="5" column="43" lean-forward="false" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="2435" column="0" lean-forward="true" selection-start-line="2435" selection-start-column="0" selection-end-line="2435" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1000">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DuelController.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="351" column="13" lean-forward="false" selection-start-line="351" selection-start-column="13" selection-end-line="351" selection-end-column="13" />
-          <folding>
-            <element signature="n#!!block;n#initialize#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#setupScene#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#btnStart_Action#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#btnRestart_Action#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#btnBack_Action#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#btnSave_Action#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#gameContainerLeft_MouseClicked#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#gameContainerRight_MouseClicked#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#gameLeft_Change#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#gameRight_Change#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#gameLeft_End#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="e#4370#4462#1" expanded="false" />
-            <element signature="n#!!block;n#gameRight_End#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="e#4575#4667#1" expanded="false" />
-            <element signature="n#!!block;n#gameLeft_RowsPopped#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#gameRight_RowsPopped#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#gameLeft_PieceChanged#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#gameRight_PieceChanged#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#startGames#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#resumeGames#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#pauseGames#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#setupEvents#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#removeFocusFromButtons#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#resizeGameCanvases#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#updateNextPieceCanvas#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="e#8574#8753#1" expanded="false" />
-            <element signature="n#!!block;n#resizeCanvas#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#updateGameCanvas#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="e#9420#9601#1" expanded="false" />
-            <element signature="n#!!block;n#drawSquare#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#drawCanvasBorder#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#startTimerLeft#0;n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#DuelController#0" expanded="false" />
-            <element signature="n#!!block;n#stopTimerLeft#0;n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#DuelController#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+        <state relative-caret-position="1306">
+          <caret line="440" column="37" lean-forward="false" selection-start-line="440" selection-start-column="37" selection-end-line="440" selection-end-column="37" />
           <folding>
-            <element signature="e#1368#1557#0" expanded="false" />
-            <element signature="e#1400#1534#1" expanded="false" />
-            <element signature="e#1746#1787#0" expanded="false" />
-            <element signature="e#1794#1837#0" expanded="false" />
-            <element signature="e#1885#1931#0" expanded="false" />
-            <element signature="e#1938#1990#0" expanded="false" />
-            <element signature="e#2282#2370#1" expanded="false" />
-            <element signature="e#2422#2603#2" expanded="false" />
+            <element signature="e#1596#1637#0" expanded="false" />
+            <element signature="e#1644#1687#0" expanded="false" />
+            <element signature="e#1735#1781#0" expanded="false" />
+            <element signature="e#1788#1840#0" expanded="false" />
+            <element signature="n#!!block;n#load#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="e#1880#2203#2" expanded="false" />
+            <element signature="e#2083#2171#1" expanded="false" />
+            <element signature="e#2223#2311#2" expanded="false" />
             <element signature="n#!!block;n#get#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#set#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="n#!!block;n#resetRNG#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#getSquaresLocations#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isGameReady#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#3167#3227#2" expanded="false" />
+            <element signature="e#3012#3072#2" expanded="false" />
             <element signature="n#!!block;n#dropPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#3319#3546#2" expanded="false" />
+            <element signature="e#3164#3391#2" expanded="false" />
             <element signature="n#!!block;n#movePieceRight#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#3670#3898#2" expanded="false" />
+            <element signature="e#3515#3743#2" expanded="false" />
             <element signature="n#!!block;n#movePieceLeft#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#4018#4246#2" expanded="false" />
-            <element signature="e#4366#4591#2" expanded="false" />
-            <element signature="e#4803#4846#1" expanded="false" />
+            <element signature="e#3863#4091#2" expanded="false" />
+            <element signature="n#!!block;n#movePieceDown#0;n#!!block;n#Game#0" expanded="false" />
+            <element signature="e#4211#4436#2" expanded="false" />
+            <element signature="e#4648#4691#1" expanded="false" />
             <element signature="n#!!block;n#rotatePiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#4962#5194#2" expanded="false" />
+            <element signature="e#4807#5039#2" expanded="false" />
             <element signature="n#!!block;n#startIfReady#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#end#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#pause#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#resume#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#restart#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#toString#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="e#6166#6341#1" expanded="false" />
             <element signature="e#6205#6308#1" expanded="false" />
-            <element signature="n#!!block;n#updateHistory#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="n#!!block;n#resetProperties#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#getRandomPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#7058#7503#2" expanded="false" />
+            <element signature="e#7085#7530#2" expanded="false" />
             <element signature="n#!!block;n#setUpNewPiece#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#7662#7775#1" expanded="false" />
+            <element signature="e#7689#7802#1" expanded="false" />
+            <element signature="n#!!block;n#startTimer#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#stopTimer#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#GameTask#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#run#0;n#!!block;n#GameTask#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#8134#8826#2" expanded="false" />
-            <element signature="e#8167#8812#1" expanded="false" />
-            <element signature="e#8327#8453#1" expanded="false" />
-            <element signature="e#8459#8680#1" expanded="false" />
-            <element signature="e#8591#8658#2" expanded="false" />
+            <element signature="e#8161#8853#2" expanded="false" />
+            <element signature="e#8194#8839#1" expanded="false" />
+            <element signature="e#8354#8480#1" expanded="false" />
+            <element signature="e#8486#8707#1" expanded="false" />
+            <element signature="e#8618#8685#2" expanded="false" />
             <element signature="n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isRowFull#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#popTopRow#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#popRow#0;n#!!block;n#popFullRows#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#9439#9600#2" expanded="false" />
-            <element signature="e#9513#9590#1" expanded="false" />
-            <element signature="e#9624#9705#1" expanded="false" />
+            <element signature="e#9466#9627#2" expanded="false" />
+            <element signature="e#9540#9617#1" expanded="false" />
+            <element signature="e#9651#9732#1" expanded="false" />
             <element signature="n#!!block;n#addPieceToGrid#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#removePieceFromGrid#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#hitBottom#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#isPieceLocationLegal#0;n#!!block;n#Game#0" expanded="false" />
-            <element signature="e#10306#10567#1" expanded="false" />
+            <element signature="e#10333#10594#1" expanded="false" />
             <element signature="n#!!block;n#waitUntilReady#0;n#!!block;n#Game#0" expanded="false" />
             <element signature="n#!!block;n#screenChanged#0;n#!!block;n#Game#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HomeController.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="67" column="5" lean-forward="false" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+          <folding>
+            <element signature="e#1112#1197#2" expanded="false" />
+            <element signature="e#1247#1333#2" expanded="false" />
+            <element signature="e#1391#1485#2" expanded="false" />
+            <element signature="n#!!block;n#btnReset_Action#0;n#!!block;n#HomeController#0" expanded="false" />
+            <element signature="n#!!block;n#btnSinglePlayer_Action#0;n#!!block;n#HomeController#0" expanded="false" />
+            <element signature="n#!!block;n#btnDuel_Action#0;n#!!block;n#HomeController#0" expanded="false" />
+            <element signature="n#!!block;n#btnHistory_Action#0;n#!!block;n#HomeController#0" expanded="false" />
+            <element signature="n#!!block;n#getSliderValues#0;n#!!block;n#HomeController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DuelController.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="118" column="8" lean-forward="false" selection-start-line="118" selection-start-column="7" selection-end-line="118" selection-end-column="8" />
+          <caret line="119" column="8" lean-forward="false" selection-start-line="119" selection-start-column="7" selection-end-line="119" selection-end-column="8" />
+          <caret line="120" column="8" lean-forward="false" selection-start-line="120" selection-start-column="7" selection-end-line="120" selection-end-column="8" />
+          <folding>
+            <element signature="e#1608#2742#0" expanded="false" />
+            <element signature="n#!!block;n#initialize#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#btnStart_Action#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#btnRestart_Action#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#btnBack_Action#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#gameContainerLeft_MouseClicked#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#gameContainerRight_MouseClicked#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#splitPaneDividerLeft_PositionChanged#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="e#4556#4830#1" expanded="false" />
+            <element signature="n#!!block;n#splitPaneDividerRight_PositionChanged#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="e#5031#5305#1" expanded="false" />
+            <element signature="e#5468#5606#2" expanded="false" />
+            <element signature="n#!!block;n#gameLeft_Change#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#gameRight_Change#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#gameLeft_End#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#gameRight_End#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#gameLeft_RowsPopped#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#gameRight_RowsPopped#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#gameLeft_PieceChanged#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#gameRight_PieceChanged#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#games_pieceGenerated#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="e#8256#8344#1" expanded="false" />
+            <element signature="n#!!block;n#startGames#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#resumeGames#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#pauseGames#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#endGames#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#resizeGameCanvases#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#updateNextPieceCanvas#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="e#10060#10239#1" expanded="false" />
+            <element signature="n#!!block;n#resizeCanvas#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#drawCanvasBorder#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#startTimerLeft#0;n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="e#12303#12465#2" expanded="false" />
+            <element signature="e#12339#12451#2" expanded="false" />
+            <element signature="n#!!block;n#startTimerRight#0;n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="e#12689#12853#2" expanded="false" />
+            <element signature="e#12725#12839#2" expanded="false" />
+            <element signature="n#!!block;n#stopTimerLeft#0;n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="n#!!block;n#stopTimerRight#0;n#!!block;n#setupKeyPressedEvents#0;n#!!block;n#DuelController#0" expanded="false" />
+            <element signature="e#13325#14333#2" expanded="false" />
+            <element signature="e#14365#14518#2" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="84" column="24" lean-forward="false" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
+          <folding>
+            <element signature="n#!!block;n#main#0" expanded="false" />
+            <element signature="n#!!block;n#start#0;n#!!block;n#App#0" expanded="false" />
+            <element signature="n#!!block;n#launchHomeScreen#0;n#!!block;n#Companion#0;n#!!block;n#App#0" expanded="false" />
+            <element signature="n#!!block;n#launchSinglePlayerScreen#0;n#!!block;n#Companion#0;n#!!block;n#App#0" expanded="false" />
+            <element signature="n#!!block;n#launchDuelScreen#0;n#!!block;n#Companion#0;n#!!block;n#App#0" expanded="false" />
+            <element signature="n#!!block;n#launchHistoryScreen#0;n#!!block;n#Companion#0;n#!!block;n#App#0" expanded="false" />
+            <element signature="n#!!block;n#generateRandomId#0" expanded="false" />
+            <element signature="e#3250#3330#2" expanded="false" />
+            <element signature="n#!!block;n#SerializableColor#0" expanded="false" />
+            <element signature="n#!!block;n#toJavaFxColor#0;n#!!block;n#SerializableColor#0" expanded="false" />
+            <element signature="n#!!block;n#toSerializableColor#0" expanded="false" />
+            <marker date="1498166200546" expanded="false" signature="7:207" ph="..." />
           </folding>
         </state>
       </provider>

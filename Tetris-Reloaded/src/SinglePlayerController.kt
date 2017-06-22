@@ -12,6 +12,8 @@ import javafx.scene.input.MouseEvent
 import javafx.scene.layout.HBox
 import javafx.scene.layout.Pane
 import javafx.scene.paint.Color
+import javafx.stage.Stage
+import java.awt.Paint
 import java.net.URL
 import java.util.*
 import kotlin.concurrent.timerTask
@@ -30,7 +32,6 @@ class SinglePlayerController(val width: Int, val height: Int, val squaresInPiece
     @FXML var btnRestart = Button()
     @FXML var btnSave = Button()
     @FXML var btnBack = Button()
-    val stage = checkNotNull(mainStage)
     val gameSizeRatio = width.toDouble() / height.toDouble()
     val possibleCombinations =  getAmountOfPossibleCombinations(squaresInPiece)
     init {
@@ -50,20 +51,15 @@ class SinglePlayerController(val width: Int, val height: Int, val squaresInPiece
     }
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
+
         game.load()
-        removeFocusFromButtons()
         setupEvents()
         lblPossibleCombinations.text = possibleCombinations.toString()
         resizeGameCanvas()
-
-    }
-
-    fun setupScene(scene: Scene){
-        setupKeyPressedEvents(scene)
     }
 
 
-    fun btnStart_Action(event: ActionEvent) {
+    private fun btnStart_Action(event: ActionEvent) {
         when {
             game.isPlaying -> pauseGame()
             game.isPaused -> resumeGame()
@@ -71,7 +67,7 @@ class SinglePlayerController(val width: Int, val height: Int, val squaresInPiece
         }
     }
 
-    fun btnRestart_Action(event: ActionEvent) {
+    private fun btnRestart_Action(event: ActionEvent) {
         btnStart.isVisible = true
         btnStart.text = "Pause"
         lblRowsPopped.text = "0"
@@ -79,17 +75,19 @@ class SinglePlayerController(val width: Int, val height: Int, val squaresInPiece
         game.restart()
     }
 
-    fun btnBack_Action(event: ActionEvent) {
+    private fun btnBack_Action(event: ActionEvent) {
         if (game.isPlaying)
             game.pause()
         App.launchHomeScreen()
     }
 
-    fun btnSave_Action(event: ActionEvent) {
-
+    private fun btnSave_Action(event: ActionEvent) {
+        if (game.isPlaying)
+            btnStart.fire()
+        App.launchSinglePlayerSaveScreen(game)
     }
 
-    fun gameContainer_MouseClicked(event: MouseEvent) {
+    private fun gameContainer_MouseClicked(event: MouseEvent) {
         if (game.isPlaying|| game.isPaused)
             btnStart.fire()
     }
@@ -168,12 +166,17 @@ class SinglePlayerController(val width: Int, val height: Int, val squaresInPiece
 
     private fun setupKeyPressedEvents(scene: Scene) {
 
+
+        val stage = scene.window as Stage
         var downPressedTimer = Timer()
         var timerRunning = false
         fun startTimer() {
             downPressedTimer = Timer()
             val downTimerTask = timerTask {
-                Platform.runLater { game.movePieceDown() }
+                Platform.runLater {
+                    if (game.isPlaying)
+                        game.movePieceDown()
+                }
             }
             downPressedTimer.scheduleAtFixedRate(downTimerTask, 0, 45)
             timerRunning = true
@@ -230,7 +233,7 @@ class SinglePlayerController(val width: Int, val height: Int, val squaresInPiece
         graphics.clearRect(0.0, 0.0, canvasGame.width, canvasGame.height)
         drawCanvasBorder(canvasGame)
         for ((x, y) in game.getSquaresLocations()) {
-            val color = game[x, y].color
+            val color = game[x, y].color.toJavaFxColor()
             val left = x * squareSize
             val top = y * squareSize
             drawSquare(graphics, color, squareSize, left, top)
@@ -262,6 +265,12 @@ class SinglePlayerController(val width: Int, val height: Int, val squaresInPiece
 
 
     private fun setupEvents() {
+        //when scene is initialized
+        gameContainer.sceneProperty().addListener { _, oldValue, newValue ->
+            if (oldValue == null && newValue != null)
+                setupKeyPressedEvents(newValue)
+        }
+
         btnStart.setOnAction(this::btnStart_Action)
         btnRestart.setOnAction(this::btnRestart_Action)
         btnBack.setOnAction(this::btnBack_Action)
@@ -272,12 +281,6 @@ class SinglePlayerController(val width: Int, val height: Int, val squaresInPiece
 
     }
 
-    private fun removeFocusFromButtons() {
-        btnStart.isFocusTraversable = false
-        btnRestart.isFocusTraversable = false
-        btnSave.isFocusTraversable = false
-        btnBack.isFocusTraversable = false
-    }
 
 
 }

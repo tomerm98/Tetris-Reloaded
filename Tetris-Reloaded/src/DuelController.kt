@@ -1,4 +1,5 @@
 import javafx.application.Platform
+import javafx.beans.value.ObservableValue
 import javafx.event.ActionEvent
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
@@ -7,11 +8,13 @@ import javafx.scene.canvas.Canvas
 import javafx.scene.canvas.GraphicsContext
 import javafx.scene.control.Button
 import javafx.scene.control.Label
+import javafx.scene.control.SplitPane
 import javafx.scene.input.KeyCode
 import javafx.scene.input.MouseEvent
 import javafx.scene.layout.HBox
 import javafx.scene.layout.Pane
 import javafx.scene.paint.Color
+import javafx.stage.Stage
 import java.net.URL
 import java.util.*
 import kotlin.concurrent.timerTask
@@ -35,9 +38,12 @@ class DuelController(val width: Int, val height: Int, val squaresInPiece: Int) :
     @FXML var btnRestart = Button()
     @FXML var btnSave = Button()
     @FXML var btnBack = Button()
-    val stage = checkNotNull(mainStage)
+    @FXML var splitPane = SplitPane()
+
     val gameSizeRatio = width.toDouble() / height.toDouble()
     val possibleCombinations =  getAmountOfPossibleCombinations(squaresInPiece)
+
+    var dividerChangedByUser = true
     init {
         val randomSeed = System.currentTimeMillis()
         gameLeft = Game(
@@ -71,18 +77,13 @@ class DuelController(val width: Int, val height: Int, val squaresInPiece: Int) :
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         gameLeft.load()
         gameRight.load()
-        removeFocusFromButtons()
         setupEvents()
         lblPossibleCombinations.text = possibleCombinations.toString()
         resizeGameCanvases()
     }
 
-    fun setupScene(scene: Scene) {
-        setupKeyPressedEvents(scene)
-    }
 
-
-    fun btnStart_Action(event: ActionEvent) {
+    private fun btnStart_Action(event: ActionEvent) {
         when {
             gameLeft.isPlaying || gameRight.isPlaying -> pauseGames()
             gameLeft.isPaused || gameRight.isPaused -> resumeGames()
@@ -90,18 +91,21 @@ class DuelController(val width: Int, val height: Int, val squaresInPiece: Int) :
         }
     }
 
-    fun btnRestart_Action(event: ActionEvent) {
+    private fun btnRestart_Action(event: ActionEvent) {
 
         btnStart.isVisible = true
         btnStart.text = "Pause"
         lblRowsPoppedLeft.text = "0"
         lblRowsPoppedRight.text = "0"
         lblMessage.text = ""
+        val randomSeed = System.currentTimeMillis()
+        gameLeft.resetRNG(randomSeed)
+        gameRight.resetRNG(randomSeed)
         gameLeft.restart()
         gameRight.restart()
     }
 
-    fun btnBack_Action(event: ActionEvent) {
+    private fun btnBack_Action(event: ActionEvent) {
         if (gameLeft.isPlaying)
             gameLeft.pause()
 
@@ -111,20 +115,65 @@ class DuelController(val width: Int, val height: Int, val squaresInPiece: Int) :
         App.launchHomeScreen()
     }
 
-    fun btnSave_Action(event: ActionEvent) {
-
+    private fun btnSave_Action(event: ActionEvent) {
+        if (gameLeft.isPlaying || gameRight.isPlaying)
+            btnStart.fire()
+        App.launchDuelSaveScreen(gameLeft,gameRight)
     }
 
-    fun gameContainerLeft_MouseClicked(event: MouseEvent) {
+    private fun gameContainerLeft_MouseClicked(event: MouseEvent) {
         if (gameLeft.isPaused||gameLeft.isPlaying)
             btnStart.fire()
     }
 
-    fun gameContainerRight_MouseClicked(event: MouseEvent) {
+    private fun gameContainerRight_MouseClicked(event: MouseEvent) {
         if (gameRight.isPaused||gameRight.isPlaying)
             btnStart.fire()
     }
 
+    private fun splitPaneDividerLeft_PositionChanged(obs: ObservableValue<out Number>, oldValue: Number, newValue: Number) {
+        if (dividerChangedByUser) {
+            dividerChangedByUser = false
+            val otherDividerPositionProperty = splitPane.dividers.component2().positionProperty()
+            val change = newValue.toDouble() - oldValue.toDouble()
+            otherDividerPositionProperty.value -= change
+        } else dividerChangedByUser = true
+    }
+
+    private fun splitPaneDividerRight_PositionChanged(obs: ObservableValue<out Number>, oldValue: Number, newValue: Number) {
+        if (dividerChangedByUser) {
+            dividerChangedByUser = false
+            val otherDividerPositionProperty = splitPane.dividers.component1().positionProperty()
+            val change = newValue.toDouble() - oldValue.toDouble()
+            otherDividerPositionProperty.value -= change
+        } else dividerChangedByUser = true
+    }
+
+    private fun setupEvents() {
+        //when scene is initialized
+        gameContainerLeft.sceneProperty().addListener { _, oldValue, newValue ->
+            if (oldValue == null && newValue != null)
+                setupKeyPressedEvents(newValue)
+        }
+        btnStart.setOnAction(this::btnStart_Action)
+        btnRestart.setOnAction(this::btnRestart_Action)
+        btnBack.setOnAction(this::btnBack_Action)
+        btnSave.setOnAction(this::btnSave_Action)
+
+        gameContainerLeft.setOnMouseClicked(this::gameContainerLeft_MouseClicked)
+        gameContainerLeft.heightProperty().addListener { _, _, _ -> resizeGameCanvases() }
+        gameContainerLeft.widthProperty().addListener { _, _, _ -> resizeGameCanvases() }
+
+        gameContainerRight.setOnMouseClicked(this::gameContainerRight_MouseClicked)
+        gameContainerRight.heightProperty().addListener { _, _, _ -> resizeGameCanvases() }
+        gameContainerRight.widthProperty().addListener { _, _, _ -> resizeGameCanvases() }
+
+
+        splitPane.dividers.component1().positionProperty().addListener(this::splitPaneDividerLeft_PositionChanged)
+        splitPane.dividers.component2().positionProperty().addListener(this::splitPaneDividerRight_PositionChanged)
+
+
+    }
     private fun gameLeft_Change(game: Game) {
         updateGameCanvas(canvasGameLeft,gameLeft)
     }
@@ -133,18 +182,12 @@ class DuelController(val width: Int, val height: Int, val squaresInPiece: Int) :
     }
 
     private fun gameLeft_End(game: Game) {
-        if (!gameRight.isPaused && !gameRight.isPaused)
-        {
-            lblMessage.text = "Game Over"
-            btnStart.isVisible = false
-        }
+        if (!gameRight.isPaused && !gameRight.isPlaying)
+            endGames()
     }
     private fun gameRight_End(game: Game) {
-        if (!gameLeft.isPaused && !gameLeft.isPaused)
-        {
-            lblMessage.text = "Game Over"
-            btnStart.isVisible = false
-        }
+        if (!gameLeft.isPaused && !gameLeft.isPlaying)
+            endGames()
     }
 
     private fun gameLeft_RowsPopped(game: Game,rowsPopped: Int) {
@@ -207,31 +250,17 @@ class DuelController(val width: Int, val height: Int, val squaresInPiece: Int) :
         btnStart.text = "Resume"
     }
 
-    private fun setupEvents() {
-        btnStart.setOnAction(this::btnStart_Action)
-        btnRestart.setOnAction(this::btnRestart_Action)
-        btnBack.setOnAction(this::btnBack_Action)
-        btnSave.setOnAction(this::btnSave_Action)
-
-        gameContainerLeft.setOnMouseClicked(this::gameContainerLeft_MouseClicked)
-        gameContainerLeft.heightProperty().addListener { _, _, _ -> resizeGameCanvases() }
-        gameContainerLeft.widthProperty().addListener { _, _, _ -> resizeGameCanvases() }
-
-        gameContainerRight.setOnMouseClicked(this::gameContainerRight_MouseClicked)
-        gameContainerRight.heightProperty().addListener { _, _, _ -> resizeGameCanvases() }
-        gameContainerRight.widthProperty().addListener { _, _, _ -> resizeGameCanvases() }
-
+    private fun endGames() {
+        lblMessage.text = "Game Over"
+        btnStart.isVisible = false
     }
 
-    private fun removeFocusFromButtons() {
-        btnStart.isFocusTraversable = false
-        btnRestart.isFocusTraversable = false
-        btnSave.isFocusTraversable = false
-        btnBack.isFocusTraversable = false
-    }
+
+
 
 
     private fun resizeGameCanvases() {
+
         resizeCanvas(canvasGameLeft, gameContainerLeft, gameSizeRatio)
         resizeCanvas(canvasGameRight, gameContainerRight, gameSizeRatio)
         updateGameCanvas(canvasGameLeft, gameLeft)
@@ -269,7 +298,7 @@ class DuelController(val width: Int, val height: Int, val squaresInPiece: Int) :
         graphics.clearRect(0.0, 0.0, canvas.width, canvas.height)
         drawCanvasBorder(canvas)
         for ((x,y) in game.getSquaresLocations()) {
-            val color = game[x,y].color
+            val color = game[x,y].color.toJavaFxColor()
             val left = x*squareSize
             val top = y*squareSize
             drawSquare(graphics,color,squareSize,left,top)
@@ -302,7 +331,7 @@ class DuelController(val width: Int, val height: Int, val squaresInPiece: Int) :
 
 
     private fun setupKeyPressedEvents(scene: Scene) {
-
+        val stage = scene.window as Stage
         var downPressedTimerLeft = Timer()
         var downPressedTimerRight = Timer()
         var timerLeftRunning = false
@@ -310,15 +339,28 @@ class DuelController(val width: Int, val height: Int, val squaresInPiece: Int) :
 
         fun startTimerLeft() {
             downPressedTimerLeft = Timer()
-            val task = timerTask { Platform.runLater { gameLeft.movePieceDown() } }
+            val task = timerTask {
+                Platform.runLater {
+                    if (gameLeft.isPlaying)
+                        gameLeft.movePieceDown()
+                }
+            }
+
             downPressedTimerLeft.scheduleAtFixedRate(task, 0, 45)
             timerLeftRunning = true
         }
 
         fun startTimerRight() {
             downPressedTimerRight = Timer()
-            val downTimerTask = timerTask { Platform.runLater { gameRight.movePieceDown() } }
-            downPressedTimerRight.scheduleAtFixedRate(downTimerTask, 0, 45)
+            val task = timerTask {
+                Platform.runLater {
+                    if (gameRight.isPlaying)
+                        gameRight.movePieceDown()
+                }
+            }
+
+            downPressedTimerRight.scheduleAtFixedRate(task, 0, 45)
+            timerRightRunning = true
         }
 
         fun stopTimerLeft() {
@@ -333,20 +375,18 @@ class DuelController(val width: Int, val height: Int, val squaresInPiece: Int) :
             timerRightRunning = false
         }
         scene.setOnKeyPressed { e ->
-            val gameLeftPlaying = gameLeft.isPlaying
-            val gameRightPlaying = gameLeft.isPlaying
 
             when (e.code) {
-                KeyCode.UP -> if (gameRightPlaying) gameRight.rotatePiece()
-                KeyCode.LEFT -> if (gameRightPlaying) gameRight.movePieceLeft()
-                KeyCode.RIGHT -> if (gameRightPlaying) gameRight.movePieceRight()
-                KeyCode.SPACE -> if (gameRightPlaying) gameRight.dropPiece()
-                KeyCode.DOWN -> if (gameRightPlaying && !timerRightRunning) startTimerRight()
-                KeyCode.W -> if (gameLeftPlaying) gameLeft.rotatePiece()
-                KeyCode.A -> if (gameLeftPlaying) gameLeft.movePieceLeft()
-                KeyCode.D -> if (gameLeftPlaying) gameLeft.movePieceRight()
-                KeyCode.SHIFT -> if (gameLeftPlaying) gameLeft.dropPiece()
-                KeyCode.S -> if (gameLeftPlaying && !timerLeftRunning) startTimerLeft()
+                KeyCode.UP -> if (gameRight.isPlaying) gameRight.rotatePiece()
+                KeyCode.LEFT -> if (gameRight.isPlaying) gameRight.movePieceLeft()
+                KeyCode.RIGHT -> if (gameRight.isPlaying) gameRight.movePieceRight()
+                KeyCode.SPACE -> if (gameRight.isPlaying) gameRight.dropPiece()
+                KeyCode.DOWN -> if (gameRight.isPlaying && !timerRightRunning) startTimerRight()
+                KeyCode.W -> if (gameLeft.isPlaying) gameLeft.rotatePiece()
+                KeyCode.A -> if (gameLeft.isPlaying) gameLeft.movePieceLeft()
+                KeyCode.D -> if (gameLeft.isPlaying) gameLeft.movePieceRight()
+                KeyCode.SHIFT -> if (gameLeft.isPlaying) gameLeft.dropPiece()
+                KeyCode.S -> if (gameLeft.isPlaying && !timerLeftRunning) startTimerLeft()
                 KeyCode.F11 -> stage.isFullScreen = !stage.isFullScreen
                 KeyCode.ENTER -> btnStart.fire()
             }

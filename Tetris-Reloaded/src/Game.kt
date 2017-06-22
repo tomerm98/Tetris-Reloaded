@@ -1,4 +1,5 @@
 import javafx.scene.paint.Color
+import java.io.Serializable
 import java.util.*
 import java.util.concurrent.atomic.AtomicBoolean
 import kotlin.concurrent.thread
@@ -16,7 +17,7 @@ class Game(
         val onPieceGenerated: (Game) -> Unit = {},
         val functionThatRunsCodeInUiThread: (Runnable) -> Unit,
         var delayMillis: Long = GAME_DELAY_MILLIS_INITIAL,
-        val randomSeed: Long = System.currentTimeMillis()
+        var randomSeed: Long = System.currentTimeMillis()
 ) {
     private var gameTask = GameTask(this)
     private var totalSuspendedTime: Long = 0
@@ -26,19 +27,12 @@ class Game(
     private var currentPiece =GamePiece(BoolGrid(1,1))
     private val atomicIsPlaying: AtomicBoolean = AtomicBoolean(false)
     private val atomicIsPaused: AtomicBoolean = AtomicBoolean(false)
-    private val rng= Random(randomSeed)
+    private var rng = Random(randomSeed)
     private var timer = Timer()
     private val squareGrid= createSynchronizedSquareGrid(width, height)
 
     val history = mutableListOf<GameTimeStamp>()
-    val timePlayed: Long; get() {
-        if (history.size > 0) {
-            return history.last().time -
-                    history.first().time -
-                    totalSuspendedTime
-        }
-        return 0
-    }
+    var timeStarted: Long = 0; private set
     var nextPiece= GamePiece(BoolGrid(1,1))
     var rowsPopped = 0; private set
     val piecesGenerated: Int get() = piecesCombinations.size
@@ -63,7 +57,6 @@ class Game(
                 generatePieceCombinationsToList(
                         squaresInPiece = squaresInPiece,
                         sharedList = piecesCombinations,
-                        randomSeed = randomSeed,
                         onGridAdded = {
                             runUI { onPieceGenerated(this) }
                         }
@@ -71,8 +64,6 @@ class Game(
             }
             thread {
                 waitUntilReady()
-                currentPiece = getRandomPiece()
-                nextPiece = getRandomPiece()
                 runUI { onReady(this) }
             }
 
@@ -85,6 +76,11 @@ class Game(
     operator fun set(x: Int, y: Int, value: GameSquare) {
         squareGrid[x][y] = value
 
+    }
+
+    fun resetRNG(randomSeed: Long = this.randomSeed) {
+        this.randomSeed = randomSeed
+        rng = Random(this.randomSeed)
     }
 
     fun getSquaresLocations(): List<Pair<Int, Int>> {
@@ -175,6 +171,10 @@ class Game(
         require(!isPlaying)
         if (!isGameReady()) return
         isPlaying = true
+        timeStarted = System.currentTimeMillis()
+        currentPiece = getRandomPiece()
+        nextPiece = getRandomPiece()
+        onPieceChanged(this)
         addPieceToGrid(currentPiece)
         screenChanged()
         startTimer()
@@ -185,7 +185,7 @@ class Game(
 
     private fun end() {
         stopTimer()
-        resetProperties()
+        isPlaying = false
         onEnd(this)
     }
 
@@ -228,14 +228,15 @@ class Game(
     }
 
     private fun updateHistory() {
-        val time = System.currentTimeMillis() - totalSuspendedTime
-        history += GameTimeStamp(squareGrid, nextPiece, time, rowsPopped)
+        val time = System.currentTimeMillis() - totalSuspendedTime - timeStarted
+        history += GameTimeStamp(squareGrid, time, rowsPopped)
     }
 
     private fun resetProperties() {
         isPaused = false
         isPlaying = false
         totalSuspendedTime = 0
+        timeStarted = 0
         delayMillis = initialDelayMillis
         currentPiece = getRandomPiece()
         nextPiece = getRandomPiece()
@@ -399,17 +400,56 @@ val GAME_DELAY_MILLIS_MIN: Long = 50
 val GAME_DELAY_MILLIS_DROP: Long = 5
 data class GameTimeStamp(
         val squareGrid: SquareGrid,
-        val nextPiece: GamePiece,
         val time: Long,
+        val rowsPopped: Int
+) : Serializable
+
+abstract class GameSave(
+        val date: Date,
+        val width: Int,
+        val height: Int,
+        val squaresInPiece: Int,
+        val id:String
+
+) : Serializable
+
+
+class SinglePlayerSave(
+        date: Date,
+        width: Int,
+        height: Int,
+        squaresInPiece: Int,
+        id: String,
+        val timeStamps: List<GameTimeStamp>,
+        val playerName: String,
         val totalRowsPopped: Int
-)
+
+) : GameSave(date, width, height, squaresInPiece,id), Serializable
+
+
+class DuelSave(
+        date: Date,
+        width: Int,
+        height: Int,
+        squaresInPiece: Int,
+        id: String,
+        val timeStampsLeft: List<GameTimeStamp>,
+        val timeStampsRight: List<GameTimeStamp>,
+        val playerNameLeft: String,
+        val playerNameRight: String,
+        val totalRowsPoppedLeft: Int,
+        val totalRowsPoppedRight: Int
+
+) : GameSave(date, width, height, squaresInPiece,id), Serializable
+
+
 
 private val COLOR_LIST = listOf(
         Color.ORANGE,
-        Color.web("#EF79FC"), //purple
         Color.web("#1C36FF"), //blue
+        Color.web("#EF79FC"), //purple
         Color.YELLOW,
         Color.web("#FF2323"), //red
-        Color.CHARTREUSE, //green
-        Color.AQUA //cyan
+        Color.AQUA, //cyan
+        Color.CHARTREUSE //green
 )

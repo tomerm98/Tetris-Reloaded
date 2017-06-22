@@ -1,6 +1,7 @@
 import javafx.scene.paint.Color
+import java.io.Serializable
 
-data class GamePiece(val grid: BoolGrid, var top: Int = 0, var left: Int = 0, val color: Color = Color.BLACK) {
+data class GamePiece(val grid: BoolGrid, var top: Int = 0, var left: Int = 0, val color: Color = Color.BLACK){
 
 
     val width: Int

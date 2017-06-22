@@ -4,8 +4,8 @@ import java.util.*
 fun generatePieceCombinationsToList(
         squaresInPiece: Int,
         sharedList: MutableList<BoolGrid>,
-        onGridAdded: (BoolGrid) -> Unit = {},
-        randomSeed: Long = System.currentTimeMillis()
+        onGridAdded: (BoolGrid) -> Unit = {}
+
 ) {
     fun lockAndAdd(grid: BoolGrid) {
         synchronized(sharedList)
@@ -44,8 +44,7 @@ fun generatePieceCombinationsToList(
         }
         grid.addBorderMargin(1)
         val truesLocations = grid.getTruesLocations()
-        if (squaresInPiece > 4)
-            Collections.shuffle(truesLocations, Random(randomSeed))
+            Collections.shuffle(truesLocations, Random(0))
         for ((x, y) in truesLocations) {
             if (!grid[x - 1, y]) {
                 val newGrid = grid.copy()
@@ -74,8 +73,7 @@ fun generatePieceCombinationsToList(
     generatePieceCombinationsToList(
             squaresInPiece = squaresInPiece - 1,
             sharedList = previousGrids,
-            onGridAdded = ::generateNewGridsFromPrevious,
-            randomSeed = randomSeed
+            onGridAdded = ::generateNewGridsFromPrevious
     )
 
 

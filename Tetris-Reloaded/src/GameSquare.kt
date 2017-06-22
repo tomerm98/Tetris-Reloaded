@@ -1,7 +1,9 @@
 import javafx.scene.paint.Color
+import java.io.Serializable
 import java.util.*
 
-data class GameSquare(var visible: Boolean = false, val color: Color = Color.BLACK) {
+ class GameSquare(var visible: Boolean = false, color: Color = Color.BLACK) : Serializable {
+    val color = color.toSerializableColor()
     fun toggle() {
         visible = !visible
     }

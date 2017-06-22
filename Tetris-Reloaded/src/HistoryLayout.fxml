@@ -1,9 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml"
-            xmlns="http://javafx.com/javafx"
-            fx:controller="HistoryController"
-            prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HistoryController">
+   <children>
+      <Region VBox.vgrow="ALWAYS" />
+      <Label text="History">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Region VBox.vgrow="ALWAYS" />
+      <HBox alignment="CENTER">
+         <children>
+            <Region HBox.hgrow="ALWAYS" />
+            <ToggleButton fx:id="tbSinglePlayer" focusTraversable="false" mnemonicParsing="false" onAction="#tbSinglePlayer_Action" prefWidth="136.0" selected="true" text="Single Player">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </ToggleButton>
+            <Region HBox.hgrow="ALWAYS" />
+            <ToggleButton fx:id="tbDuel" focusTraversable="false" mnemonicParsing="false" onAction="#tbDuel_Action" prefWidth="136.0" text="Duel">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </ToggleButton>
+            <Region HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <Region VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Region>
+      <TableView fx:id="tableView" focusTraversable="false">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Region VBox.vgrow="ALWAYS" />
+      <HBox alignment="CENTER">
+         <children>
+            <Region HBox.hgrow="ALWAYS" />
+            <VBox alignment="CENTER">
+               <children>
+                  <Button fx:id="btnBackup" focusTraversable="false" mnemonicParsing="false" onAction="#btnBackup_Action" prefWidth="136.0" text="Backup">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnImport" focusTraversable="false" mnemonicParsing="false" onAction="#btnImport_Action" prefWidth="136.0" text="Import">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="btnBack" focusTraversable="false" mnemonicParsing="false" onAction="#btnBack_Action" prefWidth="136.0" text="Back">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Region HBox.hgrow="ALWAYS" />
+            <VBox alignment="CENTER">
+               <children>
+                  <Button fx:id="btnPlay" focusTraversable="false" mnemonicParsing="false" onAction="#btnPlay_Action" prefWidth="136.0" text="Play">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnDelete" focusTraversable="false" mnemonicParsing="false" onAction="#btnDelete_Action" prefWidth="136.0" text="Delete">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <Region VBox.vgrow="ALWAYS" />
+   </children>
+</VBox>
