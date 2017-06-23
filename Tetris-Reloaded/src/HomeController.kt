@@ -11,7 +11,6 @@ import java.net.URL
 import java.util.*
 
 class HomeController : Initializable {
-    @FXML var layout = VBox()
     @FXML var btnSinglePLayer = Button()
     @FXML var btnDuel = Button()
     @FXML var btnHistory = Button()
@@ -33,29 +32,12 @@ class HomeController : Initializable {
         sldrWidth.valueProperty()?.addListener { _, _, newValue ->
             lblWidth.text = newValue.toInt().toString()
         }
-
         sldrHeight.valueProperty()?.addListener { _, _, newValue ->
             lblHeight.text = newValue.toInt().toString()
         }
-
         sldrSquaresInPiece.valueProperty()?.addListener { _, _, newValue ->
             lblSquaresInPiece.text = newValue.toInt().toString()
         }
-        btnReset.isFocusTraversable = false
-        btnSinglePLayer.isFocusTraversable = false
-        btnDuel.isFocusTraversable = false
-        btnHistory.isFocusTraversable = false
-
-        val file = File(GAME_DATA_FILE_NAME)
-        val ois = ObjectInputStream(FileInputStream(file))
-        val oldList = ois.readObject() as List<GameSave>
-        for (g in oldList)
-        when(g)
-        {
-            is SinglePlayerSave -> println(g.playerName)
-            is DuelSave -> println(g.playerNameLeft +" & " + g.playerNameRight)
-        }
-
 
 
 

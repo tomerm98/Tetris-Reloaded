@@ -12,7 +12,7 @@ import java.util.*
 /**
  * Created by Tomer on 22/06/2017.
  */
-class DuelSaveController(val gameLeft: Game, val gameRight: Game) : Initializable {
+class SaveDuelController(val gameLeft: Game, val gameRight: Game) : Initializable {
     @FXML var tfPlayerNameLeft = TextField()
     @FXML var tfPlayerNameRight = TextField()
     @FXML var lblRowsPoppedLeft = Label()
@@ -41,18 +41,9 @@ class DuelSaveController(val gameLeft: Game, val gameRight: Game) : Initializabl
 
     private fun saveGame() {
         val gameSave = generateGameSave()
-        var saveList = listOf<GameSave>(gameSave)
-
-        val file = File(GAME_DATA_FILE_NAME)
-        if (file.exists()) {
-            val ois = ObjectInputStream(FileInputStream(file))
-            val oldList = ois.readObject() as List<GameSave>
-            saveList += oldList
-        }
-
-        val oos = ObjectOutputStream(FileOutputStream(file, false))
-        oos.writeObject(saveList)
-        oos.close()
+        val oldSaveList = downloadSaveList(GAME_DATA_FILE_NAME)
+        val newSaveList = mergeSaveLists(oldSaveList, listOf(gameSave))
+        uploadSaveList(GAME_DATA_FILE_NAME,newSaveList)
     }
 
     private fun generateGameSave(): DuelSave {

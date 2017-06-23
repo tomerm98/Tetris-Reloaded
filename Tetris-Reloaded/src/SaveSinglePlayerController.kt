@@ -9,7 +9,7 @@ import java.io.*
 import java.net.URL
 import java.util.*
 
-class SinglePlayerSaveController(val game:Game):Initializable {
+class SaveSinglePlayerController(val game:Game):Initializable {
     @FXML var tfPlayerName = TextField()
     @FXML var btnSave = Button()
     @FXML var lblRowsPopped = Label()
@@ -32,18 +32,9 @@ class SinglePlayerSaveController(val game:Game):Initializable {
 
     private fun saveGame() {
         val gameSave = generateGameSave()
-        var saveList = listOf<GameSave>(gameSave)
-
-        val file = File(GAME_DATA_FILE_NAME)
-        if (file.exists()) {
-            val ois = ObjectInputStream(FileInputStream(file))
-            val oldList = ois.readObject() as List<GameSave>
-            saveList += oldList
-        }
-
-        val oos = ObjectOutputStream(FileOutputStream(file, false))
-        oos.writeObject(saveList)
-        oos.close()
+        val oldSaveList = downloadSaveList(GAME_DATA_FILE_NAME)
+        val newSaveList = mergeSaveLists(oldSaveList, listOf(gameSave))
+        uploadSaveList(GAME_DATA_FILE_NAME,newSaveList)
     }
 
     private fun generateGameSave(): SinglePlayerSave {

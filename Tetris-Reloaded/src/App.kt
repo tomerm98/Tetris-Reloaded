@@ -5,7 +5,7 @@ import javafx.scene.Scene
 import javafx.scene.paint.Color
 import javafx.stage.Modality
 import javafx.stage.Stage
-import java.io.Serializable
+import java.io.*
 import java.util.*
 
 fun main(args: Array<String>) {
@@ -13,7 +13,6 @@ fun main(args: Array<String>) {
     Application.launch(App::class.java, *args)
 
 }
-
 
 val GAME_DATA_FILE_NAME = "game_data"
 var mainStage_nullable: Stage? = null
@@ -38,8 +37,8 @@ class App : Application() {
         val SINGLE_PLAYER_LAYOUT_NAME = "SinglePlayerLayout.fxml"
         val DUEL_LAYOUT_NAME = "DuelLayout.fxml"
         val HISTORY_LAYOUT_NAME = "HistoryLayout.fxml"
-        val SINGLE_PLAYER_SAVE_LAYOUT_NAME = "SinglePlayerSaveLayout.fxml"
-        val DUEL_SAVE_LAYOUT_NAME = "DuelSaveLayout.fxml"
+        val SINGLE_PLAYER_SAVE_LAYOUT_NAME = "SaveSinglePlayerLayout.fxml"
+        val DUEL_SAVE_LAYOUT_NAME = "SaveDuelLayout.fxml"
 
         fun launchHomeScreen() {
             launchScreen(HOME_LAYOUT_NAME, mainStage)
@@ -57,18 +56,18 @@ class App : Application() {
         }
 
         fun launchHistoryScreen() {
-
+            launchScreen(HISTORY_LAYOUT_NAME, mainStage)
         }
 
         fun launchSinglePlayerSaveScreen(game: Game) {
-            val controller = SinglePlayerSaveController(game)
+            val controller = SaveSinglePlayerController(game)
             val stage = Stage()
             stage.title = ""
             launchPopup(SINGLE_PLAYER_SAVE_LAYOUT_NAME, stage, controller)
         }
 
         fun launchDuelSaveScreen(gameLeft: Game, gameRight:Game) {
-            val controller = DuelSaveController(gameLeft,gameRight)
+            val controller = SaveDuelController(gameLeft,gameRight)
             val stage = Stage()
             stage.title = ""
             launchPopup(DUEL_SAVE_LAYOUT_NAME, stage, controller)
@@ -118,3 +117,32 @@ class SerializableColor(val red: Double, val green: Double, val blue: Double, va
 fun Color.toSerializableColor(): SerializableColor {
     return SerializableColor(red, green, blue, opacity)
 }
+
+
+ fun downloadSaveList(fileName: String): List<GameSave> {
+    val file = File(fileName)
+    if (file.exists()) {
+        val ois = ObjectInputStream(FileInputStream(file))
+        val obj = ois.readObject()
+        if (obj is List<*> && !obj.isEmpty() && obj.first() is GameSave)
+            return  obj as List<GameSave>
+        ois.close()
+    }
+    return listOf()
+}
+
+ fun uploadSaveList(fileName: String,saveList:List<GameSave>) {
+    val file = File(fileName)
+    val oos = ObjectOutputStream(FileOutputStream(file,false))
+    oos.writeObject(saveList)
+    oos.close()
+}
+fun mergeSaveLists(list1: List<GameSave>, list2: List<GameSave>):List<GameSave>{
+    val tempList = list1.toMutableList()
+    list2.forEach{x ->
+        if (!tempList.any {y -> y.id == x.id  })
+            tempList.add(x)
+    }
+    return tempList.toList()
+}
+
