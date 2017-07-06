@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="layout" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HomeController">
+    <children>
+        <Region VBox.vgrow="ALWAYS" />
+        <Label text="Tetris: Reloaded" textAlignment="CENTER">
+            <font>
+                <Font size="36.0" />
+            </font>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </Label>
+        <Region VBox.vgrow="ALWAYS">
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </Region>
+        <Button fx:id="btnReset" focusTraversable="false" mnemonicParsing="false" onAction="#btnReset_Action" prefHeight="25.0" prefWidth="84.0" text="Reset">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <HBox alignment="CENTER">
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+            <children>
+                <Region HBox.hgrow="ALWAYS" />
+                <VBox alignment="CENTER">
+                    <children>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Label text="Width: ">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="lblWidth" text="10">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <Slider fx:id="sldrWidth" blockIncrement="1.0" focusTraversable="false" min="1.0" prefWidth="300.0" value="10.0">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Slider>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Button fx:id="btnWidthLeft" focusTraversable="false" mnemonicParsing="false" onAction="#btnWidthLeft_Action" prefHeight="33.0" prefWidth="33.0">
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <graphic>
+                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="/images/arrow_left.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="btnWidthRight" focusTraversable="false" mnemonicParsing="false" onAction="#btnWidthRight_Action" prefHeight="33.0" prefWidth="33.0">
+                                    <HBox.margin>
+                                        <Insets left="10.0" />
+                                    </HBox.margin>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <graphic>
+                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="/images/arrow_right.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <VBox alignment="CENTER">
+                    <children>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Label text="Height: ">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="lblHeight" text="18">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <Slider fx:id="sldrHeight" blockIncrement="1.0" focusTraversable="false" min="1.0" prefWidth="300.0" value="18.0">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Slider>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Button fx:id="btnHeightLeft" focusTraversable="false" mnemonicParsing="false" onAction="#btnHeightLeft_Action" prefHeight="33.0" prefWidth="33.0">
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <graphic>
+                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="/images/arrow_left.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="btnHeightRight" focusTraversable="false" mnemonicParsing="false" onAction="#btnHeightRight_Action" prefHeight="33.0" prefWidth="33.0">
+                                    <HBox.margin>
+                                        <Insets left="10.0" />
+                                    </HBox.margin>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <graphic>
+                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="/images/arrow_right.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <VBox alignment="CENTER">
+                    <children>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Label text="Squares in Piece: ">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="lblSquaresInPiece" text="4">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <Slider fx:id="sldrSquaresInPiece" blockIncrement="1.0" focusTraversable="false" max="30.0" min="1.0" prefWidth="300.0" value="4.0">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Slider>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Button fx:id="btnSquaresInPieceLeft" focusTraversable="false" mnemonicParsing="false" onAction="#btnSquaresInPieceLeft_Action" prefHeight="33.0" prefWidth="33.0">
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <graphic>
+                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="/images/arrow_left.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="btnSquaresInPieceRight" focusTraversable="false" mnemonicParsing="false" onAction="#btnSquaresInPieceRight_Action" prefHeight="33.0" prefWidth="33.0">
+                                    <HBox.margin>
+                                        <Insets left="10.0" />
+                                    </HBox.margin>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <graphic>
+                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="/images/arrow_right.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+            </children>
+        </HBox>
+        <Region VBox.vgrow="ALWAYS" />
+        <Button fx:id="btnSinglePLayer" focusTraversable="false" mnemonicParsing="false" onAction="#btnSinglePlayer_Action" prefWidth="136.0" text="Single Player">
+            <font>
+                <Font size="19.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Region VBox.vgrow="ALWAYS" />
+        <Button fx:id="btnDuel" focusTraversable="false" mnemonicParsing="false" onAction="#btnDuel_Action" prefWidth="136.0" text="Duel">
+            <font>
+                <Font size="19.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Region VBox.vgrow="ALWAYS" />
+        <Button fx:id="btnHistory" focusTraversable="false" mnemonicParsing="false" onAction="#btnHistory_Action" prefWidth="136.0" text="History" VBox.vgrow="ALWAYS">
+            <font>
+                <Font size="19.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Region VBox.vgrow="ALWAYS" />
+    </children>
+</VBox>

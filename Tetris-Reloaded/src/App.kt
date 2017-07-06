@@ -1,12 +1,31 @@
+
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
 import javafx.scene.Parent
 import javafx.scene.Scene
+import javafx.scene.control.Alert
+import javafx.scene.control.Alert.AlertType
+import javafx.scene.control.ButtonType
 import javafx.scene.paint.Color
 import javafx.stage.Modality
 import javafx.stage.Stage
 import java.io.*
 import java.util.*
+
+
+/*
+*  TODO: !-!-!- WATCH SCREENS -!-!-!
+*
+*  TODO: make arrow buttons on home screen be able to be long pressed
+*  TODO: make fadeout animation when row is popped
+*  TODO: make screens to be centered and of proper size ratios
+*  TODO: make new high score message
+*  TODO: add images to buttons
+*  TODO: make the squares be drawn with no excessive lines
+*  TODO: fix bug when launching save popup on fullscreen
+*/
+
+
 
 fun main(args: Array<String>) {
 
@@ -14,10 +33,20 @@ fun main(args: Array<String>) {
 
 }
 
-val GAME_DATA_FILE_NAME = "game_data"
+val GAME_DATA_FILE_PATH = "game_data"
+val APP_TITLE = "Tetris: Reloaded"
+val HOME_LAYOUT_PATH = "Layouts/HomeLayout.fxml"
+val SINGLE_PLAYER_LAYOUT_PATH = "Layouts/SinglePlayerLayout.fxml"
+val DUEL_LAYOUT_PATH = "Layouts/DuelLayout.fxml"
+val HISTORY_LAYOUT_PATH = "Layouts/HistoryLayout.fxml"
+val SAVE_SINGLE_PLAYER_LAYOUT_PATH = "Layouts/SaveSinglePlayerLayout.fxml"
+val SAVE_DUEL_LAYOUT_PATH = "Layouts/SaveDuelLayout.fxml"
+val WATCH_SINGLE_PLAYER_LAYOUT_PATH = "Layouts/WatchSinglePlayerLayout.fxml"
+val WATCH_DUEL_LAYOUT_PATH = "Layouts/WatchDuelLayout.fxml"
+
 var mainStage_nullable: Stage? = null
 var mainStage: Stage
-    get() = checkNotNull(mainStage_nullable);
+    get() = checkNotNull(mainStage_nullable)
     set(value) {
         mainStage_nullable = value
     }
@@ -26,51 +55,57 @@ class App : Application() {
 
     override fun start(primaryStage: Stage) {
         mainStage = primaryStage
-        mainStage.title = APP_TITLE
+        mainStage.apply {
+            title = APP_TITLE
+        }
 
         launchHomeScreen()
     }
 
     companion object {
-        val APP_TITLE = "Tetris: Reloaded"
-        val HOME_LAYOUT_NAME = "HomeLayout.fxml"
-        val SINGLE_PLAYER_LAYOUT_NAME = "SinglePlayerLayout.fxml"
-        val DUEL_LAYOUT_NAME = "DuelLayout.fxml"
-        val HISTORY_LAYOUT_NAME = "HistoryLayout.fxml"
-        val SINGLE_PLAYER_SAVE_LAYOUT_NAME = "SaveSinglePlayerLayout.fxml"
-        val DUEL_SAVE_LAYOUT_NAME = "SaveDuelLayout.fxml"
 
         fun launchHomeScreen() {
-            launchScreen(HOME_LAYOUT_NAME, mainStage)
+            launchScreen(HOME_LAYOUT_PATH, mainStage)
         }
 
         fun launchSinglePlayerScreen(width: Int, height: Int, squaresInPiece: Int) {
             val controller = SinglePlayerController(width,height,squaresInPiece)
-            launchScreen(SINGLE_PLAYER_LAYOUT_NAME, mainStage, controller)
+            launchScreen(SINGLE_PLAYER_LAYOUT_PATH, mainStage, controller)
         }
 
         fun launchDuelScreen(width: Int, height: Int, squaresInPiece: Int) {
             val controller = DuelController(width,height,squaresInPiece)
-            launchScreen(DUEL_LAYOUT_NAME, mainStage, controller)
+            launchScreen(DUEL_LAYOUT_PATH, mainStage, controller)
 
         }
 
         fun launchHistoryScreen() {
-            launchScreen(HISTORY_LAYOUT_NAME, mainStage)
+            launchScreen(HISTORY_LAYOUT_PATH, mainStage)
         }
 
-        fun launchSinglePlayerSaveScreen(game: Game) {
+        fun launchSaveSinglePlayerScreen(game: Game) {
             val controller = SaveSinglePlayerController(game)
             val stage = Stage()
             stage.title = ""
-            launchPopup(SINGLE_PLAYER_SAVE_LAYOUT_NAME, stage, controller)
+            launchPopup(SAVE_SINGLE_PLAYER_LAYOUT_PATH, stage, controller)
         }
 
-        fun launchDuelSaveScreen(gameLeft: Game, gameRight:Game) {
+        fun launchSaveDuelScreen(gameLeft: Game, gameRight:Game) {
             val controller = SaveDuelController(gameLeft,gameRight)
             val stage = Stage()
             stage.title = ""
-            launchPopup(DUEL_SAVE_LAYOUT_NAME, stage, controller)
+            launchPopup(SAVE_DUEL_LAYOUT_PATH, stage, controller)
+        }
+
+        fun launchWatchSinglePlayerScreen(gameSave: SinglePlayerSave)
+        {
+            val controller = WatchSinglePlayerController(gameSave)
+            launchScreen(WATCH_SINGLE_PLAYER_LAYOUT_PATH, mainStage, controller)
+        }
+        fun launchWatchDuelScreen(gameSave: DuelSave)
+        {
+            val controller = WatchDuelController(gameSave)
+            launchScreen(WATCH_DUEL_LAYOUT_PATH, mainStage, controller)
         }
 
 
@@ -78,18 +113,32 @@ class App : Application() {
             loadLayout(layoutFileName, stage, controller)
             stage.show()
         }
+
         private fun launchPopup(layoutFileName: String, stage: Stage, controller: Any? = null) {
             loadLayout(layoutFileName, stage, controller)
             stage.initModality(Modality.APPLICATION_MODAL)
             stage.show()
         }
-        private fun loadLayout(layoutFileName: String, stage: Stage, controller: Any? = null)
-        {
+
+        private fun loadLayout(layoutFileName: String, stage: Stage, controller: Any? = null) {
             val loader = FXMLLoader(javaClass.getResource(layoutFileName))
             loader.setController(controller)
             val layout: Parent = loader.load()
             val scene = Scene(layout)
             stage.scene = scene
+        }
+
+
+        fun launchConfirmationAlert(title: String? = null, header: String? = null, content: String? = null): Boolean {
+            val alert = Alert(AlertType.CONFIRMATION).apply {
+                this.title = title
+                headerText = header
+                contentText = content
+            }
+            when (alert.showAndWait().get()) {
+                ButtonType.OK -> return true
+                else -> return false
+            }
         }
 
 
@@ -143,6 +192,7 @@ fun mergeSaveLists(list1: List<GameSave>, list2: List<GameSave>):List<GameSave>{
         if (!tempList.any {y -> y.id == x.id  })
             tempList.add(x)
     }
+    Collections.sort(tempList)
     return tempList.toList()
 }
 

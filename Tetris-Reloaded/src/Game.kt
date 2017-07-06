@@ -4,7 +4,9 @@ import java.util.*
 import java.util.concurrent.atomic.AtomicBoolean
 import kotlin.concurrent.thread
 
-
+/**
+* @property runLater A function that will execute code in the UI Thread
+*/
 class Game(
         val width: Int,
         val height: Int,
@@ -15,7 +17,7 @@ class Game(
         val onPieceChanged: (Game) -> Unit = {},
         val onRowsPopped: (Game, rowsPopped: Int) -> Unit = { _,_-> },
         val onPieceGenerated: (Game) -> Unit = {},
-        val functionThatRunsCodeInUiThread: (Runnable) -> Unit,
+        val runLater: (Runnable) -> Unit,
         var delayMillis: Long = GAME_DELAY_MILLIS_INITIAL,
         var randomSeed: Long = System.currentTimeMillis()
 ) {
@@ -291,26 +293,24 @@ class Game(
         var running = true
         override fun run() {
             with(game) {
-
-                if ( running) {
-                    removePieceFromGrid(currentPiece)
-                    currentPiece.moveDown()
-                    if (isPieceLocationLegal(currentPiece)) {
-                        addPieceToGrid(currentPiece)
-                        runUI { screenChanged() }
-                    } else {
-                        currentPiece.moveUp()
-                        addPieceToGrid(currentPiece)
-
-                        runUI {
-                            hitBottom()
+                if (running) {
+                    synchronized(currentPiece) {
+                        removePieceFromGrid(currentPiece)
+                        currentPiece.moveDown()
+                        if (isPieceLocationLegal(currentPiece)) {
+                            addPieceToGrid(currentPiece)
+                            runUI { screenChanged() }
+                        }
+                        else {
+                            currentPiece.moveUp()
+                            addPieceToGrid(currentPiece)
+                            runUI { hitBottom() }
                         }
                     }
-
                         gameTask = GameTask(game)
                         timer.schedule(gameTask, delayMillis)
-
                 }
+
             }
         }
 
@@ -386,7 +386,7 @@ class Game(
 
     }
 
-    private fun runUI(function: () -> Unit) = functionThatRunsCodeInUiThread(Runnable { function() })
+    private fun runUI(function: () -> Unit) = runLater(Runnable { function() })
 
     private fun screenChanged() {
         updateHistory()
@@ -411,7 +411,7 @@ abstract class GameSave(
         val squaresInPiece: Int,
         val id:String
 
-) : Serializable
+) : Serializable, Comparable<GameSave>
 
 
 class SinglePlayerSave(
@@ -424,7 +424,11 @@ class SinglePlayerSave(
         val playerName: String,
         val totalRowsPopped: Int
 
-) : GameSave(date, width, height, squaresInPiece,id), Serializable
+) : GameSave(date, width, height, squaresInPiece, id), Serializable {
+    override fun compareTo(other: GameSave): Int {
+        return this.date.compareTo(other.date)
+    }
+}
 
 
 class DuelSave(
@@ -440,8 +444,11 @@ class DuelSave(
         val totalRowsPoppedLeft: Int,
         val totalRowsPoppedRight: Int
 
-) : GameSave(date, width, height, squaresInPiece,id), Serializable
-
+) : GameSave(date, width, height, squaresInPiece, id), Serializable {
+    override fun compareTo(other: GameSave): Int {
+        return this.date.compareTo(other.date)
+    }
+}
 
 
 private val COLOR_LIST = listOf(

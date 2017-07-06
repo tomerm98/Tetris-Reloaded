@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox alignment="CENTER" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="240.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Region VBox.vgrow="ALWAYS" />
+        <Label text="Save Game">
+            <font>
+                <Font size="27.0" />
+            </font>
+        </Label>
+        <Region VBox.vgrow="ALWAYS" />
+        <HBox alignment="CENTER">
+            <children>
+                <Label text="Rows: ">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblRowsPopped" text="0">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <Region VBox.vgrow="ALWAYS" />
+        <Label text="Enter Player Name:">
+            <font>
+                <Font size="15.0" />
+            </font>
+            <VBox.margin>
+                <Insets bottom="10.0" />
+            </VBox.margin>
+        </Label>
+        <TextField fx:id="tfPlayerName" alignment="CENTER" />
+        <Region VBox.vgrow="ALWAYS" />
+        <Button fx:id="btnSave" defaultButton="true" disable="true" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: #E2E2E2;" text="Save">
+            <font>
+                <Font size="15.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Region VBox.vgrow="ALWAYS" />
+    </children>
+</VBox>

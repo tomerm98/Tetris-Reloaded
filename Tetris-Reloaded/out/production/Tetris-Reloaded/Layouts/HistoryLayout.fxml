@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HistoryController">
+    <children>
+        <Region VBox.vgrow="ALWAYS" />
+        <Label text="History">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </Label>
+        <Region VBox.vgrow="ALWAYS" />
+        <HBox alignment="CENTER">
+            <children>
+                <Region HBox.hgrow="ALWAYS" />
+                <ToggleButton fx:id="tbSinglePlayer" focusTraversable="false" mnemonicParsing="false" onAction="#tbSinglePlayer_Action" prefWidth="136.0" selected="true" text="Single Player">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                </ToggleButton>
+                <Region HBox.hgrow="ALWAYS" />
+                <ToggleButton fx:id="tbDuel" focusTraversable="false" mnemonicParsing="false" onAction="#tbDuel_Action" prefWidth="136.0" text="Duel">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </ToggleButton>
+                <Region HBox.hgrow="ALWAYS" />
+            </children>
+        </HBox>
+        <Region VBox.vgrow="ALWAYS">
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </Region>
+        <AnchorPane>
+            <children>
+                <TableView fx:id="tableSinglePlayer" focusTraversable="false" prefHeight="410.0" prefWidth="1280.0" style="-fx-alignment: CENTER;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                    <columns>
+                        <TableColumn fx:id="columnNameSingle" prefWidth="75.0" text="Player Name" />
+                        <TableColumn fx:id="columnRowsSingle" prefWidth="75.0" text="Rows" />
+                        <TableColumn fx:id="columnDateSingle" prefWidth="75.0" text="Date" />
+                        <TableColumn fx:id="columnWidthSingle" prefWidth="75.0" text="Screen Width" />
+                        <TableColumn fx:id="columnHeightSingle" prefWidth="75.0" text="Screen Height" />
+                        <TableColumn fx:id="columnSquaresSingle" prefWidth="75.0" text="Squares In Piece" />
+                    </columns>
+                </TableView>
+                <TableView fx:id="tableDuel" focusTraversable="false" layoutX="10.0" layoutY="10.0" prefHeight="420.0" prefWidth="1290.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                    <columns>
+                        <TableColumn fx:id="columnLeftNameDuel" prefWidth="75.0" text="Left Player Name" />
+                        <TableColumn fx:id="columnLeftRowsDuel" prefWidth="75.0" text="Left Player Rows" />
+                        <TableColumn fx:id="columnRightNameDuel" prefWidth="75.0" text="Right Player Name" />
+                        <TableColumn fx:id="columnRightRowsDuel" prefWidth="75.0" text="Right Player Rows" />
+                        <TableColumn fx:id="columnDateDuel" prefWidth="75.0" text="Date" />
+                        <TableColumn fx:id="columnWidthDuel" prefWidth="75.0" text="Screen Width" />
+                        <TableColumn fx:id="columnHeightDuel" prefWidth="75.0" text="Screen Height" />
+                        <TableColumn fx:id="columnSquaresDuel" prefWidth="75.0" text="Squares In Piece" />
+                    </columns>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </TableView>
+            </children>
+        </AnchorPane>
+        <Region VBox.vgrow="ALWAYS" />
+        <HBox alignment="CENTER">
+            <children>
+                <Region HBox.hgrow="ALWAYS" />
+                <VBox alignment="CENTER">
+                    <children>
+                        <Button fx:id="btnBackup" focusTraversable="false" mnemonicParsing="false" onAction="#btnBackup_Action" prefWidth="136.0" text="Backup">
+                            <font>
+                                <Font size="19.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Button fx:id="btnImport" focusTraversable="false" mnemonicParsing="false" onAction="#btnImport_Action" prefWidth="136.0" text="Import">
+                            <font>
+                                <Font size="19.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                    </children>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="btnBack" focusTraversable="false" mnemonicParsing="false" onAction="#btnBack_Action" prefWidth="136.0" text="Back">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Region HBox.hgrow="ALWAYS" />
+                <VBox alignment="CENTER">
+                    <children>
+                        <Button fx:id="btnWatch" disable="true" focusTraversable="false" mnemonicParsing="false" onAction="#btnWatch_Action" prefWidth="136.0" text="Watch">
+                            <font>
+                                <Font size="19.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Button fx:id="btnDelete" disable="true" focusTraversable="false" mnemonicParsing="false" onAction="#btnDelete_Action" prefWidth="136.0" text="Delete">
+                            <font>
+                                <Font size="19.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                    </children>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+            </children>
+        </HBox>
+        <Region VBox.vgrow="ALWAYS" />
+    </children>
+</VBox>

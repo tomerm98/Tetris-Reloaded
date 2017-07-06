@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<SplitPane dividerPositions="0.7606516290726817" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <items>
+        <HBox fx:id="gameContainer" alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="442.0" prefWidth="1278.0">
+            <children>
+                <Canvas fx:id="canvasGame" height="398.0" width="200.0">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Canvas>
+            </children>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </HBox>
+        <VBox alignment="TOP_CENTER">
+            <children>
+                <HBox alignment="TOP_CENTER">
+                    <children>
+                        <Label fx:id="lblPlayerName" text="[Player Name]">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                      <HBox fx:id="rowsContainer" alignment="CENTER">
+                          <children>
+                              <Label text="Rows: ">
+                                  <font>
+                                      <Font size="15.0" />
+                                  </font>
+                              </Label>
+                              <Label fx:id="lblCurrentRows" text="0">
+                                  <font>
+                                      <Font size="15.0" />
+                                  </font>
+                              </Label>
+                              <Label text=" / ">
+                                  <font>
+                                      <Font size="15.0" />
+                                  </font>
+                              </Label>
+                              <Label fx:id="lblTotalRows" text="0">
+                                  <font>
+                                      <Font size="15.0" />
+                                  </font>
+                              </Label>
+                          </children>
+                     <HBox.margin>
+                        <Insets right="76.0" />
+                     </HBox.margin>
+                      </HBox>
+                  <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="lblDate" text="[Date]">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets right="5.0" />
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox alignment="CENTER">
+                    <children>
+                        <Label fx:id="lblCurrentTime" text="[cuurent time]" />
+                        <Slider fx:id="sldrTime" focusTraversable="false" nodeOrientation="LEFT_TO_RIGHT" prefWidth="500.0">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <HBox.margin>
+                                <Insets left="10.0" right="10.0" />
+                            </HBox.margin>
+                        </Slider>
+                        <Label fx:id="lblTotalTime" text="[total time]" />
+                    </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+                </HBox>
+                <HBox alignment="CENTER">
+                    <children>
+                        <Button fx:id="btnBackward" mnemonicParsing="false" prefHeight="38.0" prefWidth="38.0">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="/images/control_backward.png" />
+                           </image></ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="btnPlay" mnemonicParsing="false" prefHeight="38.0" prefWidth="38.0">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="30.0" right="30.0" />
+                            </HBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="/images/control_play.png" />
+                           </image></ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="btnForward" mnemonicParsing="false" prefHeight="38.0" prefWidth="38.0">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="/images/control_forward.png" />
+                           </image></ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <Button fx:id="btnBack" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Back">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </HBox>
+            </children>
+        </VBox>
+    </items>
+</SplitPane>
